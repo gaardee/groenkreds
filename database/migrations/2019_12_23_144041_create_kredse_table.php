@@ -28,7 +28,7 @@ class CreateKredseTable extends Migration
             $table->string('kontakt_navn')->nullable();
             $table->string('kontakt_email')->nullable();
             $table->string('kontakt_telefon')->nullable();
-            $table->json('billeder')->nullable();
+            $table->text('billeder')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
