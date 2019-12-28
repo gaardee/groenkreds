@@ -1,5 +1,5 @@
 <template>
-    <div class="" id="kortet">
+    <div class id="kortet">
         <div id="map-parent">
             <mapbox-component
                 id="map"
@@ -17,62 +17,58 @@
                 </div>
                 <div class="motivation">
                     <h4>Kredsens motivation</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Integer commodo ultricies lacus sit amet tincidunt.
-                        Nulla facilisi. Fusce tempor turpis ac iaculis
-                        ultricies. Phasellus ultrices, purus nec tincidunt
-                        volutpat, lacus felis aliquet sapien, vel blandit ipsum
-                        nibh a arcu. Cras rutrum odio metus, sit amet viverra
-                        ante varius vitae. Suspendisse eget sagittis erat.
-                        Mauris congue porttitor venenatis. In laoreet, orci ac
-                        commodo mattis, ligula velit consectetur augue,
-                        tristique scelerisque erat risus a arcu. Proin aliquam
-                        nunc sed velit porta ullamcorper. Praesent congue nisi
-                        at tellus tristique venenatis.
-                    </p>
+                    <div>{{ kreds.motivation }}</div>
                 </div>
                 <div class="billeder">
-                    <div class="img-wrapper img-thumbnail">
+                    <div
+                        class="img-wrapper img-thumbnail"
+                        v-for="(billede, index) in kreds.billeder"
+                        :key="billede"
+                        @click="showImg(index)"
+                    >
                         <div
                             class="img"
-                            style="background-image: url('/storage/billeder/78343090_132363218204658_6574630727197917184_o.png');"
-                        ></div>
-                    </div>
-                    <div class="img-wrapper img-thumbnail">
-                        <div
-                            class="img"
-                            style="background-image: url('/storage/billeder/78343090_132363218204658_6574630727197917184_o.png');"
-                        ></div>
-                    </div>
-                    <div class="img-wrapper img-thumbnail">
-                        <div
-                            class="img"
-                            style="background-image: url('/storage/billeder/78343090_132363218204658_6574630727197917184_o.png');"
-                        ></div>
-                    </div>
-                    <div class="img-wrapper img-thumbnail">
-                        <div
-                            class="img"
-                            style="background-image: url('/storage/billeder/78343090_132363218204658_6574630727197917184_o.png');"
+                            :style="
+                                'background-image: url(/storage/photos/' +
+                                    billede +
+                                    ');'
+                            "
                         ></div>
                     </div>
                 </div>
-                <div class="aktiviteter mt-4">
-                    <h4>Aktiviteter kredsen har udført</h4>
-                    <div></div>
-                </div>
+                <!-- <div class="aktiviteter mt-4">
+          <h4>Aktiviteter kredsen har udført</h4>
+          <div></div>
+        </div>-->
             </template>
         </div>
+
+        <vue-easy-lightbox
+            escDisabled
+            moveDisabled
+            :visible="visible"
+            :imgs="
+                Object.values(kreds.billeder).map(b => '/storage/photos/' + b)
+            "
+            :index="index"
+            @hide="handleHide"
+        ></vue-easy-lightbox>
     </div>
 </template>
 
 <script>
+import VueEasyLightbox from "vue-easy-lightbox";
+
 export default {
+    components: {
+        VueEasyLightbox
+    },
     props: ["kredse", "kredsprop"],
     data() {
         return {
-            kreds: this.kredsprop
+            kreds: this.kredsprop,
+            visible: false,
+            index: 0 // default: 0
         };
     },
     mounted: function() {
@@ -92,6 +88,13 @@ export default {
         }
     },
     methods: {
+        showImg(index) {
+            this.index = index;
+            this.visible = true;
+        },
+        handleHide() {
+            this.visible = false;
+        },
         async onMapLoad(event) {
             // Here we cathing 'load' map event
             const asyncActions = event.component.actions;

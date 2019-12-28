@@ -2,93 +2,61 @@
 
 namespace App\Http\Controllers;
 
+use App\Kreds;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class KredsController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function edit($key)
     {
-        $this->middleware('auth', ['except' => ['index']]);
+        $kreds = Kreds::where('key', $key)->first();
+
+        return view('kreds.edit', compact('kreds'));
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function rules()
     {
-        //
+        $rules = [
+            'name' => 'required'
+        ];
+        $photos = count($this->input('photos'));
+        foreach (range(0, $photos) as $index) {
+            $rules['photos.' . $index] = 'image|mimes:jpeg,bmp,png|max:2000';
+        }
+
+        return $rules;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function update(Request $request, $key)
     {
-        //
-    }
+        $kreds = Kreds::where('key', $key)->first();
+        $kreds->kontakt_email = $request->kontakt_email;
+        $kreds->kontakt_navn = $request->kontakt_navn;
+        $kreds->motivation = $request->motivation;
+        $kreds->active = 1;
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $billeder = $kreds->billeder ?? [];
+        // dd($request->photos);
+        if ($request->photos) {
+            foreach ($request->photos as $photo) {
+                preg_match("/^data:image\/(\w*);base64,/", $photo, $ext);
+                $filename = md5(uniqid()) . '.' . $ext[1];
+                Storage::disk('public')->put('photos/' . $filename,  base64_decode(explode(',', $photo)[1]));
+                array_push($billeder, $filename);
+            }
+        }
+        if ($request->removePhotos) {
+            foreach (json_decode($request->removePhotos) as $remove) {
+                if (($key = array_search($remove, $billeder)) !== false) {
+                    unset($billeder[$key]);
+                }
+            }
+        }
+        $kreds->billeder = array_values($billeder);
+        $kreds->save();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return redirect(route('kreds.edit', $kreds->key));
     }
 }

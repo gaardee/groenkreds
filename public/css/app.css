@@ -11427,8 +11427,8 @@ body,
   width: 50vw;
   height: calc(100vh - 100px);
   position: absolute;
-  bottom: 0;
   right: -50vw;
+  bottom: 0;
   -webkit-transition: 1s;
   transition: 1s;
   overflow: auto;
@@ -11497,6 +11497,7 @@ body,
 }
 
 #kortet #box .billeder .img-wrapper .img {
+  cursor: pointer;
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -11523,5 +11524,46 @@ body,
   .navbar-nav .nav-item {
     width: 100%;
   }
+
+  #box {
+    width: 100vw !important;
+    height: 40vh !important;
+    position: absolute !important;
+    bottom: -40vh !important;
+    right: 0 !important;
+  }
+
+  #box.show {
+    bottom: 0 !important;
+  }
+}
+
+input[type=file] {
+  display: block;
+}
+
+.pip {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  position: relative;
+}
+
+.pip img {
+  max-height: 100px;
+}
+
+.pip .remove {
+  position: absolute;
+  top: calc(1px + 0.25rem);
+  right: calc(1px + 0.25rem);
+  width: 30px;
+  background-color: #ffffffaa;
+  color: #aaa;
+  text-align: center;
+  cursor: pointer;
+}
+
+.pip .remove:hover {
+  color: black;
 }
 

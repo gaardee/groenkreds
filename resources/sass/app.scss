@@ -71,8 +71,8 @@ body,
         width: 50vw;
         height: calc(100vh - #{$navbar-height});
         position: absolute;
-        bottom: 0;
         right: -50vw;
+        bottom: 0;
         transition: 1s;
         overflow: auto;
 
@@ -130,6 +130,7 @@ body,
                 height: 175px;
                 margin: 0 0.5rem;
                 .img {
+                    cursor: pointer;
                     width: 100%;
                     height: 100%;
                     background-size: cover;
@@ -158,5 +159,44 @@ body,
     }
     .navbar-nav .nav-item {
         width: 100%;
+    }
+
+    #box {
+        width: 100vw !important;
+        height: 40vh !important;
+        position: absolute !important;
+        bottom: -40vh !important;
+        right: 0 !important;
+
+        &.show {
+            bottom: 0 !important;
+        }
+    }
+}
+
+input[type="file"] {
+    display: block;
+}
+.pip {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    position: relative;
+
+    img {
+        max-height: 100px;
+    }
+
+    .remove {
+        position: absolute;
+        top: calc(1px + 0.25rem);
+        right: calc(1px + 0.25rem);
+        width: 30px;
+        background-color: #ffffffaa;
+        color: #aaa;
+        text-align: center;
+        cursor: pointer;
+        &:hover {
+            color: black;
+        }
     }
 }
