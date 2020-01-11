@@ -1946,10 +1946,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2004,11 +2000,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 newParams = _context.sent;
                 console.log(newParams);
                 /* => {
-                  center: [30, 30],
-                  zoom: 9,
-                  bearing: 9,
-                  pitch: 7
-                }
+                        center: [30, 30],
+                        zoom: 9,
+                        bearing: 9,
+                        pitch: 7
+                      }
                 */
 
               case 7:
@@ -39770,9 +39766,11 @@ var render = function() {
           escDisabled: "",
           moveDisabled: "",
           visible: _vm.visible,
-          imgs: Object.values(_vm.kreds.billeder).map(function(b) {
-            return "/storage/photos/" + b
-          }),
+          imgs: _vm.kreds
+            ? Object.values(_vm.kreds.billeder).map(function(b) {
+                return "/storage/photos/" + b
+              })
+            : [],
           index: _vm.index
         },
         on: { hide: _vm.handleHide }
