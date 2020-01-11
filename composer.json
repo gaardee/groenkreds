@@ -15,7 +15,9 @@
         "laravel/framework": "5.8.*",
         "laravel/nova": "*",
         "laravel/tinker": "^1.0",
-        "pdewit/nova-external-url": "^1.0"
+        "mdixon18/fontawesome": "^0.1.1",
+        "pdewit/nova-external-url": "^1.0",
+        "timothyasp/nova-badge-field": "^1.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
