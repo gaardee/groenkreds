@@ -17,6 +17,7 @@ class CreateAktiviteterTable extends Migration
             $table->bigIncrements('id');
             $table->tinyInteger('type')->nullable();
             $table->string('title')->nullable();
+            $table->string('slug')->nullable();
             $table->string('ikon')->nullable();
             $table->longText('indhold')->nullable();
             $table->longText('materialer')->nullable();
