@@ -11,9 +11,11 @@
         "php": "^7.1.3",
         "benjaminhirsch/nova-slug-field": "^1.2",
         "fideloper/proxy": "^4.0",
+        "genealabs/nova-map-marker-field": "^0.1.15",
         "laravel/framework": "5.8.*",
         "laravel/nova": "*",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "pdewit/nova-external-url": "^1.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

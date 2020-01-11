@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "278c37a1483589e1c4b6958c6a49f611",
+    "content-hash": "46d3c15b1f7c667944c87b43ce59ae39",
     "packages": [
         {
             "name": "benjaminhirsch/nova-slug-field",
@@ -726,6 +726,48 @@
             "time": "2019-09-03T16:45:42+00:00"
         },
         {
+            "name": "genealabs/nova-map-marker-field",
+            "version": "0.1.15",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GeneaLabs/nova-map-marker-field.git",
+                "reference": "004d7cfc2451b9e010b8e40bd342a2cb0eee4215"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GeneaLabs/nova-map-marker-field/zipball/004d7cfc2451b9e010b8e40bd342a2cb0eee4215",
+                "reference": "004d7cfc2451b9e010b8e40bd342a2cb0eee4215",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/nova": "*",
+                "symfony/thanks": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "GeneaLabs\\NovaMapMarkerField\\Providers\\Service"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GeneaLabs\\NovaMapMarkerField\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "time": "2019-10-20T17:53:04+00:00"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "v0.2",
             "source": {
@@ -1296,6 +1338,7 @@
                 "bcmath",
                 "math"
             ],
+            "abandoned": "brick/math",
             "time": "2017-02-16T16:54:46+00:00"
         },
         {
@@ -1522,6 +1565,47 @@
                 "random"
             ],
             "time": "2018-07-02T15:55:56+00:00"
+        },
+        {
+            "name": "pdewit/nova-external-url",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pdewit/nova-external-url.git",
+                "reference": "3fe3b8cb62740dd833773665cbf4380c345c3206"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pdewit/nova-external-url/zipball/3fe3b8cb62740dd833773665cbf4380c345c3206",
+                "reference": "3fe3b8cb62740dd833773665cbf4380c345c3206",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Pdewit\\ExternalUrl\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pdewit\\ExternalUrl\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "An external URL Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "time": "2018-11-26T14:51:33+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -3088,6 +3172,49 @@
                 "standards"
             ],
             "time": "2019-10-14T12:27:06+00:00"
+        },
+        {
+            "name": "symfony/thanks",
+            "version": "v1.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/thanks.git",
+                "reference": "6021b6862da1e91d3673aab0f2045a91d0f5ac79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/thanks/zipball/6021b6862da1e91d3673aab0f2045a91d0f5ac79",
+                "reference": "6021b6862da1e91d3673aab0f2045a91d0f5ac79",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "php": "^5.5.9|^7.0.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                },
+                "class": "Symfony\\Thanks\\Thanks"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Thanks\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                }
+            ],
+            "description": "Encourages sending ⭐ and 💵 to fellow PHP package maintainers (not limited to Symfony components)!",
+            "time": "2019-11-29T16:13:13+00:00"
         },
         {
             "name": "symfony/translation",
