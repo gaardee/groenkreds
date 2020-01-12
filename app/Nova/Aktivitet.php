@@ -74,7 +74,6 @@ class Aktivitet extends Resource
             Trix::make('Materialer')->alwaysShow(),
 
             AdvancedImage::make('path')
-                ->path('aktiviteter/')
                 ->croppable(16 / 9)
                 ->resize(1920),
         ];

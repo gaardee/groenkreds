@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="image-holder">
-                <img src="{{ url("storage/aktiviteter/{$a->path}") }}">
+                <img src="{{ url("storage/{$a->path}") }}">
             </div>
             <div class="p-4">
                 <h3>Aktivitet</h3>
