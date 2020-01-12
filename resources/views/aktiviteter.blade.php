@@ -9,6 +9,9 @@
 </div>
 <div class="container mb-4 mt-4">
     <div id="aktiviteter">
+        <div class="aktivitet-header type-1">KREDSEN I LOKALMILJØET</div>
+        <div class="aktivitet-header type-2">KREDSENS LEVEVEJ</div>
+        <div class="aktivitet-header type-3">DEN LEGENDE KREDS</div>
         @forelse($aktiviteter AS $a)
         @if($a)
         <div class="aktivitet type-{{ $a->type }} {{ $slug == $a->slug ? 'open' : 'closed' }}" data-slug="{{ $a->slug }}">
