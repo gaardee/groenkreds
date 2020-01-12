@@ -53,12 +53,25 @@
                         <li class="nav-item {{ (request()->is('bliv')) ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('bliv') }}">Bliv GRØN KREDS</a>
                         </li>
+                        <li class="d-flex align-items-center justify-content-between d-md-none" style="width: 100%; padding: 0px 4rem;">
+                            <div class="d-flex align-items-center">
+                                <div style="font-size:40pt; margin-right: 5px;">{{ $kredse_count }}</div>
+                                <div>kredse er med i <br>GRØN KREDS</div>
+                            </div>
+                            <div>
+                                <a href="https://fdf.dk" target="_blank"><img src="/images/FDF_Skjold_FDFblaa_Uden_Outline_RGB.png" style="height: 40px;margin:3px;"></a>
+                                <a href="https://www.noedhjaelp.dk/" target="_blank"><img src="/images/folkekirkens_nodhjaelp_logo.svg" style="height: 40px;margin:3px;"></a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <div class="order-3 d-none d-md-flex align-items-center">
                     <div style="font-size:40pt; margin-right: 5px;">{{ $kredse_count }}</div>
                     <div>kredse er med i <br>GRØN KREDS</div>
-                    <div><img src="/images/FDF_Skjold_FDFblaa_Uden_Outline_RGB.png" style="height: 40px;margin-left:5px;"></div>
+                    <div>
+                        <a href="https://fdf.dk" target="_blank"><img src="/images/FDF_Skjold_FDFblaa_Uden_Outline_RGB.png" style="height: 40px;margin:3px;"></a>
+                        <a href="https://www.noedhjaelp.dk/" target="_blank"><img src="/images/folkekirkens_nodhjaelp_logo.svg" style="height: 40px;margin:3px;"></a>
+                    </div>
                 </div>
             </div>
         </nav>
