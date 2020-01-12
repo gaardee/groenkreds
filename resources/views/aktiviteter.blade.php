@@ -51,7 +51,7 @@
 @section('scripts')
 <script>
 $( document ).ready(function() {
-    $(".aktivitet.closed").click(function(){
+    $(document).on("click", ".aktivitet.closed", function(){
         $(this).removeClass('closed').addClass('open');
         $("<div id='placeholder'></div>").insertAfter($(this));
         $(window).scrollTop(0);
@@ -62,7 +62,7 @@ $( document ).ready(function() {
         );
         $("#modalShadow").show();
     });
-    $(".aktivitet .close, #modalShadow").click(function(e){
+    $(document).on("click", ".aktivitet .close, #modalShadow", function(e){
         closeModal();
         e.stopPropagation();
     });
