@@ -11727,6 +11727,7 @@ input[type=file] {
   -webkit-transform: translate(-50%, 0%);
           transform: translate(-50%, 0%);
   border-radius: 2rem;
+  margin-bottom: 80px;
 }
 
 #aktiviteter .aktivitet.open img {
