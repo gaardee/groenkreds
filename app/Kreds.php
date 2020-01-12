@@ -31,6 +31,8 @@ class Kreds extends Model
         'billeder' => 'array'
     ];
 
+    protected $with = ['aktiviteter'];
+
     public function scopeHasCoordinates($query)
     {
         return $query->where('latitude', '!=', 0)->where('longitude', '!=', 0);
@@ -39,5 +41,10 @@ class Kreds extends Model
     public function scopeIsActive($query)
     {
         return $query->where('active', true)->hasCoordinates();
+    }
+
+    public function aktiviteter()
+    {
+        return $this->belongsToMany('App\Aktivitet')->orderBy('type');
     }
 }

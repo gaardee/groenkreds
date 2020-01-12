@@ -20,4 +20,9 @@ class Aktivitet extends Model
     {
         return 'slug';
     }
+
+    public function kredse()
+    {
+        return $this->belongsToMany('App\Kreds');
+    }
 }
