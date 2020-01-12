@@ -17,7 +17,10 @@
                 </div>
                 <div class="motivation">
                     <h4>Kredsens motivation</h4>
-                    <div>{{ kreds.motivation }}</div>
+                    <div v-if="kreds.motivation">{{ kreds.motivation }}</div>
+                    <div v-else>
+                        <i>Kredsen har ikke skrevet nogen motivation</i>
+                    </div>
                 </div>
                 <div class="billeder">
                     <div
@@ -40,7 +43,11 @@
                     <h4>
                         Aktiviteter kredsen har udført
                     </h4>
-                    <div id="aktiviteter-select" class="d-flex">
+                    <div
+                        id="aktiviteter-select"
+                        class="d-flex"
+                        v-if="kreds.aktiviteter.length > 0"
+                    >
                         <a
                             :href="`/aktiviteter/${aktivitet.slug}`"
                             :class="
@@ -55,6 +62,9 @@
                             </div>
                             <div class="titel">{{ aktivitet.title }}</div>
                         </a>
+                    </div>
+                    <div v-else>
+                        <i>Kredsen har ikke valgt nogen aktiviteter</i>
                     </div>
                 </div>
             </template>

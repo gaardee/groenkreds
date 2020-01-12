@@ -1971,6 +1971,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -39749,7 +39759,13 @@ var render = function() {
                 _c("div", { staticClass: "motivation" }, [
                   _c("h4", [_vm._v("Kredsens motivation")]),
                   _vm._v(" "),
-                  _c("div", [_vm._v(_vm._s(_vm.kreds.motivation))])
+                  _vm.kreds.motivation
+                    ? _c("div", [_vm._v(_vm._s(_vm.kreds.motivation))])
+                    : _c("div", [
+                        _c("i", [
+                          _vm._v("Kredsen har ikke skrevet nogen motivation")
+                        ])
+                      ])
                 ]),
                 _vm._v(" "),
                 _c(
@@ -39788,41 +39804,47 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "d-flex",
-                      attrs: { id: "aktiviteter-select" }
-                    },
-                    _vm._l(_vm.kreds.aktiviteter, function(aktivitet) {
-                      return _c(
-                        "a",
+                  _vm.kreds.aktiviteter.length > 0
+                    ? _c(
+                        "div",
                         {
-                          key: aktivitet.id,
-                          class:
-                            "btn btn-round d-flex type-" +
-                            aktivitet.type +
-                            " aktivitet active",
-                          attrs: {
-                            href: "/aktiviteter/" + aktivitet.slug,
-                            target: "_blank"
-                          }
+                          staticClass: "d-flex",
+                          attrs: { id: "aktiviteter-select" }
                         },
-                        [
-                          _c(
-                            "div",
-                            { staticClass: "icon-badge rounded-circle" },
-                            [_c("i", { class: aktivitet.ikon })]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "titel" }, [
-                            _vm._v(_vm._s(aktivitet.title))
-                          ])
-                        ]
+                        _vm._l(_vm.kreds.aktiviteter, function(aktivitet) {
+                          return _c(
+                            "a",
+                            {
+                              key: aktivitet.id,
+                              class:
+                                "btn btn-round d-flex type-" +
+                                aktivitet.type +
+                                " aktivitet active",
+                              attrs: {
+                                href: "/aktiviteter/" + aktivitet.slug,
+                                target: "_blank"
+                              }
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticClass: "icon-badge rounded-circle" },
+                                [_c("i", { class: aktivitet.ikon })]
+                              ),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "titel" }, [
+                                _vm._v(_vm._s(aktivitet.title))
+                              ])
+                            ]
+                          )
+                        }),
+                        0
                       )
-                    }),
-                    0
-                  )
+                    : _c("div", [
+                        _c("i", [
+                          _vm._v("Kredsen har ikke valgt nogen aktiviteter")
+                        ])
+                      ])
                 ])
               ]
             : _vm._e()
