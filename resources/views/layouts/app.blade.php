@@ -13,6 +13,16 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -43,7 +53,9 @@
                     </ul>
                 </div>
                 <div class="order-3 d-none d-md-flex align-items-center">
-                    <div style="font-size:40pt; margin-right: 5px;">{{ $kredse_count }}</div><div>kredse er med i <br>GRØN KREDS</div>
+                    <div style="font-size:40pt; margin-right: 5px;">{{ $kredse_count }}</div>
+                    <div>kredse er med i <br>GRØN KREDS</div>
+                    <div><img src="/images/FDF_Skjold_FDFblaa_Uden_Outline_RGB.png" style="height: 40px;margin-left:5px;"></div>
                 </div>
             </div>
         </nav>
