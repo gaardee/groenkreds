@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Aktivitet;
 use App\Kreds;
 use Illuminate\Http\Request;
 
@@ -19,9 +20,18 @@ class HomeController extends Controller
         return view('kortet', compact('kredse', 'kreds'));
     }
 
-    public function aktiviteter()
+    public function aktiviteter(Aktivitet $aktivitet = null)
     {
-        return view('aktiviteter');
+        $all = Aktivitet::all()->groupBy('type');
+        $aktiviteter = [];
+        for ($i = 0; $i < max(count($all[1]), count($all[2]), count($all[3])); $i++) {
+            array_push($aktiviteter, $all[1][$i] ?? null);
+            array_push($aktiviteter, $all[2][$i] ?? null);
+            array_push($aktiviteter, $all[3][$i] ?? null);
+        }
+        // dd($aktiviteter);
+        $slug = $aktivitet->slug ?? null;
+        return view('aktiviteter', compact('aktiviteter', 'slug'));
     }
 
     public function om()
