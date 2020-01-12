@@ -25,7 +25,7 @@
 
                         <div class="form-group">
                             <div class="field" align="left">
-                                <h3>Upload your images</h3>
+                                <h3>Billeder</h3>
                                 <input type="file" id="files" multiple />
                                 @if($kreds->billeder)
                                 @foreach(array_reverse($kreds->billeder) AS $billede)
