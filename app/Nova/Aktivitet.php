@@ -10,7 +10,9 @@ use Mdixon18\Fontawesome\Fontawesome;
 use Timothyasp\Badge\Badge;
 use Benjaminhirsch\NovaSlugField\Slug;
 use Benjaminhirsch\NovaSlugField\TextWithSlug;
-
+use Ctessier\NovaAdvancedImageField\AdvancedImage;
+use Laravel\Nova\Fields\Image;
+use Illuminate\Support\Str;
 
 class Aktivitet extends Resource
 {
@@ -69,7 +71,12 @@ class Aktivitet extends Resource
 
             Trix::make('Indhold')->alwaysShow(),
 
-            Trix::make('Materialer')->alwaysShow()
+            Trix::make('Materialer')->alwaysShow(),
+
+            AdvancedImage::make('path')
+                ->path('aktiviteter/')
+                ->croppable(16 / 9)
+                ->resize(1920),
         ];
     }
 
@@ -125,5 +132,10 @@ class Aktivitet extends Resource
     public static function singularLabel()
     {
         return "Aktivitet";
+    }
+
+    public static function uriKey()
+    {
+        return Str::slug(static::label());
     }
 }

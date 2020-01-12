@@ -19,6 +19,7 @@ class CreateAktiviteterTable extends Migration
             $table->string('title')->nullable();
             $table->string('slug')->nullable();
             $table->string('ikon')->nullable();
+            $table->string('path')->nullable();
             $table->longText('indhold')->nullable();
             $table->longText('materialer')->nullable();
             $table->timestamps();
