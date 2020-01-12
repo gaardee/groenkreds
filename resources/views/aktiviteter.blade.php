@@ -9,7 +9,7 @@
 </div>
 <div class="container mb-4 mt-4">
     <div id="aktiviteter">
-        @foreach($aktiviteter AS $a)
+        @forelse($aktiviteter AS $a)
         @if($a)
         <div class="aktivitet type-{{ $a->type }} {{ $slug == $a->slug ? 'open' : 'closed' }}" data-slug="{{ $a->slug }}">
             <div class="top">
@@ -40,7 +40,10 @@
         @else
         <div class="empty"></div>
         @endif
-        @endforeach
+        @empty
+        <div></div>
+        <div class="text-center" style="width: 100%;">Der er ikke nogen aktiviteter endnu</div>
+        @endforelse
     </div>
 </div>
 @endsection
