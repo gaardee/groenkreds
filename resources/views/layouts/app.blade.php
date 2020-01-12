@@ -50,6 +50,9 @@
                         <li class="nav-item {{ (request()->is('om')) ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('om') }}">Om GRØN KREDS</a>
                         </li>
+                        <li class="nav-item {{ (request()->is('bliv')) ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ route('bliv') }}">Bliv GRØN KREDS</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="order-3 d-none d-md-flex align-items-center">

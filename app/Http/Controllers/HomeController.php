@@ -37,4 +37,9 @@ class HomeController extends Controller
     {
         return view('om');
     }
+
+    public function bliv()
+    {
+        return view('bliv');
+    }
 }
