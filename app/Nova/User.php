@@ -6,6 +6,7 @@ use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Gravatar;
+use Illuminate\Support\Str;
 use Laravel\Nova\Fields\Password;
 
 class User extends Resource
@@ -115,5 +116,10 @@ class User extends Resource
     public static function singularLabel()
     {
         return "Bruger";
+    }
+
+    public static function uriKey()
+    {
+        return Str::slug(static::label());
     }
 }

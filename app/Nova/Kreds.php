@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\Text;
 use GeneaLabs\NovaMapMarkerField\MapMarker;
 use Laravel\Nova\Panel;
 use Pdewit\ExternalUrl\ExternalUrl;
+use Illuminate\Support\Str;
 
 class Kreds extends Resource
 {
@@ -122,5 +123,10 @@ class Kreds extends Resource
     public static function singularLabel()
     {
         return "Kreds";
+    }
+
+    public static function uriKey()
+    {
+        return Str::slug(static::label());
     }
 }
