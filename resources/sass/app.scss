@@ -215,6 +215,58 @@ input[type="file"] {
     }
 }
 
+.icon-badge {
+    background-color: $fdfmoerkeblaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+#aktiviteter-select {
+    flex-wrap: wrap;
+    .aktivitet {
+        padding: 0;
+        border-radius: 20px;
+        height: 40px;
+        border: 3px solid transparent;
+        margin: 0px 10px 10px 0px;
+        background-color: $fdfblaa;
+        &.type-1 {
+            border-color: $green;
+        }
+        &.type-2 {
+            border-color: $orange;
+        }
+        &.type-3 {
+            border-color: $yellow;
+        }
+        &.active {
+            &.type-1 {
+                background-color: $green;
+            }
+            &.type-2 {
+                background-color: $orange;
+            }
+            &.type-3 {
+                background-color: $yellow;
+            }
+        }
+
+        .icon-badge {
+            margin: -3px;
+            height: 40px;
+            width: 40px;
+            font-size: 20px;
+        }
+
+        .titel {
+            line-height: 34px;
+            padding: 0px 10px;
+        }
+    }
+}
+
 #aktiviteter {
     display: grid;
     grid-template-columns: repeat(1, 1fr);

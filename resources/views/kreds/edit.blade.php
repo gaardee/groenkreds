@@ -40,9 +40,25 @@
                                 @endif
                             </div>
                         </div>
-                        {{-- <div class="form-group mt-4">
+
+                        <div class="form-group mt-4">
                             <h4>Aktiviteter i har lavet</h4>
-                        </div> --}}
+                        </div>
+                        <div class="form-group">
+                            <div class="btn-group-toggle d-flex" id="aktiviteter-select" data-toggle="buttons">
+                                @foreach($aktiviteter AS $aktivitet)
+                                <label class="btn btn-round d-flex type-{{ $aktivitet->type }} aktivitet">
+                                    <input type="checkbox" value="{{ $aktivitet->id }}" name="aktiviteter[]" autocomplete="off" {{ $kreds->aktiviteter->contains('id', $aktivitet->id) ? 'checked' : '' }}>
+                                    <div class="icon-badge rounded-circle">
+                                        <i class="{{ $aktivitet->ikon }}"></i>
+                                    </div>
+                                    <div class="titel">
+                                        {{ $aktivitet->title }}
+                                    </div>
+                                </label>
+                                @endforeach
+                            </div>
+                        </div>
 
                         <div class="form-group mt-4">
                             <h4>Kontaktperson</h4>

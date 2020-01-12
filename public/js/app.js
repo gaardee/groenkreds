@@ -1946,6 +1946,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2000,11 +2025,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 newParams = _context.sent;
                 console.log(newParams);
                 /* => {
-                        center: [30, 30],
-                        zoom: 9,
-                        bearing: 9,
-                        pitch: 7
-                      }
+                  center: [30, 30],
+                  zoom: 9,
+                  bearing: 9,
+                  pitch: 7
+                }
                 */
 
               case 7:
@@ -39754,7 +39779,51 @@ var render = function() {
                     )
                   }),
                   0
-                )
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "aktiviteter mt-4" }, [
+                  _c("h4", [
+                    _vm._v(
+                      "\n                    Aktiviteter kredsen har udført\n                "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "d-flex",
+                      attrs: { id: "aktiviteter-select" }
+                    },
+                    _vm._l(_vm.kreds.aktiviteter, function(aktivitet) {
+                      return _c(
+                        "a",
+                        {
+                          key: aktivitet.id,
+                          class:
+                            "btn btn-round d-flex type-" +
+                            aktivitet.type +
+                            " aktivitet active",
+                          attrs: {
+                            href: "/aktiviteter/" + aktivitet.slug,
+                            target: "_blank"
+                          }
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticClass: "icon-badge rounded-circle" },
+                            [_c("i", { class: aktivitet.ikon })]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "titel" }, [
+                            _vm._v(_vm._s(aktivitet.title))
+                          ])
+                        ]
+                      )
+                    }),
+                    0
+                  )
+                ])
               ]
             : _vm._e()
         ],

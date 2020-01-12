@@ -11582,6 +11582,66 @@ input[type=file] {
   display: block;
 }
 
+.icon-badge {
+  background-color: #003255;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  color: white;
+}
+
+#aktiviteter-select {
+  flex-wrap: wrap;
+}
+
+#aktiviteter-select .aktivitet {
+  padding: 0;
+  border-radius: 20px;
+  height: 40px;
+  border: 3px solid transparent;
+  margin: 0px 10px 10px 0px;
+  background-color: #5F8CB4;
+}
+
+#aktiviteter-select .aktivitet.type-1 {
+  border-color: #289438;
+}
+
+#aktiviteter-select .aktivitet.type-2 {
+  border-color: #EC6411;
+}
+
+#aktiviteter-select .aktivitet.type-3 {
+  border-color: #ffc107;
+}
+
+#aktiviteter-select .aktivitet.active.type-1 {
+  background-color: #289438;
+}
+
+#aktiviteter-select .aktivitet.active.type-2 {
+  background-color: #EC6411;
+}
+
+#aktiviteter-select .aktivitet.active.type-3 {
+  background-color: #ffc107;
+}
+
+#aktiviteter-select .aktivitet .icon-badge {
+  margin: -3px;
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+}
+
+#aktiviteter-select .aktivitet .titel {
+  line-height: 34px;
+  padding: 0px 10px;
+}
+
 #aktiviteter {
   display: grid;
   grid-template-columns: repeat(1, 1fr);

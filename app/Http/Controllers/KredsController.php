@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Aktivitet;
 use App\Kreds;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -12,7 +13,9 @@ class KredsController extends Controller
     {
         $kreds = Kreds::where('key', $key)->first();
 
-        return view('kreds.edit', compact('kreds'));
+        $aktiviteter = Aktivitet::orderBy('type')->get();
+
+        return view('kreds.edit', compact('kreds', 'aktiviteter'));
     }
 
 
@@ -31,11 +34,14 @@ class KredsController extends Controller
 
     public function update(Request $request, $key)
     {
+        // dd($request);
         $kreds = Kreds::where('key', $key)->first();
         $kreds->kontakt_email = $request->kontakt_email;
         $kreds->kontakt_navn = $request->kontakt_navn;
         $kreds->motivation = $request->motivation;
         $kreds->active = 1;
+
+        $kreds->aktiviteter()->sync($request->aktiviteter);
 
         $billeder = $kreds->billeder ?? [];
         // dd($request->photos);
