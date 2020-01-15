@@ -21,21 +21,19 @@
             data-title="{{ $a->title }}"
             data-aktiviteter="{{ $a->indhold }}"
             data-ikon="{{ $a->ikon }}"
-            data-image="{{ url("storage/{$a->path}") }}"
+            data-image="{{ $a->path != '' ? url('storage/' . $a->path) : url('images/aktivitet_placeholder.png') }}"
             data-materialer="{!! $a->materialer !!}"
         >
-            <div class="top">
-                <div class="d-flex align-items-center">
-                    <div class="icon-badge rounded-circle">
-                        <i class="{{ $a->ikon }}"></i>
-                    </div>
-                    <div class="titel">
-                        {{ $a->title }}
-                    </div>
+            <div class="top d-flex align-items-center">
+                <div class="icon-badge rounded-circle">
+                    <i class="{{ $a->ikon }}"></i>
+                </div>
+                <div class="titel">
+                    {{ $a->title }}
                 </div>
             </div>
             <div class="image-holder">
-                <img src="{{ url("storage/{$a->path}") }}">
+                <img src="{{ $a->path != '' ? url('storage/' . $a->path) : url('images/aktivitet_placeholder.png') }}">
             </div>
         </div>
         @else
@@ -61,7 +59,7 @@
       </div>
       <div class="modal-body">
         <div class="image-holder">
-            <img src="{{ url("storage/{$aktivitet->path}") ?? '' }}">
+            <img src="{{ $aktivitet ? $aktivitet->path != '' ? url('storage/' . $aktivitet->path) : url('images/aktivitet_placeholder.png') : '' }}">
         </div>
         <div class="p-4">
             <h3>Aktivitet</h3>
@@ -80,7 +78,9 @@
 @section('scripts')
 <script>
 $( document ).ready(function() {
+    @if($aktivitet)
     $('#exampleModal').modal('show');
+    @endif
     // $(document).on("click", ".aktivitet.closed", function(){
     //     $(this).removeClass('closed').addClass('open');
     //     $("<div id='placeholder'></div>").insertAfter($(this));

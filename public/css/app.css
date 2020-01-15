@@ -11695,12 +11695,6 @@ input[type=file] {
   color: white;
   border-radius: 2rem 2rem 0 0;
   height: 60px;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-          align-items: center;
   padding: 0px 10px;
 }
 
