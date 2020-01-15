@@ -30,7 +30,7 @@ class HomeController extends Controller
             array_push($aktiviteter, $all[3][$i] ?? null);
         }
         $slug = $aktivitet->slug ?? null;
-        return view('aktiviteter', compact('aktiviteter', 'slug'));
+        return view('aktiviteter', compact('aktiviteter', 'aktivitet', 'slug'));
     }
 
     public function om()
