@@ -59,7 +59,7 @@
                                 <div>kredse er med i <br>GRØN KREDS</div>
                             </div>
                             <div>
-                                <a href="https://fdf.dk" target="_blank"><img src="/images/FDF_Skjold_FDFblaa_Uden_Outline_RGB.png" style="height: 40px;margin:3px;"></a>
+                                <a href="https://fdf.dk" target="_blank"><img src="/images/FDFskjold.png" style="height: 40px;margin:3px;"></a>
                                 <a href="https://www.noedhjaelp.dk/" target="_blank"><img src="/images/folkekirkens_nodhjaelp_logo.svg" style="height: 40px;margin:3px;"></a>
                             </div>
                         </li>
@@ -69,7 +69,7 @@
                     <div style="font-size:40pt; margin-right: 5px;">{{ $kredse_count }}</div>
                     <div>kredse er med i <br>GRØN KREDS</div>
                     <div>
-                        <a href="https://fdf.dk" target="_blank"><img src="/images/FDF_Skjold_FDFblaa_Uden_Outline_RGB.png" style="height: 40px;margin:3px;"></a>
+                        <a href="https://fdf.dk" target="_blank"><img src="/images/FDFskjold.png" style="height: 40px;margin:3px;"></a>
                         <a href="https://www.noedhjaelp.dk/" target="_blank"><img src="/images/folkekirkens_nodhjaelp_logo.svg" style="height: 40px;margin:3px;"></a>
                     </div>
                 </div>
