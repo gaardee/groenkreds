@@ -1938,6 +1938,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 var markerSize = 40;
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -43985,6 +43986,7 @@ var render = function() {
         zoom: _vm.zoom,
         "map-type-id": "terrain",
         options: {
+          gestureHandling: "greedy",
           styles: _vm.styles,
           zoomControl: true,
           mapTypeControl: false,

@@ -6,6 +6,7 @@
     map-type-id="terrain"
     style="width: 100%; height: 100%"
     :options="{
+        gestureHandling: 'greedy',
         styles: styles,
    zoomControl: true,
    mapTypeControl: false,
