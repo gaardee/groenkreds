@@ -1874,6 +1874,225 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GmapsComponent.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/GmapsComponent.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_symbol__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.symbol */ "./node_modules/core-js/modules/es.symbol.js");
+/* harmony import */ var core_js_modules_es_symbol__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_symbol_description__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.symbol.description */ "./node_modules/core-js/modules/es.symbol.description.js");
+/* harmony import */ var core_js_modules_es_symbol_description__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_description__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_symbol_iterator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.symbol.iterator */ "./node_modules/core-js/modules/es.symbol.iterator.js");
+/* harmony import */ var core_js_modules_es_symbol_iterator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_symbol_iterator__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_array_iterator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.array.iterator */ "./node_modules/core-js/modules/es.array.iterator.js");
+/* harmony import */ var core_js_modules_es_array_iterator__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_iterator__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_array_map__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.array.map */ "./node_modules/core-js/modules/es.array.map.js");
+/* harmony import */ var core_js_modules_es_array_map__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_map__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var core_js_modules_es_object_to_string__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! core-js/modules/es.object.to-string */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var core_js_modules_es_string_iterator__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! core-js/modules/es.string.iterator */ "./node_modules/core-js/modules/es.string.iterator.js");
+/* harmony import */ var core_js_modules_es_string_iterator__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_iterator__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var core_js_modules_web_dom_collections_iterator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var vue2_google_maps__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vue2-google-maps */ "./node_modules/vue2-google-maps/dist/main.js");
+/* harmony import */ var vue2_google_maps__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(vue2_google_maps__WEBPACK_IMPORTED_MODULE_8__);
+
+
+
+
+
+
+
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var markerSize = 40;
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["kredse", "kreds"],
+  data: function data() {
+    return {
+      center: {
+        lat: 56.244995,
+        lng: 11.47533
+      },
+      coordinates: [12.5030745, 55.6926708],
+      zoom: 12,
+      selectedKreds: this.kreds,
+      map: null,
+      markerOptions: {
+        url: "/images/Marker.svg",
+        size: {
+          width: markerSize * 2,
+          height: markerSize * 2,
+          f: "px",
+          b: "px"
+        },
+        scaledSize: {
+          width: markerSize,
+          height: markerSize,
+          f: "px",
+          b: "px"
+        },
+        anchor: {
+          x: markerSize / 2,
+          y: markerSize
+        } // origin: { x: 0, y: 0 },
+
+      },
+      markerSelectedOptions: {
+        url: "/images/MarkerSelected.svg",
+        size: {
+          width: markerSize * 2,
+          height: markerSize * 2,
+          f: "px",
+          b: "px"
+        },
+        scaledSize: {
+          width: markerSize,
+          height: markerSize,
+          f: "px",
+          b: "px"
+        },
+        anchor: {
+          x: markerSize / 2,
+          y: markerSize
+        } // origin: { x: 0, y: 0 },
+
+      },
+      styles: [{
+        stylers: [{
+          hue: "#2c3e50"
+        }, {
+          saturation: 250
+        }]
+      }, {
+        featureType: "road",
+        elementType: "geometry",
+        stylers: [{
+          lightness: 50
+        }, {
+          visibility: "simplified"
+        }]
+      }, {
+        featureType: "road",
+        elementType: "labels",
+        stylers: [{
+          visibility: "off"
+        }]
+      }, {
+        featureType: "administrative",
+        elementType: "geometry",
+        stylers: [{
+          visibility: "off"
+        }]
+      }, {
+        featureType: "poi",
+        stylers: [{
+          visibility: "off"
+        }]
+      }, {
+        featureType: "transit",
+        stylers: [{
+          visibility: "off"
+        }]
+      }]
+    };
+  },
+  computed: {
+    google: vue2_google_maps__WEBPACK_IMPORTED_MODULE_8__["gmapApi"]
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$refs.mapRef.$mapPromise.then(function (map) {
+      _this.map = map;
+
+      _this.generateBounds(map);
+    });
+  },
+  watch: {
+    kreds: function kreds(val, oldVal) {
+      this.selectKreds(val);
+    }
+  },
+  methods: {
+    selectKreds: function selectKreds(kreds) {
+      if (kreds) this.$refs.mapRef.panTo({
+        lat: kreds.latitude,
+        lng: kreds.longitude
+      });
+      this.selectedKreds = kreds;
+      this.$emit("update:kreds", kreds);
+    },
+    generateBounds: function generateBounds(map) {
+      var bounds = new google.maps.LatLngBounds();
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = this.kredse[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var kreds = _step.value;
+          bounds.extend({
+            lat: kreds.latitude,
+            lng: kreds.longitude
+          });
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+            _iterator["return"]();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+
+      map.fitBounds(bounds);
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/KortetComponent.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/KortetComponent.vue?vue&type=script&lang=js& ***!
@@ -1983,16 +2202,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2007,9 +2216,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
     };
   },
-  mounted: function mounted() {
-    console.log(this.kreds);
-  },
+  mounted: function mounted() {},
   watch: {
     kreds: function kreds(val, oldVal) {
       if (val) {
@@ -2047,11 +2254,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 newParams = _context.sent;
                 console.log(newParams);
                 /* => {
-                  center: [30, 30],
-                  zoom: 9,
-                  bearing: 9,
-                  pitch: 7
-                }
+                        center: [30, 30],
+                        zoom: 9,
+                        bearing: 9,
+                        pitch: 7
+                      }
                 */
 
               case 7:
@@ -6778,6 +6985,55 @@ module.exports = function (it) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/a-possible-prototype.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/core-js/internals/a-possible-prototype.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
+
+module.exports = function (it) {
+  if (!isObject(it) && it !== null) {
+    throw TypeError("Can't set " + String(it) + ' as a prototype');
+  } return it;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/add-to-unscopables.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/core-js/internals/add-to-unscopables.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
+var create = __webpack_require__(/*! ../internals/object-create */ "./node_modules/core-js/internals/object-create.js");
+var definePropertyModule = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js");
+
+var UNSCOPABLES = wellKnownSymbol('unscopables');
+var ArrayPrototype = Array.prototype;
+
+// Array.prototype[@@unscopables]
+// https://tc39.github.io/ecma262/#sec-array.prototype-@@unscopables
+if (ArrayPrototype[UNSCOPABLES] == undefined) {
+  definePropertyModule.f(ArrayPrototype, UNSCOPABLES, {
+    configurable: true,
+    value: create(null)
+  });
+}
+
+// add a key to Array.prototype[@@unscopables]
+module.exports = function (key) {
+  ArrayPrototype[UNSCOPABLES][key] = true;
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/an-instance.js":
 /*!*******************************************************!*\
   !*** ./node_modules/core-js/internals/an-instance.js ***!
@@ -7181,6 +7437,52 @@ module.exports = function (target, source) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/correct-prototype-getter.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/core-js/internals/correct-prototype-getter.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
+
+module.exports = !fails(function () {
+  function F() { /* empty */ }
+  F.prototype.constructor = null;
+  return Object.getPrototypeOf(new F()) !== F.prototype;
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/create-iterator-constructor.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/core-js/internals/create-iterator-constructor.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var IteratorPrototype = __webpack_require__(/*! ../internals/iterators-core */ "./node_modules/core-js/internals/iterators-core.js").IteratorPrototype;
+var create = __webpack_require__(/*! ../internals/object-create */ "./node_modules/core-js/internals/object-create.js");
+var createPropertyDescriptor = __webpack_require__(/*! ../internals/create-property-descriptor */ "./node_modules/core-js/internals/create-property-descriptor.js");
+var setToStringTag = __webpack_require__(/*! ../internals/set-to-string-tag */ "./node_modules/core-js/internals/set-to-string-tag.js");
+var Iterators = __webpack_require__(/*! ../internals/iterators */ "./node_modules/core-js/internals/iterators.js");
+
+var returnThis = function () { return this; };
+
+module.exports = function (IteratorConstructor, NAME, next) {
+  var TO_STRING_TAG = NAME + ' Iterator';
+  IteratorConstructor.prototype = create(IteratorPrototype, { next: createPropertyDescriptor(1, next) });
+  setToStringTag(IteratorConstructor, TO_STRING_TAG, false, true);
+  Iterators[TO_STRING_TAG] = returnThis;
+  return IteratorConstructor;
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/create-non-enumerable-property.js":
 /*!**************************************************************************!*\
   !*** ./node_modules/core-js/internals/create-non-enumerable-property.js ***!
@@ -7221,6 +7523,130 @@ module.exports = function (bitmap, value) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/define-iterator.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/core-js/internals/define-iterator.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var createIteratorConstructor = __webpack_require__(/*! ../internals/create-iterator-constructor */ "./node_modules/core-js/internals/create-iterator-constructor.js");
+var getPrototypeOf = __webpack_require__(/*! ../internals/object-get-prototype-of */ "./node_modules/core-js/internals/object-get-prototype-of.js");
+var setPrototypeOf = __webpack_require__(/*! ../internals/object-set-prototype-of */ "./node_modules/core-js/internals/object-set-prototype-of.js");
+var setToStringTag = __webpack_require__(/*! ../internals/set-to-string-tag */ "./node_modules/core-js/internals/set-to-string-tag.js");
+var createNonEnumerableProperty = __webpack_require__(/*! ../internals/create-non-enumerable-property */ "./node_modules/core-js/internals/create-non-enumerable-property.js");
+var redefine = __webpack_require__(/*! ../internals/redefine */ "./node_modules/core-js/internals/redefine.js");
+var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
+var IS_PURE = __webpack_require__(/*! ../internals/is-pure */ "./node_modules/core-js/internals/is-pure.js");
+var Iterators = __webpack_require__(/*! ../internals/iterators */ "./node_modules/core-js/internals/iterators.js");
+var IteratorsCore = __webpack_require__(/*! ../internals/iterators-core */ "./node_modules/core-js/internals/iterators-core.js");
+
+var IteratorPrototype = IteratorsCore.IteratorPrototype;
+var BUGGY_SAFARI_ITERATORS = IteratorsCore.BUGGY_SAFARI_ITERATORS;
+var ITERATOR = wellKnownSymbol('iterator');
+var KEYS = 'keys';
+var VALUES = 'values';
+var ENTRIES = 'entries';
+
+var returnThis = function () { return this; };
+
+module.exports = function (Iterable, NAME, IteratorConstructor, next, DEFAULT, IS_SET, FORCED) {
+  createIteratorConstructor(IteratorConstructor, NAME, next);
+
+  var getIterationMethod = function (KIND) {
+    if (KIND === DEFAULT && defaultIterator) return defaultIterator;
+    if (!BUGGY_SAFARI_ITERATORS && KIND in IterablePrototype) return IterablePrototype[KIND];
+    switch (KIND) {
+      case KEYS: return function keys() { return new IteratorConstructor(this, KIND); };
+      case VALUES: return function values() { return new IteratorConstructor(this, KIND); };
+      case ENTRIES: return function entries() { return new IteratorConstructor(this, KIND); };
+    } return function () { return new IteratorConstructor(this); };
+  };
+
+  var TO_STRING_TAG = NAME + ' Iterator';
+  var INCORRECT_VALUES_NAME = false;
+  var IterablePrototype = Iterable.prototype;
+  var nativeIterator = IterablePrototype[ITERATOR]
+    || IterablePrototype['@@iterator']
+    || DEFAULT && IterablePrototype[DEFAULT];
+  var defaultIterator = !BUGGY_SAFARI_ITERATORS && nativeIterator || getIterationMethod(DEFAULT);
+  var anyNativeIterator = NAME == 'Array' ? IterablePrototype.entries || nativeIterator : nativeIterator;
+  var CurrentIteratorPrototype, methods, KEY;
+
+  // fix native
+  if (anyNativeIterator) {
+    CurrentIteratorPrototype = getPrototypeOf(anyNativeIterator.call(new Iterable()));
+    if (IteratorPrototype !== Object.prototype && CurrentIteratorPrototype.next) {
+      if (!IS_PURE && getPrototypeOf(CurrentIteratorPrototype) !== IteratorPrototype) {
+        if (setPrototypeOf) {
+          setPrototypeOf(CurrentIteratorPrototype, IteratorPrototype);
+        } else if (typeof CurrentIteratorPrototype[ITERATOR] != 'function') {
+          createNonEnumerableProperty(CurrentIteratorPrototype, ITERATOR, returnThis);
+        }
+      }
+      // Set @@toStringTag to native iterators
+      setToStringTag(CurrentIteratorPrototype, TO_STRING_TAG, true, true);
+      if (IS_PURE) Iterators[TO_STRING_TAG] = returnThis;
+    }
+  }
+
+  // fix Array#{values, @@iterator}.name in V8 / FF
+  if (DEFAULT == VALUES && nativeIterator && nativeIterator.name !== VALUES) {
+    INCORRECT_VALUES_NAME = true;
+    defaultIterator = function values() { return nativeIterator.call(this); };
+  }
+
+  // define iterator
+  if ((!IS_PURE || FORCED) && IterablePrototype[ITERATOR] !== defaultIterator) {
+    createNonEnumerableProperty(IterablePrototype, ITERATOR, defaultIterator);
+  }
+  Iterators[NAME] = defaultIterator;
+
+  // export additional methods
+  if (DEFAULT) {
+    methods = {
+      values: getIterationMethod(VALUES),
+      keys: IS_SET ? defaultIterator : getIterationMethod(KEYS),
+      entries: getIterationMethod(ENTRIES)
+    };
+    if (FORCED) for (KEY in methods) {
+      if (BUGGY_SAFARI_ITERATORS || INCORRECT_VALUES_NAME || !(KEY in IterablePrototype)) {
+        redefine(IterablePrototype, KEY, methods[KEY]);
+      }
+    } else $({ target: NAME, proto: true, forced: BUGGY_SAFARI_ITERATORS || INCORRECT_VALUES_NAME }, methods);
+  }
+
+  return methods;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/define-well-known-symbol.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/core-js/internals/define-well-known-symbol.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var path = __webpack_require__(/*! ../internals/path */ "./node_modules/core-js/internals/path.js");
+var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
+var wrappedWellKnownSymbolModule = __webpack_require__(/*! ../internals/well-known-symbol-wrapped */ "./node_modules/core-js/internals/well-known-symbol-wrapped.js");
+var defineProperty = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js").f;
+
+module.exports = function (NAME) {
+  var Symbol = path.Symbol || (path.Symbol = {});
+  if (!has(Symbol, NAME)) defineProperty(Symbol, NAME, {
+    value: wrappedWellKnownSymbolModule.f(NAME)
+  });
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/descriptors.js":
 /*!*******************************************************!*\
   !*** ./node_modules/core-js/internals/descriptors.js ***!
@@ -7254,6 +7680,52 @@ var EXISTS = isObject(document) && isObject(document.createElement);
 
 module.exports = function (it) {
   return EXISTS ? document.createElement(it) : {};
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/dom-iterables.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/core-js/internals/dom-iterables.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// iterable DOM collections
+// flag - `iterable` interface - 'entries', 'keys', 'values', 'forEach' methods
+module.exports = {
+  CSSRuleList: 0,
+  CSSStyleDeclaration: 0,
+  CSSValueList: 0,
+  ClientRectList: 0,
+  DOMRectList: 0,
+  DOMStringList: 0,
+  DOMTokenList: 1,
+  DataTransferItemList: 0,
+  FileList: 0,
+  HTMLAllCollection: 0,
+  HTMLCollection: 0,
+  HTMLFormElement: 0,
+  HTMLSelectElement: 0,
+  MediaList: 0,
+  MimeTypeArray: 0,
+  NamedNodeMap: 0,
+  NodeList: 1,
+  PaintRequestList: 0,
+  Plugin: 0,
+  PluginArray: 0,
+  SVGLengthList: 0,
+  SVGNumberList: 0,
+  SVGPathSegList: 0,
+  SVGPointList: 0,
+  SVGStringList: 0,
+  SVGTransformList: 0,
+  SourceBufferList: 0,
+  StyleSheetList: 0,
+  TextTrackCueList: 0,
+  TextTrackList: 0,
+  TouchList: 0
 };
 
 
@@ -7878,6 +8350,55 @@ iterate.stop = function (result) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/iterators-core.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/core-js/internals/iterators-core.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var getPrototypeOf = __webpack_require__(/*! ../internals/object-get-prototype-of */ "./node_modules/core-js/internals/object-get-prototype-of.js");
+var createNonEnumerableProperty = __webpack_require__(/*! ../internals/create-non-enumerable-property */ "./node_modules/core-js/internals/create-non-enumerable-property.js");
+var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
+var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
+var IS_PURE = __webpack_require__(/*! ../internals/is-pure */ "./node_modules/core-js/internals/is-pure.js");
+
+var ITERATOR = wellKnownSymbol('iterator');
+var BUGGY_SAFARI_ITERATORS = false;
+
+var returnThis = function () { return this; };
+
+// `%IteratorPrototype%` object
+// https://tc39.github.io/ecma262/#sec-%iteratorprototype%-object
+var IteratorPrototype, PrototypeOfArrayIteratorPrototype, arrayIterator;
+
+if ([].keys) {
+  arrayIterator = [].keys();
+  // Safari 8 has buggy iterators w/o `next`
+  if (!('next' in arrayIterator)) BUGGY_SAFARI_ITERATORS = true;
+  else {
+    PrototypeOfArrayIteratorPrototype = getPrototypeOf(getPrototypeOf(arrayIterator));
+    if (PrototypeOfArrayIteratorPrototype !== Object.prototype) IteratorPrototype = PrototypeOfArrayIteratorPrototype;
+  }
+}
+
+if (IteratorPrototype == undefined) IteratorPrototype = {};
+
+// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
+if (!IS_PURE && !has(IteratorPrototype, ITERATOR)) {
+  createNonEnumerableProperty(IteratorPrototype, ITERATOR, returnThis);
+}
+
+module.exports = {
+  IteratorPrototype: IteratorPrototype,
+  BUGGY_SAFARI_ITERATORS: BUGGY_SAFARI_ITERATORS
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/iterators.js":
 /*!*****************************************************!*\
   !*** ./node_modules/core-js/internals/iterators.js ***!
@@ -8058,6 +8579,122 @@ module.exports.f = function (C) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/object-create.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/core-js/internals/object-create.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
+var defineProperties = __webpack_require__(/*! ../internals/object-define-properties */ "./node_modules/core-js/internals/object-define-properties.js");
+var enumBugKeys = __webpack_require__(/*! ../internals/enum-bug-keys */ "./node_modules/core-js/internals/enum-bug-keys.js");
+var hiddenKeys = __webpack_require__(/*! ../internals/hidden-keys */ "./node_modules/core-js/internals/hidden-keys.js");
+var html = __webpack_require__(/*! ../internals/html */ "./node_modules/core-js/internals/html.js");
+var documentCreateElement = __webpack_require__(/*! ../internals/document-create-element */ "./node_modules/core-js/internals/document-create-element.js");
+var sharedKey = __webpack_require__(/*! ../internals/shared-key */ "./node_modules/core-js/internals/shared-key.js");
+
+var GT = '>';
+var LT = '<';
+var PROTOTYPE = 'prototype';
+var SCRIPT = 'script';
+var IE_PROTO = sharedKey('IE_PROTO');
+
+var EmptyConstructor = function () { /* empty */ };
+
+var scriptTag = function (content) {
+  return LT + SCRIPT + GT + content + LT + '/' + SCRIPT + GT;
+};
+
+// Create object with fake `null` prototype: use ActiveX Object with cleared prototype
+var NullProtoObjectViaActiveX = function (activeXDocument) {
+  activeXDocument.write(scriptTag(''));
+  activeXDocument.close();
+  var temp = activeXDocument.parentWindow.Object;
+  activeXDocument = null; // avoid memory leak
+  return temp;
+};
+
+// Create object with fake `null` prototype: use iframe Object with cleared prototype
+var NullProtoObjectViaIFrame = function () {
+  // Thrash, waste and sodomy: IE GC bug
+  var iframe = documentCreateElement('iframe');
+  var JS = 'java' + SCRIPT + ':';
+  var iframeDocument;
+  iframe.style.display = 'none';
+  html.appendChild(iframe);
+  // https://github.com/zloirock/core-js/issues/475
+  iframe.src = String(JS);
+  iframeDocument = iframe.contentWindow.document;
+  iframeDocument.open();
+  iframeDocument.write(scriptTag('document.F=Object'));
+  iframeDocument.close();
+  return iframeDocument.F;
+};
+
+// Check for document.domain and active x support
+// No need to use active x approach when document.domain is not set
+// see https://github.com/es-shims/es5-shim/issues/150
+// variation of https://github.com/kitcambridge/es5-shim/commit/4f738ac066346
+// avoid IE GC bug
+var activeXDocument;
+var NullProtoObject = function () {
+  try {
+    /* global ActiveXObject */
+    activeXDocument = document.domain && new ActiveXObject('htmlfile');
+  } catch (error) { /* ignore */ }
+  NullProtoObject = activeXDocument ? NullProtoObjectViaActiveX(activeXDocument) : NullProtoObjectViaIFrame();
+  var length = enumBugKeys.length;
+  while (length--) delete NullProtoObject[PROTOTYPE][enumBugKeys[length]];
+  return NullProtoObject();
+};
+
+hiddenKeys[IE_PROTO] = true;
+
+// `Object.create` method
+// https://tc39.github.io/ecma262/#sec-object.create
+module.exports = Object.create || function create(O, Properties) {
+  var result;
+  if (O !== null) {
+    EmptyConstructor[PROTOTYPE] = anObject(O);
+    result = new EmptyConstructor();
+    EmptyConstructor[PROTOTYPE] = null;
+    // add "__proto__" for Object.getPrototypeOf polyfill
+    result[IE_PROTO] = O;
+  } else result = NullProtoObject();
+  return Properties === undefined ? result : defineProperties(result, Properties);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/object-define-properties.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/core-js/internals/object-define-properties.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
+var definePropertyModule = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js");
+var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
+var objectKeys = __webpack_require__(/*! ../internals/object-keys */ "./node_modules/core-js/internals/object-keys.js");
+
+// `Object.defineProperties` method
+// https://tc39.github.io/ecma262/#sec-object.defineproperties
+module.exports = DESCRIPTORS ? Object.defineProperties : function defineProperties(O, Properties) {
+  anObject(O);
+  var keys = objectKeys(Properties);
+  var length = keys.length;
+  var index = 0;
+  var key;
+  while (length > index) definePropertyModule.f(O, key = keys[index++], Properties[key]);
+  return O;
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/object-define-property.js":
 /*!******************************************************************!*\
   !*** ./node_modules/core-js/internals/object-define-property.js ***!
@@ -8120,6 +8757,39 @@ exports.f = DESCRIPTORS ? nativeGetOwnPropertyDescriptor : function getOwnProper
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/object-get-own-property-names-external.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/core-js/internals/object-get-own-property-names-external.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var toIndexedObject = __webpack_require__(/*! ../internals/to-indexed-object */ "./node_modules/core-js/internals/to-indexed-object.js");
+var nativeGetOwnPropertyNames = __webpack_require__(/*! ../internals/object-get-own-property-names */ "./node_modules/core-js/internals/object-get-own-property-names.js").f;
+
+var toString = {}.toString;
+
+var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
+  ? Object.getOwnPropertyNames(window) : [];
+
+var getWindowNames = function (it) {
+  try {
+    return nativeGetOwnPropertyNames(it);
+  } catch (error) {
+    return windowNames.slice();
+  }
+};
+
+// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
+module.exports.f = function getOwnPropertyNames(it) {
+  return windowNames && toString.call(it) == '[object Window]'
+    ? getWindowNames(it)
+    : nativeGetOwnPropertyNames(toIndexedObject(it));
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/object-get-own-property-names.js":
 /*!*************************************************************************!*\
   !*** ./node_modules/core-js/internals/object-get-own-property-names.js ***!
@@ -8153,6 +8823,34 @@ exports.f = Object.getOwnPropertySymbols;
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/object-get-prototype-of.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/core-js/internals/object-get-prototype-of.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
+var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
+var sharedKey = __webpack_require__(/*! ../internals/shared-key */ "./node_modules/core-js/internals/shared-key.js");
+var CORRECT_PROTOTYPE_GETTER = __webpack_require__(/*! ../internals/correct-prototype-getter */ "./node_modules/core-js/internals/correct-prototype-getter.js");
+
+var IE_PROTO = sharedKey('IE_PROTO');
+var ObjectPrototype = Object.prototype;
+
+// `Object.getPrototypeOf` method
+// https://tc39.github.io/ecma262/#sec-object.getprototypeof
+module.exports = CORRECT_PROTOTYPE_GETTER ? Object.getPrototypeOf : function (O) {
+  O = toObject(O);
+  if (has(O, IE_PROTO)) return O[IE_PROTO];
+  if (typeof O.constructor == 'function' && O instanceof O.constructor) {
+    return O.constructor.prototype;
+  } return O instanceof Object ? ObjectPrototype : null;
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/object-keys-internal.js":
 /*!****************************************************************!*\
   !*** ./node_modules/core-js/internals/object-keys-internal.js ***!
@@ -8181,6 +8879,25 @@ module.exports = function (object, names) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/object-keys.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/core-js/internals/object-keys.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var internalObjectKeys = __webpack_require__(/*! ../internals/object-keys-internal */ "./node_modules/core-js/internals/object-keys-internal.js");
+var enumBugKeys = __webpack_require__(/*! ../internals/enum-bug-keys */ "./node_modules/core-js/internals/enum-bug-keys.js");
+
+// `Object.keys` method
+// https://tc39.github.io/ecma262/#sec-object.keys
+module.exports = Object.keys || function keys(O) {
+  return internalObjectKeys(O, enumBugKeys);
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/object-property-is-enumerable.js":
 /*!*************************************************************************!*\
   !*** ./node_modules/core-js/internals/object-property-is-enumerable.js ***!
@@ -8202,6 +8919,41 @@ exports.f = NASHORN_BUG ? function propertyIsEnumerable(V) {
   var descriptor = getOwnPropertyDescriptor(this, V);
   return !!descriptor && descriptor.enumerable;
 } : nativePropertyIsEnumerable;
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/object-set-prototype-of.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/core-js/internals/object-set-prototype-of.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
+var aPossiblePrototype = __webpack_require__(/*! ../internals/a-possible-prototype */ "./node_modules/core-js/internals/a-possible-prototype.js");
+
+// `Object.setPrototypeOf` method
+// https://tc39.github.io/ecma262/#sec-object.setprototypeof
+// Works with __proto__ only. Old v8 can't work with null proto objects.
+/* eslint-disable no-proto */
+module.exports = Object.setPrototypeOf || ('__proto__' in {} ? function () {
+  var CORRECT_SETTER = false;
+  var test = {};
+  var setter;
+  try {
+    setter = Object.getOwnPropertyDescriptor(Object.prototype, '__proto__').set;
+    setter.call(test, []);
+    CORRECT_SETTER = test instanceof Array;
+  } catch (error) { /* empty */ }
+  return function setPrototypeOf(O, proto) {
+    anObject(O);
+    aPossiblePrototype(proto);
+    if (CORRECT_SETTER) setter.call(O, proto);
+    else O.__proto__ = proto;
+    return O;
+  };
+}() : undefined);
 
 
 /***/ }),
@@ -8539,6 +9291,44 @@ module.exports = function (O, defaultConstructor) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/string-multibyte.js":
+/*!************************************************************!*\
+  !*** ./node_modules/core-js/internals/string-multibyte.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var toInteger = __webpack_require__(/*! ../internals/to-integer */ "./node_modules/core-js/internals/to-integer.js");
+var requireObjectCoercible = __webpack_require__(/*! ../internals/require-object-coercible */ "./node_modules/core-js/internals/require-object-coercible.js");
+
+// `String.prototype.{ codePointAt, at }` methods implementation
+var createMethod = function (CONVERT_TO_STRING) {
+  return function ($this, pos) {
+    var S = String(requireObjectCoercible($this));
+    var position = toInteger(pos);
+    var size = S.length;
+    var first, second;
+    if (position < 0 || position >= size) return CONVERT_TO_STRING ? '' : undefined;
+    first = S.charCodeAt(position);
+    return first < 0xD800 || first > 0xDBFF || position + 1 === size
+      || (second = S.charCodeAt(position + 1)) < 0xDC00 || second > 0xDFFF
+        ? CONVERT_TO_STRING ? S.charAt(position) : first
+        : CONVERT_TO_STRING ? S.slice(position, position + 2) : (first - 0xD800 << 10) + (second - 0xDC00) + 0x10000;
+  };
+};
+
+module.exports = {
+  // `String.prototype.codePointAt` method
+  // https://tc39.github.io/ecma262/#sec-string.prototype.codepointat
+  codeAt: createMethod(false),
+  // `String.prototype.at` method
+  // https://github.com/mathiasbynens/String.prototype.at
+  charAt: createMethod(true)
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/task.js":
 /*!************************************************!*\
   !*** ./node_modules/core-js/internals/task.js ***!
@@ -8828,6 +9618,20 @@ module.exports = NATIVE_SYMBOL
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/well-known-symbol-wrapped.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/core-js/internals/well-known-symbol-wrapped.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
+
+exports.f = wellKnownSymbol;
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/well-known-symbol.js":
 /*!*************************************************************!*\
   !*** ./node_modules/core-js/internals/well-known-symbol.js ***!
@@ -8852,6 +9656,71 @@ module.exports = function (name) {
     else WellKnownSymbolsStore[name] = createWellKnownSymbol('Symbol.' + name);
   } return WellKnownSymbolsStore[name];
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/es.array.iterator.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.array.iterator.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var toIndexedObject = __webpack_require__(/*! ../internals/to-indexed-object */ "./node_modules/core-js/internals/to-indexed-object.js");
+var addToUnscopables = __webpack_require__(/*! ../internals/add-to-unscopables */ "./node_modules/core-js/internals/add-to-unscopables.js");
+var Iterators = __webpack_require__(/*! ../internals/iterators */ "./node_modules/core-js/internals/iterators.js");
+var InternalStateModule = __webpack_require__(/*! ../internals/internal-state */ "./node_modules/core-js/internals/internal-state.js");
+var defineIterator = __webpack_require__(/*! ../internals/define-iterator */ "./node_modules/core-js/internals/define-iterator.js");
+
+var ARRAY_ITERATOR = 'Array Iterator';
+var setInternalState = InternalStateModule.set;
+var getInternalState = InternalStateModule.getterFor(ARRAY_ITERATOR);
+
+// `Array.prototype.entries` method
+// https://tc39.github.io/ecma262/#sec-array.prototype.entries
+// `Array.prototype.keys` method
+// https://tc39.github.io/ecma262/#sec-array.prototype.keys
+// `Array.prototype.values` method
+// https://tc39.github.io/ecma262/#sec-array.prototype.values
+// `Array.prototype[@@iterator]` method
+// https://tc39.github.io/ecma262/#sec-array.prototype-@@iterator
+// `CreateArrayIterator` internal method
+// https://tc39.github.io/ecma262/#sec-createarrayiterator
+module.exports = defineIterator(Array, 'Array', function (iterated, kind) {
+  setInternalState(this, {
+    type: ARRAY_ITERATOR,
+    target: toIndexedObject(iterated), // target
+    index: 0,                          // next index
+    kind: kind                         // kind
+  });
+// `%ArrayIteratorPrototype%.next` method
+// https://tc39.github.io/ecma262/#sec-%arrayiteratorprototype%.next
+}, function () {
+  var state = getInternalState(this);
+  var target = state.target;
+  var kind = state.kind;
+  var index = state.index++;
+  if (!target || index >= target.length) {
+    state.target = undefined;
+    return { value: undefined, done: true };
+  }
+  if (kind == 'keys') return { value: index, done: false };
+  if (kind == 'values') return { value: target[index], done: false };
+  return { value: [index, target[index]], done: false };
+}, 'values');
+
+// argumentsList[@@iterator] is %ArrayProto_values%
+// https://tc39.github.io/ecma262/#sec-createunmappedargumentsobject
+// https://tc39.github.io/ecma262/#sec-createmappedargumentsobject
+Iterators.Arguments = Iterators.Array;
+
+// https://tc39.github.io/ecma262/#sec-array.prototype-@@unscopables
+addToUnscopables('keys');
+addToUnscopables('values');
+addToUnscopables('entries');
 
 
 /***/ }),
@@ -9297,6 +10166,492 @@ $({ target: PROMISE, stat: true, forced: INCORRECT_ITERATION }, {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/modules/es.string.iterator.js":
+/*!************************************************************!*\
+  !*** ./node_modules/core-js/modules/es.string.iterator.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var charAt = __webpack_require__(/*! ../internals/string-multibyte */ "./node_modules/core-js/internals/string-multibyte.js").charAt;
+var InternalStateModule = __webpack_require__(/*! ../internals/internal-state */ "./node_modules/core-js/internals/internal-state.js");
+var defineIterator = __webpack_require__(/*! ../internals/define-iterator */ "./node_modules/core-js/internals/define-iterator.js");
+
+var STRING_ITERATOR = 'String Iterator';
+var setInternalState = InternalStateModule.set;
+var getInternalState = InternalStateModule.getterFor(STRING_ITERATOR);
+
+// `String.prototype[@@iterator]` method
+// https://tc39.github.io/ecma262/#sec-string.prototype-@@iterator
+defineIterator(String, 'String', function (iterated) {
+  setInternalState(this, {
+    type: STRING_ITERATOR,
+    string: String(iterated),
+    index: 0
+  });
+// `%StringIteratorPrototype%.next` method
+// https://tc39.github.io/ecma262/#sec-%stringiteratorprototype%.next
+}, function next() {
+  var state = getInternalState(this);
+  var string = state.string;
+  var index = state.index;
+  var point;
+  if (index >= string.length) return { value: undefined, done: true };
+  point = charAt(string, index);
+  state.index += point.length;
+  return { value: point, done: false };
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/es.symbol.description.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/core-js/modules/es.symbol.description.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+// `Symbol.prototype.description` getter
+// https://tc39.github.io/ecma262/#sec-symbol.prototype.description
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
+var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
+var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
+var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
+var defineProperty = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js").f;
+var copyConstructorProperties = __webpack_require__(/*! ../internals/copy-constructor-properties */ "./node_modules/core-js/internals/copy-constructor-properties.js");
+
+var NativeSymbol = global.Symbol;
+
+if (DESCRIPTORS && typeof NativeSymbol == 'function' && (!('description' in NativeSymbol.prototype) ||
+  // Safari 12 bug
+  NativeSymbol().description !== undefined
+)) {
+  var EmptyStringDescriptionStore = {};
+  // wrap Symbol constructor for correct work with undefined description
+  var SymbolWrapper = function Symbol() {
+    var description = arguments.length < 1 || arguments[0] === undefined ? undefined : String(arguments[0]);
+    var result = this instanceof SymbolWrapper
+      ? new NativeSymbol(description)
+      // in Edge 13, String(Symbol(undefined)) === 'Symbol(undefined)'
+      : description === undefined ? NativeSymbol() : NativeSymbol(description);
+    if (description === '') EmptyStringDescriptionStore[result] = true;
+    return result;
+  };
+  copyConstructorProperties(SymbolWrapper, NativeSymbol);
+  var symbolPrototype = SymbolWrapper.prototype = NativeSymbol.prototype;
+  symbolPrototype.constructor = SymbolWrapper;
+
+  var symbolToString = symbolPrototype.toString;
+  var native = String(NativeSymbol('test')) == 'Symbol(test)';
+  var regexp = /^Symbol\((.*)\)[^)]+$/;
+  defineProperty(symbolPrototype, 'description', {
+    configurable: true,
+    get: function description() {
+      var symbol = isObject(this) ? this.valueOf() : this;
+      var string = symbolToString.call(symbol);
+      if (has(EmptyStringDescriptionStore, symbol)) return '';
+      var desc = native ? string.slice(7, -1) : string.replace(regexp, '$1');
+      return desc === '' ? undefined : desc;
+    }
+  });
+
+  $({ global: true, forced: true }, {
+    Symbol: SymbolWrapper
+  });
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/es.symbol.iterator.js":
+/*!************************************************************!*\
+  !*** ./node_modules/core-js/modules/es.symbol.iterator.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js/internals/define-well-known-symbol.js");
+
+// `Symbol.iterator` well-known symbol
+// https://tc39.github.io/ecma262/#sec-symbol.iterator
+defineWellKnownSymbol('iterator');
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/es.symbol.js":
+/*!***************************************************!*\
+  !*** ./node_modules/core-js/modules/es.symbol.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
+var getBuiltIn = __webpack_require__(/*! ../internals/get-built-in */ "./node_modules/core-js/internals/get-built-in.js");
+var IS_PURE = __webpack_require__(/*! ../internals/is-pure */ "./node_modules/core-js/internals/is-pure.js");
+var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
+var NATIVE_SYMBOL = __webpack_require__(/*! ../internals/native-symbol */ "./node_modules/core-js/internals/native-symbol.js");
+var USE_SYMBOL_AS_UID = __webpack_require__(/*! ../internals/use-symbol-as-uid */ "./node_modules/core-js/internals/use-symbol-as-uid.js");
+var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
+var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
+var isArray = __webpack_require__(/*! ../internals/is-array */ "./node_modules/core-js/internals/is-array.js");
+var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
+var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
+var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
+var toIndexedObject = __webpack_require__(/*! ../internals/to-indexed-object */ "./node_modules/core-js/internals/to-indexed-object.js");
+var toPrimitive = __webpack_require__(/*! ../internals/to-primitive */ "./node_modules/core-js/internals/to-primitive.js");
+var createPropertyDescriptor = __webpack_require__(/*! ../internals/create-property-descriptor */ "./node_modules/core-js/internals/create-property-descriptor.js");
+var nativeObjectCreate = __webpack_require__(/*! ../internals/object-create */ "./node_modules/core-js/internals/object-create.js");
+var objectKeys = __webpack_require__(/*! ../internals/object-keys */ "./node_modules/core-js/internals/object-keys.js");
+var getOwnPropertyNamesModule = __webpack_require__(/*! ../internals/object-get-own-property-names */ "./node_modules/core-js/internals/object-get-own-property-names.js");
+var getOwnPropertyNamesExternal = __webpack_require__(/*! ../internals/object-get-own-property-names-external */ "./node_modules/core-js/internals/object-get-own-property-names-external.js");
+var getOwnPropertySymbolsModule = __webpack_require__(/*! ../internals/object-get-own-property-symbols */ "./node_modules/core-js/internals/object-get-own-property-symbols.js");
+var getOwnPropertyDescriptorModule = __webpack_require__(/*! ../internals/object-get-own-property-descriptor */ "./node_modules/core-js/internals/object-get-own-property-descriptor.js");
+var definePropertyModule = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js");
+var propertyIsEnumerableModule = __webpack_require__(/*! ../internals/object-property-is-enumerable */ "./node_modules/core-js/internals/object-property-is-enumerable.js");
+var createNonEnumerableProperty = __webpack_require__(/*! ../internals/create-non-enumerable-property */ "./node_modules/core-js/internals/create-non-enumerable-property.js");
+var redefine = __webpack_require__(/*! ../internals/redefine */ "./node_modules/core-js/internals/redefine.js");
+var shared = __webpack_require__(/*! ../internals/shared */ "./node_modules/core-js/internals/shared.js");
+var sharedKey = __webpack_require__(/*! ../internals/shared-key */ "./node_modules/core-js/internals/shared-key.js");
+var hiddenKeys = __webpack_require__(/*! ../internals/hidden-keys */ "./node_modules/core-js/internals/hidden-keys.js");
+var uid = __webpack_require__(/*! ../internals/uid */ "./node_modules/core-js/internals/uid.js");
+var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
+var wrappedWellKnownSymbolModule = __webpack_require__(/*! ../internals/well-known-symbol-wrapped */ "./node_modules/core-js/internals/well-known-symbol-wrapped.js");
+var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js/internals/define-well-known-symbol.js");
+var setToStringTag = __webpack_require__(/*! ../internals/set-to-string-tag */ "./node_modules/core-js/internals/set-to-string-tag.js");
+var InternalStateModule = __webpack_require__(/*! ../internals/internal-state */ "./node_modules/core-js/internals/internal-state.js");
+var $forEach = __webpack_require__(/*! ../internals/array-iteration */ "./node_modules/core-js/internals/array-iteration.js").forEach;
+
+var HIDDEN = sharedKey('hidden');
+var SYMBOL = 'Symbol';
+var PROTOTYPE = 'prototype';
+var TO_PRIMITIVE = wellKnownSymbol('toPrimitive');
+var setInternalState = InternalStateModule.set;
+var getInternalState = InternalStateModule.getterFor(SYMBOL);
+var ObjectPrototype = Object[PROTOTYPE];
+var $Symbol = global.Symbol;
+var $stringify = getBuiltIn('JSON', 'stringify');
+var nativeGetOwnPropertyDescriptor = getOwnPropertyDescriptorModule.f;
+var nativeDefineProperty = definePropertyModule.f;
+var nativeGetOwnPropertyNames = getOwnPropertyNamesExternal.f;
+var nativePropertyIsEnumerable = propertyIsEnumerableModule.f;
+var AllSymbols = shared('symbols');
+var ObjectPrototypeSymbols = shared('op-symbols');
+var StringToSymbolRegistry = shared('string-to-symbol-registry');
+var SymbolToStringRegistry = shared('symbol-to-string-registry');
+var WellKnownSymbolsStore = shared('wks');
+var QObject = global.QObject;
+// Don't use setters in Qt Script, https://github.com/zloirock/core-js/issues/173
+var USE_SETTER = !QObject || !QObject[PROTOTYPE] || !QObject[PROTOTYPE].findChild;
+
+// fallback for old Android, https://code.google.com/p/v8/issues/detail?id=687
+var setSymbolDescriptor = DESCRIPTORS && fails(function () {
+  return nativeObjectCreate(nativeDefineProperty({}, 'a', {
+    get: function () { return nativeDefineProperty(this, 'a', { value: 7 }).a; }
+  })).a != 7;
+}) ? function (O, P, Attributes) {
+  var ObjectPrototypeDescriptor = nativeGetOwnPropertyDescriptor(ObjectPrototype, P);
+  if (ObjectPrototypeDescriptor) delete ObjectPrototype[P];
+  nativeDefineProperty(O, P, Attributes);
+  if (ObjectPrototypeDescriptor && O !== ObjectPrototype) {
+    nativeDefineProperty(ObjectPrototype, P, ObjectPrototypeDescriptor);
+  }
+} : nativeDefineProperty;
+
+var wrap = function (tag, description) {
+  var symbol = AllSymbols[tag] = nativeObjectCreate($Symbol[PROTOTYPE]);
+  setInternalState(symbol, {
+    type: SYMBOL,
+    tag: tag,
+    description: description
+  });
+  if (!DESCRIPTORS) symbol.description = description;
+  return symbol;
+};
+
+var isSymbol = USE_SYMBOL_AS_UID ? function (it) {
+  return typeof it == 'symbol';
+} : function (it) {
+  return Object(it) instanceof $Symbol;
+};
+
+var $defineProperty = function defineProperty(O, P, Attributes) {
+  if (O === ObjectPrototype) $defineProperty(ObjectPrototypeSymbols, P, Attributes);
+  anObject(O);
+  var key = toPrimitive(P, true);
+  anObject(Attributes);
+  if (has(AllSymbols, key)) {
+    if (!Attributes.enumerable) {
+      if (!has(O, HIDDEN)) nativeDefineProperty(O, HIDDEN, createPropertyDescriptor(1, {}));
+      O[HIDDEN][key] = true;
+    } else {
+      if (has(O, HIDDEN) && O[HIDDEN][key]) O[HIDDEN][key] = false;
+      Attributes = nativeObjectCreate(Attributes, { enumerable: createPropertyDescriptor(0, false) });
+    } return setSymbolDescriptor(O, key, Attributes);
+  } return nativeDefineProperty(O, key, Attributes);
+};
+
+var $defineProperties = function defineProperties(O, Properties) {
+  anObject(O);
+  var properties = toIndexedObject(Properties);
+  var keys = objectKeys(properties).concat($getOwnPropertySymbols(properties));
+  $forEach(keys, function (key) {
+    if (!DESCRIPTORS || $propertyIsEnumerable.call(properties, key)) $defineProperty(O, key, properties[key]);
+  });
+  return O;
+};
+
+var $create = function create(O, Properties) {
+  return Properties === undefined ? nativeObjectCreate(O) : $defineProperties(nativeObjectCreate(O), Properties);
+};
+
+var $propertyIsEnumerable = function propertyIsEnumerable(V) {
+  var P = toPrimitive(V, true);
+  var enumerable = nativePropertyIsEnumerable.call(this, P);
+  if (this === ObjectPrototype && has(AllSymbols, P) && !has(ObjectPrototypeSymbols, P)) return false;
+  return enumerable || !has(this, P) || !has(AllSymbols, P) || has(this, HIDDEN) && this[HIDDEN][P] ? enumerable : true;
+};
+
+var $getOwnPropertyDescriptor = function getOwnPropertyDescriptor(O, P) {
+  var it = toIndexedObject(O);
+  var key = toPrimitive(P, true);
+  if (it === ObjectPrototype && has(AllSymbols, key) && !has(ObjectPrototypeSymbols, key)) return;
+  var descriptor = nativeGetOwnPropertyDescriptor(it, key);
+  if (descriptor && has(AllSymbols, key) && !(has(it, HIDDEN) && it[HIDDEN][key])) {
+    descriptor.enumerable = true;
+  }
+  return descriptor;
+};
+
+var $getOwnPropertyNames = function getOwnPropertyNames(O) {
+  var names = nativeGetOwnPropertyNames(toIndexedObject(O));
+  var result = [];
+  $forEach(names, function (key) {
+    if (!has(AllSymbols, key) && !has(hiddenKeys, key)) result.push(key);
+  });
+  return result;
+};
+
+var $getOwnPropertySymbols = function getOwnPropertySymbols(O) {
+  var IS_OBJECT_PROTOTYPE = O === ObjectPrototype;
+  var names = nativeGetOwnPropertyNames(IS_OBJECT_PROTOTYPE ? ObjectPrototypeSymbols : toIndexedObject(O));
+  var result = [];
+  $forEach(names, function (key) {
+    if (has(AllSymbols, key) && (!IS_OBJECT_PROTOTYPE || has(ObjectPrototype, key))) {
+      result.push(AllSymbols[key]);
+    }
+  });
+  return result;
+};
+
+// `Symbol` constructor
+// https://tc39.github.io/ecma262/#sec-symbol-constructor
+if (!NATIVE_SYMBOL) {
+  $Symbol = function Symbol() {
+    if (this instanceof $Symbol) throw TypeError('Symbol is not a constructor');
+    var description = !arguments.length || arguments[0] === undefined ? undefined : String(arguments[0]);
+    var tag = uid(description);
+    var setter = function (value) {
+      if (this === ObjectPrototype) setter.call(ObjectPrototypeSymbols, value);
+      if (has(this, HIDDEN) && has(this[HIDDEN], tag)) this[HIDDEN][tag] = false;
+      setSymbolDescriptor(this, tag, createPropertyDescriptor(1, value));
+    };
+    if (DESCRIPTORS && USE_SETTER) setSymbolDescriptor(ObjectPrototype, tag, { configurable: true, set: setter });
+    return wrap(tag, description);
+  };
+
+  redefine($Symbol[PROTOTYPE], 'toString', function toString() {
+    return getInternalState(this).tag;
+  });
+
+  redefine($Symbol, 'withoutSetter', function (description) {
+    return wrap(uid(description), description);
+  });
+
+  propertyIsEnumerableModule.f = $propertyIsEnumerable;
+  definePropertyModule.f = $defineProperty;
+  getOwnPropertyDescriptorModule.f = $getOwnPropertyDescriptor;
+  getOwnPropertyNamesModule.f = getOwnPropertyNamesExternal.f = $getOwnPropertyNames;
+  getOwnPropertySymbolsModule.f = $getOwnPropertySymbols;
+
+  wrappedWellKnownSymbolModule.f = function (name) {
+    return wrap(wellKnownSymbol(name), name);
+  };
+
+  if (DESCRIPTORS) {
+    // https://github.com/tc39/proposal-Symbol-description
+    nativeDefineProperty($Symbol[PROTOTYPE], 'description', {
+      configurable: true,
+      get: function description() {
+        return getInternalState(this).description;
+      }
+    });
+    if (!IS_PURE) {
+      redefine(ObjectPrototype, 'propertyIsEnumerable', $propertyIsEnumerable, { unsafe: true });
+    }
+  }
+}
+
+$({ global: true, wrap: true, forced: !NATIVE_SYMBOL, sham: !NATIVE_SYMBOL }, {
+  Symbol: $Symbol
+});
+
+$forEach(objectKeys(WellKnownSymbolsStore), function (name) {
+  defineWellKnownSymbol(name);
+});
+
+$({ target: SYMBOL, stat: true, forced: !NATIVE_SYMBOL }, {
+  // `Symbol.for` method
+  // https://tc39.github.io/ecma262/#sec-symbol.for
+  'for': function (key) {
+    var string = String(key);
+    if (has(StringToSymbolRegistry, string)) return StringToSymbolRegistry[string];
+    var symbol = $Symbol(string);
+    StringToSymbolRegistry[string] = symbol;
+    SymbolToStringRegistry[symbol] = string;
+    return symbol;
+  },
+  // `Symbol.keyFor` method
+  // https://tc39.github.io/ecma262/#sec-symbol.keyfor
+  keyFor: function keyFor(sym) {
+    if (!isSymbol(sym)) throw TypeError(sym + ' is not a symbol');
+    if (has(SymbolToStringRegistry, sym)) return SymbolToStringRegistry[sym];
+  },
+  useSetter: function () { USE_SETTER = true; },
+  useSimple: function () { USE_SETTER = false; }
+});
+
+$({ target: 'Object', stat: true, forced: !NATIVE_SYMBOL, sham: !DESCRIPTORS }, {
+  // `Object.create` method
+  // https://tc39.github.io/ecma262/#sec-object.create
+  create: $create,
+  // `Object.defineProperty` method
+  // https://tc39.github.io/ecma262/#sec-object.defineproperty
+  defineProperty: $defineProperty,
+  // `Object.defineProperties` method
+  // https://tc39.github.io/ecma262/#sec-object.defineproperties
+  defineProperties: $defineProperties,
+  // `Object.getOwnPropertyDescriptor` method
+  // https://tc39.github.io/ecma262/#sec-object.getownpropertydescriptors
+  getOwnPropertyDescriptor: $getOwnPropertyDescriptor
+});
+
+$({ target: 'Object', stat: true, forced: !NATIVE_SYMBOL }, {
+  // `Object.getOwnPropertyNames` method
+  // https://tc39.github.io/ecma262/#sec-object.getownpropertynames
+  getOwnPropertyNames: $getOwnPropertyNames,
+  // `Object.getOwnPropertySymbols` method
+  // https://tc39.github.io/ecma262/#sec-object.getownpropertysymbols
+  getOwnPropertySymbols: $getOwnPropertySymbols
+});
+
+// Chrome 38 and 39 `Object.getOwnPropertySymbols` fails on primitives
+// https://bugs.chromium.org/p/v8/issues/detail?id=3443
+$({ target: 'Object', stat: true, forced: fails(function () { getOwnPropertySymbolsModule.f(1); }) }, {
+  getOwnPropertySymbols: function getOwnPropertySymbols(it) {
+    return getOwnPropertySymbolsModule.f(toObject(it));
+  }
+});
+
+// `JSON.stringify` method behavior with symbols
+// https://tc39.github.io/ecma262/#sec-json.stringify
+if ($stringify) {
+  var FORCED_JSON_STRINGIFY = !NATIVE_SYMBOL || fails(function () {
+    var symbol = $Symbol();
+    // MS Edge converts symbol values to JSON as {}
+    return $stringify([symbol]) != '[null]'
+      // WebKit converts symbol values to JSON as null
+      || $stringify({ a: symbol }) != '{}'
+      // V8 throws on boxed symbols
+      || $stringify(Object(symbol)) != '{}';
+  });
+
+  $({ target: 'JSON', stat: true, forced: FORCED_JSON_STRINGIFY }, {
+    // eslint-disable-next-line no-unused-vars
+    stringify: function stringify(it, replacer, space) {
+      var args = [it];
+      var index = 1;
+      var $replacer;
+      while (arguments.length > index) args.push(arguments[index++]);
+      $replacer = replacer;
+      if (!isObject(replacer) && it === undefined || isSymbol(it)) return; // IE8 returns string on undefined
+      if (!isArray(replacer)) replacer = function (key, value) {
+        if (typeof $replacer == 'function') value = $replacer.call(this, key, value);
+        if (!isSymbol(value)) return value;
+      };
+      args[1] = replacer;
+      return $stringify.apply(null, args);
+    }
+  });
+}
+
+// `Symbol.prototype[@@toPrimitive]` method
+// https://tc39.github.io/ecma262/#sec-symbol.prototype-@@toprimitive
+if (!$Symbol[PROTOTYPE][TO_PRIMITIVE]) {
+  createNonEnumerableProperty($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
+}
+// `Symbol.prototype[@@toStringTag]` property
+// https://tc39.github.io/ecma262/#sec-symbol.prototype-@@tostringtag
+setToStringTag($Symbol, SYMBOL);
+
+hiddenKeys[HIDDEN] = true;
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/web.dom-collections.iterator.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/core-js/modules/web.dom-collections.iterator.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
+var DOMIterables = __webpack_require__(/*! ../internals/dom-iterables */ "./node_modules/core-js/internals/dom-iterables.js");
+var ArrayIteratorMethods = __webpack_require__(/*! ../modules/es.array.iterator */ "./node_modules/core-js/modules/es.array.iterator.js");
+var createNonEnumerableProperty = __webpack_require__(/*! ../internals/create-non-enumerable-property */ "./node_modules/core-js/internals/create-non-enumerable-property.js");
+var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
+
+var ITERATOR = wellKnownSymbol('iterator');
+var TO_STRING_TAG = wellKnownSymbol('toStringTag');
+var ArrayValues = ArrayIteratorMethods.values;
+
+for (var COLLECTION_NAME in DOMIterables) {
+  var Collection = global[COLLECTION_NAME];
+  var CollectionPrototype = Collection && Collection.prototype;
+  if (CollectionPrototype) {
+    // some Chrome versions have non-configurable methods on DOMTokenList
+    if (CollectionPrototype[ITERATOR] !== ArrayValues) try {
+      createNonEnumerableProperty(CollectionPrototype, ITERATOR, ArrayValues);
+    } catch (error) {
+      CollectionPrototype[ITERATOR] = ArrayValues;
+    }
+    if (!CollectionPrototype[TO_STRING_TAG]) {
+      createNonEnumerableProperty(CollectionPrototype, TO_STRING_TAG, COLLECTION_NAME);
+    }
+    if (DOMIterables[COLLECTION_NAME]) for (var METHOD_NAME in ArrayIteratorMethods) {
+      // some Chrome versions have non-configurable methods on DOMTokenList
+      if (CollectionPrototype[METHOD_NAME] !== ArrayIteratorMethods[METHOD_NAME]) try {
+        createNonEnumerableProperty(CollectionPrototype, METHOD_NAME, ArrayIteratorMethods[METHOD_NAME]);
+      } catch (error) {
+        CollectionPrototype[METHOD_NAME] = ArrayIteratorMethods[METHOD_NAME];
+      }
+    }
+  }
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue-mapbox/src/components/map/GlMap.vue?vue&type=style&index=0&lang=css&":
 /*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue-mapbox/src/components/map/GlMap.vue?vue&type=style&index=0&lang=css& ***!
@@ -9310,6 +10665,44 @@ exports = module.exports = __webpack_require__(/*! ../../../../css-loader/lib/cs
 
 // module
 exports.push([module.i, "\n.mgl-map-wrapper {\n  height: 100%;\n  position: relative;\n  width: 100%;\n}\n.mgl-map-wrapper .mapboxgl-map {\n  height: 100%;\n  left: 0;\n  position: absolute;\n  top: 0;\n  width: 100%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=style&index=0&lang=css&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=style&index=0&lang=css& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.vue-map-container {\n  position: relative;\n}\n.vue-map-container .vue-map {\n  left: 0; right: 0; top: 0; bottom: 0;\n  position: absolute;\n}\n.vue-map-hidden {\n  display: none;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=style&index=0&lang=css&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=style&index=0&lang=css& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.vue-street-view-pano-container {\n  position: relative;\n}\n.vue-street-view-pano-container .vue-street-view-pano {\n  left: 0; right: 0; top: 0; bottom: 0;\n  position: absolute;\n}\n", ""]);
 
 // exports
 
@@ -41002,6 +42395,66 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=style&index=0&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=style&index=0&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../css-loader??ref--6-1!../../../vue-loader/lib/loaders/stylePostLoader.js!../../../postcss-loader/src??ref--6-2!../../../vue-loader/lib??vue-loader-options!./map.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=style&index=0&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=style&index=0&lang=css&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=style&index=0&lang=css& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../css-loader??ref--6-1!../../../vue-loader/lib/loaders/stylePostLoader.js!../../../postcss-loader/src??ref--6-2!../../../vue-loader/lib??vue-loader-options!./streetViewPanorama.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=style&index=0&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -42121,6 +43574,102 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/autocomplete.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue2-google-maps/dist/components/autocomplete.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ((function (x) { return x.default || x })(__webpack_require__(/*! ./autocompleteImpl.js */ "./node_modules/vue2-google-maps/dist/components/autocompleteImpl.js")));
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/infoWindow.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue2-google-maps/dist/components/infoWindow.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ((function (x) { return x.default || x })(__webpack_require__(/*! ./infoWindowImpl.js */ "./node_modules/vue2-google-maps/dist/components/infoWindowImpl.js")));
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ((function (x) { return x.default || x })(__webpack_require__(/*! ./mapImpl.js */ "./node_modules/vue2-google-maps/dist/components/mapImpl.js")));
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ((function (x) { return x.default || x })(__webpack_require__(/*! ./streetViewPanoramaImpl.js */ "./node_modules/vue2-google-maps/dist/components/streetViewPanoramaImpl.js")));
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue-mapbox/src/components/UI/Marker.vue?vue&type=template&id=530f7769&":
 /*!***************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue-mapbox/src/components/UI/Marker.vue?vue&type=template&id=530f7769& ***!
@@ -42210,6 +43759,160 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/autocomplete.vue?vue&type=template&id=2c922d06&":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue2-google-maps/dist/components/autocomplete.vue?vue&type=template&id=2c922d06& ***!
+  \*************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "input",
+    _vm._g(_vm._b({ ref: "input" }, "input", _vm.$attrs, false), _vm.$listeners)
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/infoWindow.vue?vue&type=template&id=17fc7ddc&":
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue2-google-maps/dist/components/infoWindow.vue?vue&type=template&id=17fc7ddc& ***!
+  \***********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_c("div", { ref: "flyaway" }, [_vm._t("default")], 2)])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=template&id=85ca06a4&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=template&id=85ca06a4& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "vue-map-container" },
+    [
+      _c("div", { ref: "vue-map", staticClass: "vue-map" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "vue-map-hidden" }, [_vm._t("default")], 2),
+      _vm._v(" "),
+      _vm._t("visible")
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/placeInput.vue?vue&type=template&id=c1ab87be&":
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue2-google-maps/dist/components/placeInput.vue?vue&type=template&id=c1ab87be& ***!
+  \***********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("label", [
+    _c("span", { domProps: { textContent: _vm._s(_vm.label) } }),
+    _vm._v(" "),
+    _c("input", {
+      ref: "input",
+      class: _vm.className,
+      attrs: { type: "text", placeholder: _vm.placeholder }
+    })
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=template&id=ed35740a&":
+/*!*******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=template&id=ed35740a& ***!
+  \*******************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "vue-street-view-pano-container" },
+    [
+      _c("div", {
+        ref: "vue-street-view-pano",
+        staticClass: "vue-street-view-pano"
+      }),
+      _vm._v(" "),
+      _vm._t("default")
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
@@ -42257,6 +43960,71 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GmapsComponent.vue?vue&type=template&id=69e092ca&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/GmapsComponent.vue?vue&type=template&id=69e092ca& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "GmapMap",
+    {
+      ref: "mapRef",
+      staticStyle: { width: "100%", height: "100%" },
+      attrs: {
+        center: _vm.center,
+        zoom: _vm.zoom,
+        "map-type-id": "terrain",
+        options: {
+          styles: _vm.styles,
+          zoomControl: true,
+          mapTypeControl: false,
+          scaleControl: false,
+          streetViewControl: false,
+          rotateControl: false,
+          fullscreenControl: false,
+          disableDefaultUI: false
+        }
+      }
+    },
+    _vm._l(_vm.kredse, function(kreds, index) {
+      return _c("GmapMarker", {
+        key: index,
+        attrs: {
+          position: { lat: kreds.latitude, lng: kreds.longitude },
+          clickable: true,
+          icon: _vm.selectedKreds
+            ? kreds.id == _vm.selectedKreds.id
+              ? _vm.markerSelectedOptions
+              : _vm.markerOptions
+            : _vm.markerOptions
+        },
+        on: {
+          click: function($event) {
+            return _vm.selectKreds(kreds)
+          }
+        }
+      })
+    }),
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/KortetComponent.vue?vue&type=template&id=640f270d&":
 /*!******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/KortetComponent.vue?vue&type=template&id=640f270d& ***!
@@ -42274,13 +44042,13 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { attrs: { id: "kortet" } },
+    { class: { showBox: _vm.kreds != null }, attrs: { id: "kortet" } },
     [
       _c(
         "div",
         { attrs: { id: "map-parent" } },
         [
-          _c("mapbox-component", {
+          _c("gmaps-component", {
             attrs: { id: "map", kredse: _vm.kredse, kreds: _vm.kreds },
             on: {
               "update:kreds": function($event) {
@@ -42357,11 +44125,7 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 _c("div", { staticClass: "aktiviteter mt-4" }, [
-                  _c("h4", [
-                    _vm._v(
-                      "\n                    Aktiviteter kredsen har udført\n                "
-                    )
-                  ]),
+                  _c("h4", [_vm._v("Aktiviteter kredsen har udført")]),
                   _vm._v(" "),
                   _vm.kreds.aktiviteter.length > 0
                     ? _c(
@@ -56671,6 +58435,2540 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/vue2-google-maps/dist/components/autocomplete.vue":
+/*!************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/autocomplete.vue ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _autocomplete_vue_vue_type_template_id_2c922d06___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./autocomplete.vue?vue&type=template&id=2c922d06& */ "./node_modules/vue2-google-maps/dist/components/autocomplete.vue?vue&type=template&id=2c922d06&");
+/* harmony import */ var _autocomplete_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./autocomplete.vue?vue&type=script&lang=js& */ "./node_modules/vue2-google-maps/dist/components/autocomplete.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _autocomplete_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _autocomplete_vue_vue_type_template_id_2c922d06___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _autocomplete_vue_vue_type_template_id_2c922d06___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "node_modules/vue2-google-maps/dist/components/autocomplete.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/autocomplete.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/autocomplete.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vue_loader_lib_index_js_vue_loader_options_autocomplete_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../vue-loader/lib??vue-loader-options!./autocomplete.vue?vue&type=script&lang=js& */ "./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/autocomplete.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_vue_loader_lib_index_js_vue_loader_options_autocomplete_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/autocomplete.vue?vue&type=template&id=2c922d06&":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/autocomplete.vue?vue&type=template&id=2c922d06& ***!
+  \*******************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_autocomplete_vue_vue_type_template_id_2c922d06___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../vue-loader/lib??vue-loader-options!./autocomplete.vue?vue&type=template&id=2c922d06& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/autocomplete.vue?vue&type=template&id=2c922d06&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_autocomplete_vue_vue_type_template_id_2c922d06___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_autocomplete_vue_vue_type_template_id_2c922d06___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/autocompleteImpl.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/autocompleteImpl.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _bindProps = __webpack_require__(/*! ../utils/bindProps.js */ "./node_modules/vue2-google-maps/dist/utils/bindProps.js");
+
+var _simulateArrowDown = __webpack_require__(/*! ../utils/simulateArrowDown.js */ "./node_modules/vue2-google-maps/dist/utils/simulateArrowDown.js");
+
+var _simulateArrowDown2 = _interopRequireDefault(_simulateArrowDown);
+
+var _mapElementFactory = __webpack_require__(/*! ./mapElementFactory */ "./node_modules/vue2-google-maps/dist/components/mapElementFactory.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mappedProps = {
+  bounds: {
+    type: Object
+  },
+  componentRestrictions: {
+    type: Object,
+    // Do not bind -- must check for undefined
+    // in the property
+    noBind: true
+  },
+  types: {
+    type: Array,
+    default: function _default() {
+      return [];
+    }
+  }
+};
+
+var props = {
+  selectFirstOnEnter: {
+    required: false,
+    type: Boolean,
+    default: false
+  },
+  options: {
+    type: Object
+  }
+};
+
+exports.default = {
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$gmapApiPromiseLazy().then(function () {
+      if (_this.selectFirstOnEnter) {
+        (0, _simulateArrowDown2.default)(_this.$refs.input);
+      }
+
+      if (typeof google.maps.places.Autocomplete !== 'function') {
+        throw new Error('google.maps.places.Autocomplete is undefined. Did you add \'places\' to libraries when loading Google Maps?');
+      }
+
+      /* eslint-disable no-unused-vars */
+      var finalOptions = _extends({}, (0, _bindProps.getPropsValues)(_this, mappedProps), _this.options);
+
+      _this.$autocomplete = new google.maps.places.Autocomplete(_this.$refs.input, finalOptions);
+      (0, _bindProps.bindProps)(_this, _this.$autocomplete, mappedProps);
+
+      _this.$watch('componentRestrictions', function (v) {
+        if (v !== undefined) {
+          _this.$autocomplete.setComponentRestrictions(v);
+        }
+      });
+
+      // Not using `bindEvents` because we also want
+      // to return the result of `getPlace()`
+      _this.$autocomplete.addListener('place_changed', function () {
+        _this.$emit('place_changed', _this.$autocomplete.getPlace());
+      });
+    });
+  },
+
+  props: _extends({}, (0, _mapElementFactory.mappedPropsToVueProps)(mappedProps), props)
+};
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/circle.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/circle.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _mapElementFactory = __webpack_require__(/*! ./mapElementFactory */ "./node_modules/vue2-google-maps/dist/components/mapElementFactory.js");
+
+var _mapElementFactory2 = _interopRequireDefault(_mapElementFactory);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var props = {
+  center: {
+    type: Object,
+    twoWay: true,
+    required: true
+  },
+  radius: {
+    type: Number,
+    twoWay: true
+  },
+  draggable: {
+    type: Boolean,
+    default: false
+  },
+  editable: {
+    type: Boolean,
+    default: false
+  },
+  options: {
+    type: Object,
+    twoWay: false
+  }
+};
+
+var events = ['click', 'dblclick', 'drag', 'dragend', 'dragstart', 'mousedown', 'mousemove', 'mouseout', 'mouseover', 'mouseup', 'rightclick'];
+
+exports.default = (0, _mapElementFactory2.default)({
+  mappedProps: props,
+  name: 'circle',
+  ctr: function ctr() {
+    return google.maps.Circle;
+  },
+  events: events
+});
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/infoWindow.vue":
+/*!**********************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/infoWindow.vue ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _infoWindow_vue_vue_type_template_id_17fc7ddc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./infoWindow.vue?vue&type=template&id=17fc7ddc& */ "./node_modules/vue2-google-maps/dist/components/infoWindow.vue?vue&type=template&id=17fc7ddc&");
+/* harmony import */ var _infoWindow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./infoWindow.vue?vue&type=script&lang=js& */ "./node_modules/vue2-google-maps/dist/components/infoWindow.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _infoWindow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _infoWindow_vue_vue_type_template_id_17fc7ddc___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _infoWindow_vue_vue_type_template_id_17fc7ddc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "node_modules/vue2-google-maps/dist/components/infoWindow.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/infoWindow.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/infoWindow.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vue_loader_lib_index_js_vue_loader_options_infoWindow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../vue-loader/lib??vue-loader-options!./infoWindow.vue?vue&type=script&lang=js& */ "./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/infoWindow.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_vue_loader_lib_index_js_vue_loader_options_infoWindow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/infoWindow.vue?vue&type=template&id=17fc7ddc&":
+/*!*****************************************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/infoWindow.vue?vue&type=template&id=17fc7ddc& ***!
+  \*****************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_infoWindow_vue_vue_type_template_id_17fc7ddc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../vue-loader/lib??vue-loader-options!./infoWindow.vue?vue&type=template&id=17fc7ddc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/infoWindow.vue?vue&type=template&id=17fc7ddc&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_infoWindow_vue_vue_type_template_id_17fc7ddc___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_infoWindow_vue_vue_type_template_id_17fc7ddc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/infoWindowImpl.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/infoWindowImpl.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _mapElementFactory = __webpack_require__(/*! ./mapElementFactory.js */ "./node_modules/vue2-google-maps/dist/components/mapElementFactory.js");
+
+var _mapElementFactory2 = _interopRequireDefault(_mapElementFactory);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var props = {
+  options: {
+    type: Object,
+    required: false,
+    default: function _default() {
+      return {};
+    }
+  },
+  position: {
+    type: Object,
+    twoWay: true
+  },
+  zIndex: {
+    type: Number,
+    twoWay: true
+  }
+};
+
+var events = ['domready', 'closeclick', 'content_changed'];
+
+exports.default = (0, _mapElementFactory2.default)({
+  mappedProps: props,
+  events: events,
+  name: 'infoWindow',
+  ctr: function ctr() {
+    return google.maps.InfoWindow;
+  },
+  props: {
+    opened: {
+      type: Boolean,
+      default: true
+    }
+  },
+
+  inject: {
+    '$markerPromise': {
+      default: null
+    }
+  },
+
+  mounted: function mounted() {
+    var el = this.$refs.flyaway;
+    el.parentNode.removeChild(el);
+  },
+  beforeCreate: function beforeCreate(options) {
+    var _this = this;
+
+    options.content = this.$refs.flyaway;
+
+    if (this.$markerPromise) {
+      delete options.position;
+      return this.$markerPromise.then(function (mo) {
+        _this.$markerObject = mo;
+        return mo;
+      });
+    }
+  },
+
+
+  methods: {
+    _openInfoWindow: function _openInfoWindow() {
+      if (this.opened) {
+        if (this.$markerObject !== null) {
+          this.$infoWindowObject.open(this.$map, this.$markerObject);
+        } else {
+          this.$infoWindowObject.open(this.$map);
+        }
+      } else {
+        this.$infoWindowObject.close();
+      }
+    }
+  },
+
+  afterCreate: function afterCreate() {
+    var _this2 = this;
+
+    this._openInfoWindow();
+    this.$watch('opened', function () {
+      _this2._openInfoWindow();
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/map.vue":
+/*!***************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/map.vue ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _map_vue_vue_type_template_id_85ca06a4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./map.vue?vue&type=template&id=85ca06a4& */ "./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=template&id=85ca06a4&");
+/* harmony import */ var _map_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./map.vue?vue&type=script&lang=js& */ "./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _map_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./map.vue?vue&type=style&index=0&lang=css& */ "./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _map_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _map_vue_vue_type_template_id_85ca06a4___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _map_vue_vue_type_template_id_85ca06a4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "node_modules/vue2-google-maps/dist/components/map.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vue_loader_lib_index_js_vue_loader_options_map_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../vue-loader/lib??vue-loader-options!./map.vue?vue&type=script&lang=js& */ "./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_vue_loader_lib_index_js_vue_loader_options_map_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=style&index=0&lang=css&":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=style&index=0&lang=css& ***!
+  \************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _style_loader_index_js_css_loader_index_js_ref_6_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_6_2_vue_loader_lib_index_js_vue_loader_options_map_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../style-loader!../../../css-loader??ref--6-1!../../../vue-loader/lib/loaders/stylePostLoader.js!../../../postcss-loader/src??ref--6-2!../../../vue-loader/lib??vue-loader-options!./map.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _style_loader_index_js_css_loader_index_js_ref_6_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_6_2_vue_loader_lib_index_js_vue_loader_options_map_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_index_js_css_loader_index_js_ref_6_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_6_2_vue_loader_lib_index_js_vue_loader_options_map_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _style_loader_index_js_css_loader_index_js_ref_6_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_6_2_vue_loader_lib_index_js_vue_loader_options_map_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _style_loader_index_js_css_loader_index_js_ref_6_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_6_2_vue_loader_lib_index_js_vue_loader_options_map_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_style_loader_index_js_css_loader_index_js_ref_6_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_6_2_vue_loader_lib_index_js_vue_loader_options_map_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=template&id=85ca06a4&":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=template&id=85ca06a4& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_map_vue_vue_type_template_id_85ca06a4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../vue-loader/lib??vue-loader-options!./map.vue?vue&type=template&id=85ca06a4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/map.vue?vue&type=template&id=85ca06a4&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_map_vue_vue_type_template_id_85ca06a4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_map_vue_vue_type_template_id_85ca06a4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/mapElementFactory.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/mapElementFactory.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+exports.default = function (options) {
+  var mappedProps = options.mappedProps,
+      name = options.name,
+      ctr = options.ctr,
+      ctrArgs = options.ctrArgs,
+      events = options.events,
+      beforeCreate = options.beforeCreate,
+      afterCreate = options.afterCreate,
+      props = options.props,
+      rest = _objectWithoutProperties(options, ['mappedProps', 'name', 'ctr', 'ctrArgs', 'events', 'beforeCreate', 'afterCreate', 'props']);
+
+  var promiseName = '$' + name + 'Promise';
+  var instanceName = '$' + name + 'Object';
+
+  assert(!(rest.props instanceof Array), '`props` should be an object, not Array');
+
+  return _extends({}, typeof GENERATE_DOC !== 'undefined' ? { $vgmOptions: options } : {}, {
+    mixins: [_mapElementMixin2.default],
+    props: _extends({}, props, mappedPropsToVueProps(mappedProps)),
+    render: function render() {
+      return '';
+    },
+    provide: function provide() {
+      var _this = this;
+
+      var promise = this.$mapPromise.then(function (map) {
+        // Infowindow needs this to be immediately available
+        _this.$map = map;
+
+        // Initialize the maps with the given options
+        var options = _extends({}, _this.options, {
+          map: map
+        }, (0, _bindProps.getPropsValues)(_this, mappedProps));
+        delete options.options; // delete the extra options
+
+        if (beforeCreate) {
+          var result = beforeCreate.bind(_this)(options);
+
+          if (result instanceof Promise) {
+            return result.then(function () {
+              return { options: options };
+            });
+          }
+        }
+        return { options: options };
+      }).then(function (_ref) {
+        var _Function$prototype$b;
+
+        var options = _ref.options;
+
+        var ConstructorObject = ctr();
+        // https://stackoverflow.com/questions/1606797/use-of-apply-with-new-operator-is-this-possible
+        _this[instanceName] = ctrArgs ? new ((_Function$prototype$b = Function.prototype.bind).call.apply(_Function$prototype$b, [ConstructorObject, null].concat(_toConsumableArray(ctrArgs(options, (0, _bindProps.getPropsValues)(_this, props || {}))))))() : new ConstructorObject(options);
+
+        (0, _bindProps.bindProps)(_this, _this[instanceName], mappedProps);
+        (0, _bindEvents2.default)(_this, _this[instanceName], events);
+
+        if (afterCreate) {
+          afterCreate.bind(_this)(_this[instanceName]);
+        }
+        return _this[instanceName];
+      });
+      this[promiseName] = promise;
+      return _defineProperty({}, promiseName, promise);
+    },
+    destroyed: function destroyed() {
+      // Note: not all Google Maps components support maps
+      if (this[instanceName] && this[instanceName].setMap) {
+        this[instanceName].setMap(null);
+      }
+    }
+  }, rest);
+};
+
+exports.mappedPropsToVueProps = mappedPropsToVueProps;
+
+var _bindEvents = __webpack_require__(/*! ../utils/bindEvents.js */ "./node_modules/vue2-google-maps/dist/utils/bindEvents.js");
+
+var _bindEvents2 = _interopRequireDefault(_bindEvents);
+
+var _bindProps = __webpack_require__(/*! ../utils/bindProps.js */ "./node_modules/vue2-google-maps/dist/utils/bindProps.js");
+
+var _mapElementMixin = __webpack_require__(/*! ./mapElementMixin */ "./node_modules/vue2-google-maps/dist/components/mapElementMixin.js");
+
+var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+/**
+ *
+ * @param {Object} options
+ * @param {Object} options.mappedProps - Definitions of props
+ * @param {Object} options.mappedProps.PROP.type - Value type
+ * @param {Boolean} options.mappedProps.PROP.twoWay
+ *  - Whether the prop has a corresponding PROP_changed
+ *   event
+ * @param {Boolean} options.mappedProps.PROP.noBind
+ *  - If true, do not apply the default bindProps / bindEvents.
+ * However it will still be added to the list of component props
+ * @param {Object} options.props - Regular Vue-style props.
+ *  Note: must be in the Object form because it will be
+ *  merged with the `mappedProps`
+ *
+ * @param {Object} options.events - Google Maps API events
+ *  that are not bound to a corresponding prop
+ * @param {String} options.name - e.g. `polyline`
+ * @param {=> String} options.ctr - constructor, e.g.
+ *  `google.maps.Polyline`. However, since this is not
+ *  generally available during library load, this becomes
+ *  a function instead, e.g. () => google.maps.Polyline
+ *  which will be called only after the API has been loaded
+ * @param {(MappedProps, OtherVueProps) => Array} options.ctrArgs -
+ *   If the constructor in `ctr` needs to be called with
+ *   arguments other than a single `options` object, e.g. for
+ *   GroundOverlay, we call `new GroundOverlay(url, bounds, options)`
+ *   then pass in a function that returns the argument list as an array
+ *
+ * Otherwise, the constructor will be called with an `options` object,
+ *   with property and values merged from:
+ *
+ *   1. the `options` property, if any
+ *   2. a `map` property with the Google Maps
+ *   3. all the properties passed to the component in `mappedProps`
+ * @param {Object => Any} options.beforeCreate -
+ *  Hook to modify the options passed to the initializer
+ * @param {(options.ctr, Object) => Any} options.afterCreate -
+ *  Hook called when
+ *
+ */
+
+
+function assert(v, message) {
+  if (!v) throw new Error(message);
+}
+
+/**
+ * Strips out the extraneous properties we have in our
+ * props definitions
+ * @param {Object} props
+ */
+function mappedPropsToVueProps(mappedProps) {
+  return Object.entries(mappedProps).map(function (_ref3) {
+    var _ref4 = _slicedToArray(_ref3, 2),
+        key = _ref4[0],
+        prop = _ref4[1];
+
+    var value = {};
+
+    if ('type' in prop) value.type = prop.type;
+    if ('default' in prop) value.default = prop.default;
+    if ('required' in prop) value.required = prop.required;
+
+    return [key, value];
+  }).reduce(function (acc, _ref5) {
+    var _ref6 = _slicedToArray(_ref5, 2),
+        key = _ref6[0],
+        val = _ref6[1];
+
+    acc[key] = val;
+    return acc;
+  }, {});
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/mapElementMixin.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/mapElementMixin.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/**
+ * @class MapElementMixin
+ *
+ * Extends components to include the following fields:
+ *
+ * @property $map        The Google map (valid only after the promise returns)
+ *
+ *
+ * */
+exports.default = {
+  inject: {
+    '$mapPromise': { default: 'abcdef' }
+  },
+
+  provide: function provide() {
+    var _this = this;
+
+    // Note: although this mixin is not "providing" anything,
+    // components' expect the `$map` property to be present on the component.
+    // In order for that to happen, this mixin must intercept the $mapPromise
+    // .then(() =>) first before its component does so.
+    //
+    // Since a provide() on a mixin is executed before a provide() on the
+    // component, putting this code in provide() ensures that the $map is
+    // already set by the time the
+    // component's provide() is called.
+    this.$mapPromise.then(function (map) {
+      _this.$map = map;
+    });
+
+    return {};
+  }
+};
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/mapImpl.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/mapImpl.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _bindEvents = __webpack_require__(/*! ../utils/bindEvents.js */ "./node_modules/vue2-google-maps/dist/utils/bindEvents.js");
+
+var _bindEvents2 = _interopRequireDefault(_bindEvents);
+
+var _bindProps = __webpack_require__(/*! ../utils/bindProps.js */ "./node_modules/vue2-google-maps/dist/utils/bindProps.js");
+
+var _mountableMixin = __webpack_require__(/*! ../utils/mountableMixin.js */ "./node_modules/vue2-google-maps/dist/utils/mountableMixin.js");
+
+var _mountableMixin2 = _interopRequireDefault(_mountableMixin);
+
+var _TwoWayBindingWrapper = __webpack_require__(/*! ../utils/TwoWayBindingWrapper.js */ "./node_modules/vue2-google-maps/dist/utils/TwoWayBindingWrapper.js");
+
+var _TwoWayBindingWrapper2 = _interopRequireDefault(_TwoWayBindingWrapper);
+
+var _WatchPrimitiveProperties = __webpack_require__(/*! ../utils/WatchPrimitiveProperties.js */ "./node_modules/vue2-google-maps/dist/utils/WatchPrimitiveProperties.js");
+
+var _WatchPrimitiveProperties2 = _interopRequireDefault(_WatchPrimitiveProperties);
+
+var _mapElementFactory = __webpack_require__(/*! ./mapElementFactory.js */ "./node_modules/vue2-google-maps/dist/components/mapElementFactory.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var props = {
+  center: {
+    required: true,
+    twoWay: true,
+    type: Object,
+    noBind: true
+  },
+  zoom: {
+    required: false,
+    twoWay: true,
+    type: Number,
+    noBind: true
+  },
+  heading: {
+    type: Number,
+    twoWay: true
+  },
+  mapTypeId: {
+    twoWay: true,
+    type: String
+  },
+  tilt: {
+    twoWay: true,
+    type: Number
+  },
+  options: {
+    type: Object,
+    default: function _default() {
+      return {};
+    }
+  }
+};
+
+var events = ['bounds_changed', 'click', 'dblclick', 'drag', 'dragend', 'dragstart', 'idle', 'mousemove', 'mouseout', 'mouseover', 'resize', 'rightclick', 'tilesloaded'];
+
+// Plain Google Maps methods exposed here for convenience
+var linkedMethods = ['panBy', 'panTo', 'panToBounds', 'fitBounds'].reduce(function (all, methodName) {
+  all[methodName] = function () {
+    if (this.$mapObject) {
+      this.$mapObject[methodName].apply(this.$mapObject, arguments);
+    }
+  };
+  return all;
+}, {});
+
+// Other convenience methods exposed by Vue Google Maps
+var customMethods = {
+  resize: function resize() {
+    if (this.$mapObject) {
+      google.maps.event.trigger(this.$mapObject, 'resize');
+    }
+  },
+  resizePreserveCenter: function resizePreserveCenter() {
+    if (!this.$mapObject) {
+      return;
+    }
+
+    var oldCenter = this.$mapObject.getCenter();
+    google.maps.event.trigger(this.$mapObject, 'resize');
+    this.$mapObject.setCenter(oldCenter);
+  },
+
+
+  /// Override mountableMixin::_resizeCallback
+  /// because resizePreserveCenter is usually the
+  /// expected behaviour
+  _resizeCallback: function _resizeCallback() {
+    this.resizePreserveCenter();
+  }
+};
+
+exports.default = {
+  mixins: [_mountableMixin2.default],
+  props: (0, _mapElementFactory.mappedPropsToVueProps)(props),
+
+  provide: function provide() {
+    var _this = this;
+
+    this.$mapPromise = new Promise(function (resolve, reject) {
+      _this.$mapPromiseDeferred = { resolve: resolve, reject: reject };
+    });
+    return {
+      '$mapPromise': this.$mapPromise
+    };
+  },
+
+
+  computed: {
+    finalLat: function finalLat() {
+      return this.center && typeof this.center.lat === 'function' ? this.center.lat() : this.center.lat;
+    },
+    finalLng: function finalLng() {
+      return this.center && typeof this.center.lng === 'function' ? this.center.lng() : this.center.lng;
+    },
+    finalLatLng: function finalLatLng() {
+      return { lat: this.finalLat, lng: this.finalLng };
+    }
+  },
+
+  watch: {
+    zoom: function zoom(_zoom) {
+      if (this.$mapObject) {
+        this.$mapObject.setZoom(_zoom);
+      }
+    }
+  },
+
+  mounted: function mounted() {
+    var _this2 = this;
+
+    return this.$gmapApiPromiseLazy().then(function () {
+      // getting the DOM element where to create the map
+      var element = _this2.$refs['vue-map'];
+
+      // creating the map
+      var options = _extends({}, _this2.options, (0, _bindProps.getPropsValues)(_this2, props));
+      delete options.options;
+      _this2.$mapObject = new google.maps.Map(element, options);
+
+      // binding properties (two and one way)
+      (0, _bindProps.bindProps)(_this2, _this2.$mapObject, props);
+      // binding events
+      (0, _bindEvents2.default)(_this2, _this2.$mapObject, events);
+
+      // manually trigger center and zoom
+      (0, _TwoWayBindingWrapper2.default)(function (increment, decrement, shouldUpdate) {
+        _this2.$mapObject.addListener('center_changed', function () {
+          if (shouldUpdate()) {
+            _this2.$emit('center_changed', _this2.$mapObject.getCenter());
+          }
+          decrement();
+        });
+
+        (0, _WatchPrimitiveProperties2.default)(_this2, ['finalLat', 'finalLng'], function updateCenter() {
+          increment();
+          _this2.$mapObject.setCenter(_this2.finalLatLng);
+        });
+      });
+      _this2.$mapObject.addListener('zoom_changed', function () {
+        _this2.$emit('zoom_changed', _this2.$mapObject.getZoom());
+      });
+      _this2.$mapObject.addListener('bounds_changed', function () {
+        _this2.$emit('bounds_changed', _this2.$mapObject.getBounds());
+      });
+
+      _this2.$mapPromiseDeferred.resolve(_this2.$mapObject);
+
+      return _this2.$mapObject;
+    }).catch(function (error) {
+      throw error;
+    });
+  },
+
+  methods: _extends({}, customMethods, linkedMethods)
+};
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/marker.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/marker.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _mapElementFactory = __webpack_require__(/*! ./mapElementFactory.js */ "./node_modules/vue2-google-maps/dist/components/mapElementFactory.js");
+
+var _mapElementFactory2 = _interopRequireDefault(_mapElementFactory);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var props = {
+  animation: {
+    twoWay: true,
+    type: Number
+  },
+  attribution: {
+    type: Object
+  },
+  clickable: {
+    type: Boolean,
+    twoWay: true,
+    default: true
+  },
+  cursor: {
+    type: String,
+    twoWay: true
+  },
+  draggable: {
+    type: Boolean,
+    twoWay: true,
+    default: false
+  },
+  icon: {
+    twoWay: true
+  },
+  label: {},
+  opacity: {
+    type: Number,
+    default: 1
+  },
+  options: {
+    type: Object
+  },
+  place: {
+    type: Object
+  },
+  position: {
+    type: Object,
+    twoWay: true
+  },
+  shape: {
+    type: Object,
+    twoWay: true
+  },
+  title: {
+    type: String,
+    twoWay: true
+  },
+  zIndex: {
+    type: Number,
+    twoWay: true
+  },
+  visible: {
+    twoWay: true,
+    default: true
+  }
+};
+
+var events = ['click', 'rightclick', 'dblclick', 'drag', 'dragstart', 'dragend', 'mouseup', 'mousedown', 'mouseover', 'mouseout'];
+
+/**
+ * @class Marker
+ *
+ * Marker class with extra support for
+ *
+ * - Embedded info windows
+ * - Clustered markers
+ *
+ * Support for clustered markers is for backward-compatability
+ * reasons. Otherwise we should use a cluster-marker mixin or
+ * subclass.
+ */
+exports.default = (0, _mapElementFactory2.default)({
+  mappedProps: props,
+  events: events,
+  name: 'marker',
+  ctr: function ctr() {
+    return google.maps.Marker;
+  },
+
+  inject: {
+    '$clusterPromise': {
+      default: null
+    }
+  },
+
+  render: function render(h) {
+    if (!this.$slots.default || this.$slots.default.length === 0) {
+      return '';
+    } else if (this.$slots.default.length === 1) {
+      // So that infowindows can have a marker parent
+      return this.$slots.default[0];
+    } else {
+      return h('div', this.$slots.default);
+    }
+  },
+  destroyed: function destroyed() {
+    if (!this.$markerObject) {
+      return;
+    }
+
+    if (this.$clusterObject) {
+      // Repaint will be performed in `updated()` of cluster
+      this.$clusterObject.removeMarker(this.$markerObject, true);
+    } else {
+      this.$markerObject.setMap(null);
+    }
+  },
+  beforeCreate: function beforeCreate(options) {
+    if (this.$clusterPromise) {
+      options.map = null;
+    }
+
+    return this.$clusterPromise;
+  },
+  afterCreate: function afterCreate(inst) {
+    var _this = this;
+
+    if (this.$clusterPromise) {
+      this.$clusterPromise.then(function (co) {
+        co.addMarker(inst);
+        _this.$clusterObject = co;
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/placeInput.vue":
+/*!**********************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/placeInput.vue ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _placeInput_vue_vue_type_template_id_c1ab87be___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./placeInput.vue?vue&type=template&id=c1ab87be& */ "./node_modules/vue2-google-maps/dist/components/placeInput.vue?vue&type=template&id=c1ab87be&");
+/* harmony import */ var _placeInputImpl_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./placeInputImpl.js?vue&type=script&lang=js& */ "./node_modules/vue2-google-maps/dist/components/placeInputImpl.js?vue&type=script&lang=js&?bfef");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _placeInputImpl_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _placeInputImpl_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _placeInputImpl_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _placeInput_vue_vue_type_template_id_c1ab87be___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _placeInput_vue_vue_type_template_id_c1ab87be___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "node_modules/vue2-google-maps/dist/components/placeInput.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/placeInput.vue?vue&type=template&id=c1ab87be&":
+/*!*****************************************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/placeInput.vue?vue&type=template&id=c1ab87be& ***!
+  \*****************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_placeInput_vue_vue_type_template_id_c1ab87be___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../vue-loader/lib??vue-loader-options!./placeInput.vue?vue&type=template&id=c1ab87be& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/placeInput.vue?vue&type=template&id=c1ab87be&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_placeInput_vue_vue_type_template_id_c1ab87be___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_placeInput_vue_vue_type_template_id_c1ab87be___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/placeInputImpl.js?vue&type=script&lang=js&?0c5e":
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/placeInputImpl.js?vue&type=script&lang=js& ***!
+  \**************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _bindProps = __webpack_require__(/*! ../utils/bindProps.js */ "./node_modules/vue2-google-maps/dist/utils/bindProps.js");
+
+var _simulateArrowDown = __webpack_require__(/*! ../utils/simulateArrowDown.js */ "./node_modules/vue2-google-maps/dist/utils/simulateArrowDown.js");
+
+var _simulateArrowDown2 = _interopRequireDefault(_simulateArrowDown);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+var props = {
+  bounds: {
+    type: Object
+  },
+  defaultPlace: {
+    type: String,
+    default: ''
+  },
+  componentRestrictions: {
+    type: Object,
+    default: null
+  },
+  types: {
+    type: Array,
+    default: function _default() {
+      return [];
+    }
+  },
+  placeholder: {
+    required: false,
+    type: String
+  },
+  className: {
+    required: false,
+    type: String
+  },
+  label: {
+    required: false,
+    type: String,
+    default: null
+  },
+  selectFirstOnEnter: {
+    require: false,
+    type: Boolean,
+    default: false
+  }
+};
+
+exports.default = {
+  mounted: function mounted() {
+    var _this = this;
+
+    var input = this.$refs.input;
+
+    // Allow default place to be set
+    input.value = this.defaultPlace;
+    this.$watch('defaultPlace', function () {
+      input.value = _this.defaultPlace;
+    });
+
+    this.$gmapApiPromiseLazy().then(function () {
+      var options = (0, _bindProps.getPropsValues)(_this, props);
+      if (_this.selectFirstOnEnter) {
+        (0, _simulateArrowDown2.default)(_this.$refs.input);
+      }
+
+      if (typeof google.maps.places.Autocomplete !== 'function') {
+        throw new Error('google.maps.places.Autocomplete is undefined. Did you add \'places\' to libraries when loading Google Maps?');
+      }
+
+      _this.autoCompleter = new google.maps.places.Autocomplete(_this.$refs.input, options);
+
+      var placeholder = props.placeholder,
+          place = props.place,
+          defaultPlace = props.defaultPlace,
+          className = props.className,
+          label = props.label,
+          selectFirstOnEnter = props.selectFirstOnEnter,
+          rest = _objectWithoutProperties(props, ['placeholder', 'place', 'defaultPlace', 'className', 'label', 'selectFirstOnEnter']); // eslint-disable-line
+
+
+      (0, _bindProps.bindProps)(_this, _this.autoCompleter, rest);
+
+      _this.autoCompleter.addListener('place_changed', function () {
+        _this.$emit('place_changed', _this.autoCompleter.getPlace());
+      });
+    });
+  },
+  created: function created() {
+    console.warn('The PlaceInput class is deprecated! Please consider using the Autocomplete input instead'); // eslint-disable-line no-console
+  },
+
+  props: props
+};
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/placeInputImpl.js?vue&type=script&lang=js&?bfef":
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/placeInputImpl.js?vue&type=script&lang=js& ***!
+  \**************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _placeInputImpl_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./placeInputImpl.js?vue&type=script&lang=js& */ "./node_modules/vue2-google-maps/dist/components/placeInputImpl.js?vue&type=script&lang=js&?0c5e");
+/* harmony import */ var _placeInputImpl_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_placeInputImpl_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _placeInputImpl_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _placeInputImpl_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_placeInputImpl_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/polygon.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/polygon.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var _mapElementFactory = __webpack_require__(/*! ./mapElementFactory.js */ "./node_modules/vue2-google-maps/dist/components/mapElementFactory.js");
+
+var _mapElementFactory2 = _interopRequireDefault(_mapElementFactory);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var props = {
+  draggable: {
+    type: Boolean
+  },
+  editable: {
+    type: Boolean
+  },
+  options: {
+    type: Object
+  },
+  path: {
+    type: Array,
+    twoWay: true,
+    noBind: true
+  },
+  paths: {
+    type: Array,
+    twoWay: true,
+    noBind: true
+  }
+};
+
+var events = ['click', 'dblclick', 'drag', 'dragend', 'dragstart', 'mousedown', 'mousemove', 'mouseout', 'mouseover', 'mouseup', 'rightclick'];
+
+exports.default = (0, _mapElementFactory2.default)({
+  props: {
+    deepWatch: {
+      type: Boolean,
+      default: false
+    }
+  },
+  events: events,
+  mappedProps: props,
+  name: 'polygon',
+  ctr: function ctr() {
+    return google.maps.Polygon;
+  },
+
+  beforeCreate: function beforeCreate(options) {
+    if (!options.path) delete options.path;
+    if (!options.paths) delete options.paths;
+  },
+  afterCreate: function afterCreate(inst) {
+    var _this = this;
+
+    var clearEvents = function () {};
+
+    // Watch paths, on our own, because we do not want to set either when it is
+    // empty
+    this.$watch('paths', function (paths) {
+      if (paths) {
+        clearEvents();
+
+        inst.setPaths(paths);
+
+        var updatePaths = function () {
+          _this.$emit('paths_changed', inst.getPaths());
+        };
+        var eventListeners = [];
+
+        var mvcArray = inst.getPaths();
+        for (var i = 0; i < mvcArray.getLength(); i++) {
+          var mvcPath = mvcArray.getAt(i);
+          eventListeners.push([mvcPath, mvcPath.addListener('insert_at', updatePaths)]);
+          eventListeners.push([mvcPath, mvcPath.addListener('remove_at', updatePaths)]);
+          eventListeners.push([mvcPath, mvcPath.addListener('set_at', updatePaths)]);
+        }
+        eventListeners.push([mvcArray, mvcArray.addListener('insert_at', updatePaths)]);
+        eventListeners.push([mvcArray, mvcArray.addListener('remove_at', updatePaths)]);
+        eventListeners.push([mvcArray, mvcArray.addListener('set_at', updatePaths)]);
+
+        clearEvents = function () {
+          eventListeners.map(function (_ref) {
+            var _ref2 = _slicedToArray(_ref, 2),
+                obj = _ref2[0],
+                listenerHandle = _ref2[1];
+
+            return (// eslint-disable-line no-unused-vars
+              google.maps.event.removeListener(listenerHandle)
+            );
+          });
+        };
+      }
+    }, {
+      deep: this.deepWatch,
+      immediate: true
+    });
+
+    this.$watch('path', function (path) {
+      if (path) {
+        clearEvents();
+
+        inst.setPaths(path);
+
+        var mvcPath = inst.getPath();
+        var eventListeners = [];
+
+        var updatePaths = function () {
+          _this.$emit('path_changed', inst.getPath());
+        };
+
+        eventListeners.push([mvcPath, mvcPath.addListener('insert_at', updatePaths)]);
+        eventListeners.push([mvcPath, mvcPath.addListener('remove_at', updatePaths)]);
+        eventListeners.push([mvcPath, mvcPath.addListener('set_at', updatePaths)]);
+
+        clearEvents = function () {
+          eventListeners.map(function (_ref3) {
+            var _ref4 = _slicedToArray(_ref3, 2),
+                obj = _ref4[0],
+                listenerHandle = _ref4[1];
+
+            return (// eslint-disable-line no-unused-vars
+              google.maps.event.removeListener(listenerHandle)
+            );
+          });
+        };
+      }
+    }, {
+      deep: this.deepWatch,
+      immediate: true
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/polyline.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/polyline.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var _mapElementFactory = __webpack_require__(/*! ./mapElementFactory.js */ "./node_modules/vue2-google-maps/dist/components/mapElementFactory.js");
+
+var _mapElementFactory2 = _interopRequireDefault(_mapElementFactory);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var props = {
+  draggable: {
+    type: Boolean
+  },
+  editable: {
+    type: Boolean
+  },
+  options: {
+    twoWay: false,
+    type: Object
+  },
+  path: {
+    type: Array,
+    twoWay: true
+  }
+};
+
+var events = ['click', 'dblclick', 'drag', 'dragend', 'dragstart', 'mousedown', 'mousemove', 'mouseout', 'mouseover', 'mouseup', 'rightclick'];
+
+exports.default = (0, _mapElementFactory2.default)({
+  mappedProps: props,
+  props: {
+    deepWatch: {
+      type: Boolean,
+      default: false
+    }
+  },
+  events: events,
+
+  name: 'polyline',
+  ctr: function ctr() {
+    return google.maps.Polyline;
+  },
+
+  afterCreate: function afterCreate() {
+    var _this = this;
+
+    var clearEvents = function () {};
+
+    this.$watch('path', function (path) {
+      if (path) {
+        clearEvents();
+
+        _this.$polylineObject.setPath(path);
+
+        var mvcPath = _this.$polylineObject.getPath();
+        var eventListeners = [];
+
+        var updatePaths = function () {
+          _this.$emit('path_changed', _this.$polylineObject.getPath());
+        };
+
+        eventListeners.push([mvcPath, mvcPath.addListener('insert_at', updatePaths)]);
+        eventListeners.push([mvcPath, mvcPath.addListener('remove_at', updatePaths)]);
+        eventListeners.push([mvcPath, mvcPath.addListener('set_at', updatePaths)]);
+
+        clearEvents = function () {
+          eventListeners.map(function (_ref) {
+            var _ref2 = _slicedToArray(_ref, 2),
+                obj = _ref2[0],
+                listenerHandle = _ref2[1];
+
+            return (// eslint-disable-line no-unused-vars
+              google.maps.event.removeListener(listenerHandle)
+            );
+          });
+        };
+      }
+    }, {
+      deep: this.deepWatch,
+      immediate: true
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/rectangle.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/rectangle.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _mapElementFactory = __webpack_require__(/*! ./mapElementFactory.js */ "./node_modules/vue2-google-maps/dist/components/mapElementFactory.js");
+
+var _mapElementFactory2 = _interopRequireDefault(_mapElementFactory);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var props = {
+  bounds: {
+    type: Object,
+    twoWay: true
+  },
+  draggable: {
+    type: Boolean,
+    default: false
+  },
+  editable: {
+    type: Boolean,
+    default: false
+  },
+  options: {
+    type: Object,
+    twoWay: false
+  }
+};
+
+var events = ['click', 'dblclick', 'drag', 'dragend', 'dragstart', 'mousedown', 'mousemove', 'mouseout', 'mouseover', 'mouseup', 'rightclick'];
+
+exports.default = (0, _mapElementFactory2.default)({
+  mappedProps: props,
+  name: 'rectangle',
+  ctr: function ctr() {
+    return google.maps.Rectangle;
+  },
+  events: events
+});
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue":
+/*!******************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _streetViewPanorama_vue_vue_type_template_id_ed35740a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./streetViewPanorama.vue?vue&type=template&id=ed35740a& */ "./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=template&id=ed35740a&");
+/* harmony import */ var _streetViewPanorama_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./streetViewPanorama.vue?vue&type=script&lang=js& */ "./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _streetViewPanorama_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./streetViewPanorama.vue?vue&type=style&index=0&lang=css& */ "./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _streetViewPanorama_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _streetViewPanorama_vue_vue_type_template_id_ed35740a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _streetViewPanorama_vue_vue_type_template_id_ed35740a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vue_loader_lib_index_js_vue_loader_options_streetViewPanorama_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../vue-loader/lib??vue-loader-options!./streetViewPanorama.vue?vue&type=script&lang=js& */ "./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_vue_loader_lib_index_js_vue_loader_options_streetViewPanorama_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=style&index=0&lang=css&":
+/*!***************************************************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=style&index=0&lang=css& ***!
+  \***************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _style_loader_index_js_css_loader_index_js_ref_6_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_6_2_vue_loader_lib_index_js_vue_loader_options_streetViewPanorama_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../style-loader!../../../css-loader??ref--6-1!../../../vue-loader/lib/loaders/stylePostLoader.js!../../../postcss-loader/src??ref--6-2!../../../vue-loader/lib??vue-loader-options!./streetViewPanorama.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _style_loader_index_js_css_loader_index_js_ref_6_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_6_2_vue_loader_lib_index_js_vue_loader_options_streetViewPanorama_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_index_js_css_loader_index_js_ref_6_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_6_2_vue_loader_lib_index_js_vue_loader_options_streetViewPanorama_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _style_loader_index_js_css_loader_index_js_ref_6_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_6_2_vue_loader_lib_index_js_vue_loader_options_streetViewPanorama_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _style_loader_index_js_css_loader_index_js_ref_6_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_6_2_vue_loader_lib_index_js_vue_loader_options_streetViewPanorama_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_style_loader_index_js_css_loader_index_js_ref_6_1_vue_loader_lib_loaders_stylePostLoader_js_postcss_loader_src_index_js_ref_6_2_vue_loader_lib_index_js_vue_loader_options_streetViewPanorama_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=template&id=ed35740a&":
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=template&id=ed35740a& ***!
+  \*************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_streetViewPanorama_vue_vue_type_template_id_ed35740a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../vue-loader/lib??vue-loader-options!./streetViewPanorama.vue?vue&type=template&id=ed35740a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue?vue&type=template&id=ed35740a&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_streetViewPanorama_vue_vue_type_template_id_ed35740a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _vue_loader_lib_loaders_templateLoader_js_vue_loader_options_vue_loader_lib_index_js_vue_loader_options_streetViewPanorama_vue_vue_type_template_id_ed35740a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/components/streetViewPanoramaImpl.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/components/streetViewPanoramaImpl.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _bindEvents = __webpack_require__(/*! ../utils/bindEvents.js */ "./node_modules/vue2-google-maps/dist/utils/bindEvents.js");
+
+var _bindEvents2 = _interopRequireDefault(_bindEvents);
+
+var _bindProps = __webpack_require__(/*! ../utils/bindProps.js */ "./node_modules/vue2-google-maps/dist/utils/bindProps.js");
+
+var _mountableMixin = __webpack_require__(/*! ../utils/mountableMixin.js */ "./node_modules/vue2-google-maps/dist/utils/mountableMixin.js");
+
+var _mountableMixin2 = _interopRequireDefault(_mountableMixin);
+
+var _TwoWayBindingWrapper = __webpack_require__(/*! ../utils/TwoWayBindingWrapper.js */ "./node_modules/vue2-google-maps/dist/utils/TwoWayBindingWrapper.js");
+
+var _TwoWayBindingWrapper2 = _interopRequireDefault(_TwoWayBindingWrapper);
+
+var _WatchPrimitiveProperties = __webpack_require__(/*! ../utils/WatchPrimitiveProperties.js */ "./node_modules/vue2-google-maps/dist/utils/WatchPrimitiveProperties.js");
+
+var _WatchPrimitiveProperties2 = _interopRequireDefault(_WatchPrimitiveProperties);
+
+var _mapElementFactory = __webpack_require__(/*! ./mapElementFactory.js */ "./node_modules/vue2-google-maps/dist/components/mapElementFactory.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var props = {
+  zoom: {
+    twoWay: true,
+    type: Number
+  },
+  pov: {
+    twoWay: true,
+    type: Object,
+    trackProperties: ['pitch', 'heading']
+  },
+  position: {
+    twoWay: true,
+    type: Object,
+    noBind: true
+  },
+  pano: {
+    twoWay: true,
+    type: String
+  },
+  motionTracking: {
+    twoWay: false,
+    type: Boolean
+  },
+  visible: {
+    twoWay: true,
+    type: Boolean,
+    default: true
+  },
+  options: {
+    twoWay: false,
+    type: Object,
+    default: function _default() {
+      return {};
+    }
+  }
+};
+
+var events = ['closeclick', 'status_changed'];
+
+exports.default = {
+  mixins: [_mountableMixin2.default],
+  props: (0, _mapElementFactory.mappedPropsToVueProps)(props),
+  replace: false, // necessary for css styles
+  methods: {
+    resize: function resize() {
+      if (this.$panoObject) {
+        google.maps.event.trigger(this.$panoObject, 'resize');
+      }
+    }
+  },
+
+  provide: function provide() {
+    var _this = this;
+
+    var promise = new Promise(function (resolve, reject) {
+      _this.$panoPromiseDeferred = { resolve: resolve, reject: reject };
+    });
+    return {
+      '$panoPromise': promise,
+      '$mapPromise': promise // so that we can use it with markers
+    };
+  },
+
+
+  computed: {
+    finalLat: function finalLat() {
+      return this.position && typeof this.position.lat === 'function' ? this.position.lat() : this.position.lat;
+    },
+    finalLng: function finalLng() {
+      return this.position && typeof this.position.lng === 'function' ? this.position.lng() : this.position.lng;
+    },
+    finalLatLng: function finalLatLng() {
+      return {
+        lat: this.finalLat,
+        lng: this.finalLng
+      };
+    }
+  },
+
+  watch: {
+    zoom: function zoom(_zoom) {
+      if (this.$panoObject) {
+        this.$panoObject.setZoom(_zoom);
+      }
+    }
+  },
+
+  mounted: function mounted() {
+    var _this2 = this;
+
+    return this.$gmapApiPromiseLazy().then(function () {
+      // getting the DOM element where to create the map
+      var element = _this2.$refs['vue-street-view-pano'];
+
+      // creating the map
+      var options = _extends({}, _this2.options, (0, _bindProps.getPropsValues)(_this2, props));
+      delete options.options;
+
+      _this2.$panoObject = new google.maps.StreetViewPanorama(element, options);
+
+      // binding properties (two and one way)
+      (0, _bindProps.bindProps)(_this2, _this2.$panoObject, props);
+      // binding events
+      (0, _bindEvents2.default)(_this2, _this2.$panoObject, events);
+
+      // manually trigger position
+      (0, _TwoWayBindingWrapper2.default)(function (increment, decrement, shouldUpdate) {
+        // Panos take a while to load
+        increment();
+
+        _this2.$panoObject.addListener('position_changed', function () {
+          if (shouldUpdate()) {
+            _this2.$emit('position_changed', _this2.$panoObject.getPosition());
+          }
+          decrement();
+        });
+
+        (0, _WatchPrimitiveProperties2.default)(_this2, ['finalLat', 'finalLng'], function updateCenter() {
+          increment();
+          _this2.$panoObject.setPosition(_this2.finalLatLng);
+        });
+      });
+
+      _this2.$panoPromiseDeferred.resolve(_this2.$panoObject);
+
+      return _this2.$panoPromise;
+    }).catch(function (error) {
+      throw error;
+    });
+  }
+};
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/main.js":
+/*!****************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/main.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.StreetViewPanorama = exports.MountableMixin = exports.Autocomplete = exports.MapElementFactory = exports.MapElementMixin = exports.PlaceInput = exports.Map = exports.InfoWindow = exports.Rectangle = exports.Cluster = exports.Circle = exports.Polygon = exports.Polyline = exports.Marker = exports.loadGmapApi = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+// Vue component imports
+
+
+exports.install = install;
+exports.gmapApi = gmapApi;
+
+var _lazyValue = __webpack_require__(/*! ./utils/lazyValue */ "./node_modules/vue2-google-maps/dist/utils/lazyValue.js");
+
+var _lazyValue2 = _interopRequireDefault(_lazyValue);
+
+var _manager = __webpack_require__(/*! ./manager */ "./node_modules/vue2-google-maps/dist/manager.js");
+
+var _marker = __webpack_require__(/*! ./components/marker */ "./node_modules/vue2-google-maps/dist/components/marker.js");
+
+var _marker2 = _interopRequireDefault(_marker);
+
+var _polyline = __webpack_require__(/*! ./components/polyline */ "./node_modules/vue2-google-maps/dist/components/polyline.js");
+
+var _polyline2 = _interopRequireDefault(_polyline);
+
+var _polygon = __webpack_require__(/*! ./components/polygon */ "./node_modules/vue2-google-maps/dist/components/polygon.js");
+
+var _polygon2 = _interopRequireDefault(_polygon);
+
+var _circle = __webpack_require__(/*! ./components/circle */ "./node_modules/vue2-google-maps/dist/components/circle.js");
+
+var _circle2 = _interopRequireDefault(_circle);
+
+var _rectangle = __webpack_require__(/*! ./components/rectangle */ "./node_modules/vue2-google-maps/dist/components/rectangle.js");
+
+var _rectangle2 = _interopRequireDefault(_rectangle);
+
+var _infoWindow = __webpack_require__(/*! ./components/infoWindow.vue */ "./node_modules/vue2-google-maps/dist/components/infoWindow.vue");
+
+var _infoWindow2 = _interopRequireDefault(_infoWindow);
+
+var _map = __webpack_require__(/*! ./components/map.vue */ "./node_modules/vue2-google-maps/dist/components/map.vue");
+
+var _map2 = _interopRequireDefault(_map);
+
+var _streetViewPanorama = __webpack_require__(/*! ./components/streetViewPanorama.vue */ "./node_modules/vue2-google-maps/dist/components/streetViewPanorama.vue");
+
+var _streetViewPanorama2 = _interopRequireDefault(_streetViewPanorama);
+
+var _placeInput = __webpack_require__(/*! ./components/placeInput.vue */ "./node_modules/vue2-google-maps/dist/components/placeInput.vue");
+
+var _placeInput2 = _interopRequireDefault(_placeInput);
+
+var _autocomplete = __webpack_require__(/*! ./components/autocomplete.vue */ "./node_modules/vue2-google-maps/dist/components/autocomplete.vue");
+
+var _autocomplete2 = _interopRequireDefault(_autocomplete);
+
+var _mapElementMixin = __webpack_require__(/*! ./components/mapElementMixin */ "./node_modules/vue2-google-maps/dist/components/mapElementMixin.js");
+
+var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
+
+var _mapElementFactory = __webpack_require__(/*! ./components/mapElementFactory */ "./node_modules/vue2-google-maps/dist/components/mapElementFactory.js");
+
+var _mapElementFactory2 = _interopRequireDefault(_mapElementFactory);
+
+var _mountableMixin = __webpack_require__(/*! ./utils/mountableMixin */ "./node_modules/vue2-google-maps/dist/utils/mountableMixin.js");
+
+var _mountableMixin2 = _interopRequireDefault(_mountableMixin);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// HACK: Cluster should be loaded conditionally
+// However in the web version, it's not possible to write
+// `import 'vue2-google-maps/src/components/cluster'`, so we need to
+// import it anyway (but we don't have to register it)
+// Therefore we use babel-plugin-transform-inline-environment-variables to
+// set BUILD_DEV to truthy / falsy
+var Cluster = undefined;
+
+var GmapApi = null;
+
+// export everything
+exports.loadGmapApi = _manager.loadGmapApi;
+exports.Marker = _marker2.default;
+exports.Polyline = _polyline2.default;
+exports.Polygon = _polygon2.default;
+exports.Circle = _circle2.default;
+exports.Cluster = Cluster;
+exports.Rectangle = _rectangle2.default;
+exports.InfoWindow = _infoWindow2.default;
+exports.Map = _map2.default;
+exports.PlaceInput = _placeInput2.default;
+exports.MapElementMixin = _mapElementMixin2.default;
+exports.MapElementFactory = _mapElementFactory2.default;
+exports.Autocomplete = _autocomplete2.default;
+exports.MountableMixin = _mountableMixin2.default;
+exports.StreetViewPanorama = _streetViewPanorama2.default;
+function install(Vue, options) {
+  // Set defaults
+  options = _extends({
+    installComponents: true,
+    autobindAllEvents: false
+  }, options);
+
+  // Update the global `GmapApi`. This will allow
+  // components to use the `google` global reactively
+  // via:
+  //   import {gmapApi} from 'vue2-google-maps'
+  //   export default {  computed: { google: gmapApi }  }
+  GmapApi = new Vue({ data: { gmapApi: null } });
+
+  var defaultResizeBus = new Vue();
+
+  // Use a lazy to only load the API when
+  // a VGM component is loaded
+  var gmapApiPromiseLazy = makeGmapApiPromiseLazy(options);
+
+  Vue.mixin({
+    created: function created() {
+      this.$gmapDefaultResizeBus = defaultResizeBus;
+      this.$gmapOptions = options;
+      this.$gmapApiPromiseLazy = gmapApiPromiseLazy;
+    }
+  });
+  Vue.$gmapDefaultResizeBus = defaultResizeBus;
+  Vue.$gmapApiPromiseLazy = gmapApiPromiseLazy;
+
+  if (options.installComponents) {
+    Vue.component('GmapMap', _map2.default);
+    Vue.component('GmapMarker', _marker2.default);
+    Vue.component('GmapInfoWindow', _infoWindow2.default);
+    Vue.component('GmapPolyline', _polyline2.default);
+    Vue.component('GmapPolygon', _polygon2.default);
+    Vue.component('GmapCircle', _circle2.default);
+    Vue.component('GmapRectangle', _rectangle2.default);
+    Vue.component('GmapAutocomplete', _autocomplete2.default);
+    Vue.component('GmapPlaceInput', _placeInput2.default);
+    Vue.component('GmapStreetViewPanorama', _streetViewPanorama2.default);
+  }
+}
+
+function makeGmapApiPromiseLazy(options) {
+  // Things to do once the API is loaded
+  function onApiLoaded() {
+    GmapApi.gmapApi = {};
+    return window.google;
+  }
+
+  if (options.load) {
+    // If library should load the API
+    return (0, _lazyValue2.default)(function () {
+      // Load the
+      // This will only be evaluated once
+      if (typeof window === 'undefined') {
+        // server side -- never resolve this promise
+        return new Promise(function () {}).then(onApiLoaded);
+      } else {
+        return new Promise(function (resolve, reject) {
+          try {
+            window['vueGoogleMapsInit'] = resolve;
+            (0, _manager.loadGmapApi)(options.load, options.loadCn);
+          } catch (err) {
+            reject(err);
+          }
+        }).then(onApiLoaded);
+      }
+    });
+  } else {
+    // If library should not handle API, provide
+    // end-users with the global `vueGoogleMapsInit: () => undefined`
+    // when the Google Maps API has been loaded
+    var promise = new Promise(function (resolve) {
+      if (typeof window === 'undefined') {
+        // Do nothing if run from server-side
+        return;
+      }
+      window['vueGoogleMapsInit'] = resolve;
+    }).then(onApiLoaded);
+
+    return (0, _lazyValue2.default)(function () {
+      return promise;
+    });
+  }
+}
+
+function gmapApi() {
+  return GmapApi.gmapApi && window.google;
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/manager.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/manager.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var isApiSetUp = false;
+
+/**
+ * @param apiKey    API Key, or object with the URL parameters. For example
+ *                  to use Google Maps Premium API, pass
+ *                    `{ client: <YOUR-CLIENT-ID> }`.
+ *                  You may pass the libraries and/or version (as `v`) parameter into
+ *                  this parameter and skip the next two parameters
+ * @param version   Google Maps version
+ * @param libraries Libraries to load (@see
+ *                  https://developers.google.com/maps/documentation/javascript/libraries)
+ * @param loadCn    Boolean. If set to true, the map will be loaded from google maps China
+ *                  (@see https://developers.google.com/maps/documentation/javascript/basics#GoogleMapsChina)
+ *
+ * Example:
+ * ```
+ *      import {load} from 'vue-google-maps'
+ *
+ *      load(<YOUR-API-KEY>)
+ *
+ *      load({
+ *              key: <YOUR-API-KEY>,
+ *      })
+ *
+ *      load({
+ *              client: <YOUR-CLIENT-ID>,
+ *              channel: <YOUR CHANNEL>
+ *      })
+ * ```
+ */
+var loadGmapApi = exports.loadGmapApi = function (options, loadCn) {
+  if (typeof document === 'undefined') {
+    // Do nothing if run from server-side
+    return;
+  }
+  if (!isApiSetUp) {
+    isApiSetUp = true;
+
+    var googleMapScript = document.createElement('SCRIPT');
+
+    // Allow options to be an object.
+    // This is to support more esoteric means of loading Google Maps,
+    // such as Google for business
+    // https://developers.google.com/maps/documentation/javascript/get-api-key#premium-auth
+    if ((typeof options === 'undefined' ? 'undefined' : _typeof(options)) !== 'object') {
+      throw new Error('options should  be an object');
+    }
+
+    // libraries
+    if (Array.prototype.isPrototypeOf(options.libraries)) {
+      options.libraries = options.libraries.join(',');
+    }
+    options['callback'] = 'vueGoogleMapsInit';
+
+    var baseUrl = 'https://maps.googleapis.com/';
+
+    if (typeof loadCn === 'boolean' && loadCn === true) {
+      baseUrl = 'https://maps.google.cn/';
+    }
+
+    var url = baseUrl + 'maps/api/js?' + Object.keys(options).map(function (key) {
+      return encodeURIComponent(key) + '=' + encodeURIComponent(options[key]);
+    }).join('&');
+
+    googleMapScript.setAttribute('src', url);
+    googleMapScript.setAttribute('async', '');
+    googleMapScript.setAttribute('defer', '');
+    document.head.appendChild(googleMapScript);
+  } else {
+    throw new Error('You already started the loading of google maps');
+  }
+};
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/utils/TwoWayBindingWrapper.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/utils/TwoWayBindingWrapper.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = TwoWayBindingWrapper;
+/**
+ * When you have two-way bindings, but the actual bound value will not equal
+ * the value you initially passed in, then to avoid an infinite loop you
+ * need to increment a counter every time you pass in a value, decrement the
+ * same counter every time the bound value changed, but only bubble up
+ * the event when the counter is zero.
+ *
+Example:
+
+Let's say DrawingRecognitionCanvas is a deep-learning backed canvas
+that, when given the name of an object (e.g. 'dog'), draws a dog.
+But whenever the drawing on it changes, it also sends back its interpretation
+of the image by way of the @newObjectRecognized event.
+
+<input
+  type="text"
+  placeholder="an object, e.g. Dog, Cat, Frog"
+  v-model="identifiedObject" />
+<DrawingRecognitionCanvas
+  :object="identifiedObject"
+  @newObjectRecognized="identifiedObject = $event"
+  />
+
+new TwoWayBindingWrapper((increment, decrement, shouldUpdate) => {
+  this.$watch('identifiedObject', () => {
+    // new object passed in
+    increment()
+  })
+  this.$deepLearningBackend.on('drawingChanged', () => {
+    recognizeObject(this.$deepLearningBackend)
+      .then((object) => {
+        decrement()
+        if (shouldUpdate()) {
+          this.$emit('newObjectRecognized', object.name)
+        }
+      })
+  })
+})
+ */
+function TwoWayBindingWrapper(fn) {
+  var counter = 0;
+
+  fn(function () {
+    counter += 1;
+  }, function () {
+    counter = Math.max(0, counter - 1);
+  }, function () {
+    return counter === 0;
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/utils/WatchPrimitiveProperties.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/utils/WatchPrimitiveProperties.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = WatchPrimitiveProperties;
+/**
+ * Watch the individual properties of a PoD object, instead of the object
+ * per se. This is different from a deep watch where both the reference
+ * and the individual values are watched.
+ *
+ * In effect, it throttles the multiple $watch to execute at most once per tick.
+ */
+function WatchPrimitiveProperties(vueInst, propertiesToTrack, handler) {
+  var immediate = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+
+  var isHandled = false;
+
+  function requestHandle() {
+    if (!isHandled) {
+      isHandled = true;
+      vueInst.$nextTick(function () {
+        isHandled = false;
+        handler();
+      });
+    }
+  }
+
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = propertiesToTrack[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var prop = _step.value;
+
+      vueInst.$watch(prop, requestHandle, { immediate: immediate });
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/utils/bindEvents.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/utils/bindEvents.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function (vueInst, googleMapsInst, events) {
+  var _loop = function (eventName) {
+    if (vueInst.$gmapOptions.autobindAllEvents || vueInst.$listeners[eventName]) {
+      googleMapsInst.addListener(eventName, function (ev) {
+        vueInst.$emit(eventName, ev);
+      });
+    }
+  };
+
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = events[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var eventName = _step.value;
+
+      _loop(eventName);
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+};
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/utils/bindProps.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/utils/bindProps.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getPropsValues = getPropsValues;
+exports.bindProps = bindProps;
+
+var _WatchPrimitiveProperties = __webpack_require__(/*! ../utils/WatchPrimitiveProperties */ "./node_modules/vue2-google-maps/dist/utils/WatchPrimitiveProperties.js");
+
+var _WatchPrimitiveProperties2 = _interopRequireDefault(_WatchPrimitiveProperties);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function getPropsValues(vueInst, props) {
+  return Object.keys(props).reduce(function (acc, prop) {
+    if (vueInst[prop] !== undefined) {
+      acc[prop] = vueInst[prop];
+    }
+    return acc;
+  }, {});
+}
+
+/**
+  * Binds the properties defined in props to the google maps instance.
+  * If the prop is an Object type, and we wish to track the properties
+  * of the object (e.g. the lat and lng of a LatLng), then we do a deep
+  * watch. For deep watch, we also prevent the _changed event from being
+  * emitted if the data source was external.
+  */
+function bindProps(vueInst, googleMapsInst, props) {
+  var _loop = function (attribute) {
+    var _props$attribute = props[attribute],
+        twoWay = _props$attribute.twoWay,
+        type = _props$attribute.type,
+        trackProperties = _props$attribute.trackProperties,
+        noBind = _props$attribute.noBind;
+
+
+    if (noBind) return 'continue';
+
+    var setMethodName = 'set' + capitalizeFirstLetter(attribute);
+    var getMethodName = 'get' + capitalizeFirstLetter(attribute);
+    var eventName = attribute.toLowerCase() + '_changed';
+    var initialValue = vueInst[attribute];
+
+    if (typeof googleMapsInst[setMethodName] === 'undefined') {
+      throw new Error(setMethodName + ' is not a method of (the Maps object corresponding to) ' + vueInst.$options._componentTag);
+    }
+
+    // We need to avoid an endless
+    // propChanged -> event emitted -> propChanged -> event emitted loop
+    // although this may really be the user's responsibility
+    if (type !== Object || !trackProperties) {
+      // Track the object deeply
+      vueInst.$watch(attribute, function () {
+        var attributeValue = vueInst[attribute];
+
+        googleMapsInst[setMethodName](attributeValue);
+      }, {
+        immediate: typeof initialValue !== 'undefined',
+        deep: type === Object
+      });
+    } else {
+      (0, _WatchPrimitiveProperties2.default)(vueInst, trackProperties.map(function (prop) {
+        return attribute + '.' + prop;
+      }), function () {
+        googleMapsInst[setMethodName](vueInst[attribute]);
+      }, vueInst[attribute] !== undefined);
+    }
+
+    if (twoWay && (vueInst.$gmapOptions.autobindAllEvents || vueInst.$listeners[eventName])) {
+      googleMapsInst.addListener(eventName, function () {
+        // eslint-disable-line no-unused-vars
+        vueInst.$emit(eventName, googleMapsInst[getMethodName]());
+      });
+    }
+  };
+
+  for (var attribute in props) {
+    var _ret = _loop(attribute);
+
+    if (_ret === 'continue') continue;
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/utils/lazyValue.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/utils/lazyValue.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+// This piece of code was orignally written by sindresorhus and can be seen here
+// https://github.com/sindresorhus/lazy-value/blob/master/index.js
+
+exports.default = function (fn) {
+  var called = false;
+  var ret = void 0;
+
+  return function () {
+    if (!called) {
+      called = true;
+      ret = fn();
+    }
+
+    return ret;
+  };
+};
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/utils/mountableMixin.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/utils/mountableMixin.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/*
+Mixin for objects that are mounted by Google Maps
+Javascript API.
+
+These are objects that are sensitive to element resize
+operations so it exposes a property which accepts a bus
+
+*/
+
+exports.default = {
+  props: ['resizeBus'],
+
+  data: function data() {
+    return {
+      _actualResizeBus: null
+    };
+  },
+  created: function created() {
+    if (typeof this.resizeBus === 'undefined') {
+      this.$data._actualResizeBus = this.$gmapDefaultResizeBus;
+    } else {
+      this.$data._actualResizeBus = this.resizeBus;
+    }
+  },
+
+
+  methods: {
+    _resizeCallback: function _resizeCallback() {
+      this.resize();
+    },
+    _delayedResizeCallback: function _delayedResizeCallback() {
+      var _this = this;
+
+      this.$nextTick(function () {
+        return _this._resizeCallback();
+      });
+    }
+  },
+
+  watch: {
+    resizeBus: function resizeBus(newVal) {
+      // eslint-disable-line no-unused-vars
+      this.$data._actualResizeBus = newVal;
+    },
+    '$data._actualResizeBus': function $data_actualResizeBus(newVal, oldVal) {
+      if (oldVal) {
+        oldVal.$off('resize', this._delayedResizeCallback);
+      }
+      if (newVal) {
+        newVal.$on('resize', this._delayedResizeCallback);
+      }
+    }
+  },
+
+  destroyed: function destroyed() {
+    if (this.$data._actualResizeBus) {
+      this.$data._actualResizeBus.$off('resize', this._delayedResizeCallback);
+    }
+  }
+};
+
+/***/ }),
+
+/***/ "./node_modules/vue2-google-maps/dist/utils/simulateArrowDown.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/vue2-google-maps/dist/utils/simulateArrowDown.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+// This piece of code was orignally written by amirnissim and can be seen here
+// http://stackoverflow.com/a/11703018/2694653
+// This has been ported to Vanilla.js by GuillaumeLeclerc
+exports.default = function (input) {
+  var _addEventListener = input.addEventListener ? input.addEventListener : input.attachEvent;
+
+  function addEventListenerWrapper(type, listener) {
+    // Simulate a 'down arrow' keypress on hitting 'return' when no pac suggestion is selected,
+    // and then trigger the original listener.
+    if (type === 'keydown') {
+      var origListener = listener;
+      listener = function (event) {
+        var suggestionSelected = document.getElementsByClassName('pac-item-selected').length > 0;
+        if (event.which === 13 && !suggestionSelected) {
+          var simulatedEvent = document.createEvent('Event');
+          simulatedEvent.keyCode = 40;
+          simulatedEvent.which = 40;
+          origListener.apply(input, [simulatedEvent]);
+        }
+        origListener.apply(input, [event]);
+      };
+    }
+    _addEventListener.apply(input, [type, listener]);
+  }
+
+  input.addEventListener = addEventListenerWrapper;
+  input.attachEvent = addEventListenerWrapper;
+};
+
+/***/ }),
+
 /***/ "./node_modules/webpack/buildin/global.js":
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -56739,9 +61037,13 @@ module.exports = function(module) {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue2_google_maps__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue2-google-maps */ "./node_modules/vue2-google-maps/dist/main.js");
+/* harmony import */ var vue2_google_maps__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue2_google_maps__WEBPACK_IMPORTED_MODULE_0__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -56762,7 +61064,31 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.component('mapbox-component', __webpack_require__(/*! ./components/MapboxComponent.vue */ "./resources/js/components/MapboxComponent.vue")["default"]);
+Vue.component('gmaps-component', __webpack_require__(/*! ./components/GmapsComponent.vue */ "./resources/js/components/GmapsComponent.vue")["default"]);
 Vue.component('kortet-component', __webpack_require__(/*! ./components/KortetComponent.vue */ "./resources/js/components/KortetComponent.vue")["default"]);
+
+Vue.use(vue2_google_maps__WEBPACK_IMPORTED_MODULE_0__, {
+  load: {
+    key: 'AIzaSyArUxUuGpJSdf0-zd2F8WORQZT7LxAmybQ' //libraries: 'places', // This is required if you use the Autocomplete plugin
+    // OR: libraries: 'places,drawing'
+    // OR: libraries: 'places,drawing,visualization'
+    // (as you require)
+    //// If you want to set the version, you can do so:
+    // v: '3.26',
+
+  },
+  //// If you intend to programmatically custom event listener code
+  //// (e.g. `this.$refs.gmap.$on('zoom_changed', someFunc)`)
+  //// instead of going through Vue templates (e.g. `<GmapMap @zoom_changed="someFunc">`)
+  //// you might need to turn this on.
+  // autobindAllEvents: false,
+  //// If you want to manually install components, e.g.
+  //// import {GmapMarker} from 'vue2-google-maps/src/components/marker'
+  //// Vue.component('GmapMarker', GmapMarker)
+  //// then set installComponents to 'false'.
+  //// If you want to automatically install all the components this property must be set to 'true':
+  installComponents: true
+});
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -56884,6 +61210,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/GmapsComponent.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/components/GmapsComponent.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _GmapsComponent_vue_vue_type_template_id_69e092ca___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GmapsComponent.vue?vue&type=template&id=69e092ca& */ "./resources/js/components/GmapsComponent.vue?vue&type=template&id=69e092ca&");
+/* harmony import */ var _GmapsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GmapsComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/GmapsComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _GmapsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GmapsComponent_vue_vue_type_template_id_69e092ca___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GmapsComponent_vue_vue_type_template_id_69e092ca___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/GmapsComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/GmapsComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/GmapsComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GmapsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./GmapsComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GmapsComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GmapsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/GmapsComponent.vue?vue&type=template&id=69e092ca&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/GmapsComponent.vue?vue&type=template&id=69e092ca& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GmapsComponent_vue_vue_type_template_id_69e092ca___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./GmapsComponent.vue?vue&type=template&id=69e092ca& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/GmapsComponent.vue?vue&type=template&id=69e092ca&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GmapsComponent_vue_vue_type_template_id_69e092ca___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GmapsComponent_vue_vue_type_template_id_69e092ca___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

@@ -60,25 +60,31 @@ body,
 #kortet {
     overflow: hidden;
     position: relative;
+    display: grid;
+    grid-template-columns: auto;
+    height: calc(100vh - #{$navbar-height});
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
 
     #map-parent {
         background-color: #c7def8;
-        height: calc(100vh - #{$navbar-height});
+        height: 100%;
     }
 
     #box {
         background-color: $body-bg;
-        width: 50vw;
-        height: calc(100vh - #{$navbar-height});
-        position: absolute;
-        right: -50vw;
-        bottom: 0;
+        // width: 50vw;
+        // height: calc(100vh - #{$navbar-height});
+        // position: absolute;
+        // right: -50vw;
+        // bottom: 0;
         transition: 1s;
         overflow: auto;
 
-        &.show {
-            right: 0;
-        }
+        // &.show {
+        //     right: 0;
+        // }
 
         h4 {
             font-size: 1.25rem;
@@ -152,6 +158,13 @@ body,
         padding: 1rem;
     }
 }
+@media (min-width: 768px) {
+    #kortet {
+        &.showBox {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
 
 @media (max-width: 767px) {
     .navbar {
@@ -161,15 +174,15 @@ body,
         width: 100%;
     }
 
-    #box {
-        width: 100vw !important;
-        height: 40vh !important;
-        position: absolute !important;
-        bottom: -40vh !important;
-        right: 0 !important;
 
-        &.show {
-            bottom: 0 !important;
+    #kortet {
+        overflow: hidden;
+        position: relative;
+        display: grid;
+        grid-template-columns: auto;
+
+        &.showBox {
+            grid-template-rows: 1fr 1fr;
         }
     }
 }

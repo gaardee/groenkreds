@@ -28,7 +28,9 @@ class Kreds extends Model
     ];
 
     protected $casts = [
-        'billeder' => 'array'
+        'billeder' => 'array',
+        'latitude' => 'float',
+        'longitude' => 'float',
     ];
 
     protected $with = ['aktiviteter'];

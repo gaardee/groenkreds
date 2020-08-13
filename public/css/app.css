@@ -11415,27 +11415,23 @@ body,
 #kortet {
   overflow: hidden;
   position: relative;
+  display: grid;
+  grid-template-columns: auto;
+  height: calc(100vh - 100px);
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
 }
 
 #kortet #map-parent {
   background-color: #c7def8;
-  height: calc(100vh - 100px);
+  height: 100%;
 }
 
 #kortet #box {
   background-color: #f6f6f6;
-  width: 50vw;
-  height: calc(100vh - 100px);
-  position: absolute;
-  right: -50vw;
-  bottom: 0;
   -webkit-transition: 1s;
   transition: 1s;
   overflow: auto;
-}
-
-#kortet #box.show {
-  right: 0;
 }
 
 #kortet #box h4 {
@@ -11516,6 +11512,12 @@ body,
   }
 }
 
+@media (min-width: 768px) {
+  #kortet.showBox {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 767px) {
   .navbar {
     padding: 0 2rem;
@@ -11525,16 +11527,15 @@ body,
     width: 100%;
   }
 
-  #box {
-    width: 100vw !important;
-    height: 40vh !important;
-    position: absolute !important;
-    bottom: -40vh !important;
-    right: 0 !important;
+  #kortet {
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto;
   }
 
-  #box.show {
-    bottom: 0 !important;
+  #kortet.showBox {
+    grid-template-rows: 1fr 1fr;
   }
 }
 
