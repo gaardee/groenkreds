@@ -65,7 +65,7 @@
             <h3>Aktivitet</h3>
             <div id="aktiviteter-indhold">{!! $aktivitet->indhold ?? '' !!}</div>
         </div>
-        <div class="p-4">
+        <div class="p-4" id="materialer" style="display:{{ $aktivitet->materialer ? 'block' : 'none' }}">
             <h3>Materialer</h3>
             <div id="materialer-indhold">{!! $aktivitet->materialer ?? '' !!}</div>
         </div>
@@ -109,7 +109,13 @@ $( document ).ready(function() {
         );
         modal.find('.modal-title').text(title);
         modal.removeClass('type-1 type-2 type-3').addClass(type);
-        modal.find('.modal-body #materialer-indhold').html(materialer);
+        console.log(materialer);
+        if(materialer){
+            modal.find('.modal-body #materialer').show();
+            modal.find('.modal-body #materialer-indhold').html(materialer);
+        } else {
+            modal.find('.modal-body #materialer').hide();
+        }
         modal.find('.modal-body #aktiviteter-indhold').html(aktiviteter);
         modal.find(".modal-body .image-holder img").attr("src",image);
         modal.find(".modal-header .icon-badge i").removeClass();
