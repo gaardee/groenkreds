@@ -1956,8 +1956,8 @@ var markerSize = 40;
       markerOptions: {
         url: "/images/Marker.svg",
         size: {
-          width: markerSize * 2,
-          height: markerSize * 2,
+          width: markerSize,
+          height: markerSize,
           f: "px",
           b: "px"
         },
@@ -1976,8 +1976,8 @@ var markerSize = 40;
       markerSelectedOptions: {
         url: "/images/MarkerSelected.svg",
         size: {
-          width: markerSize * 2,
-          height: markerSize * 2,
+          width: markerSize,
+          height: markerSize,
           f: "px",
           b: "px"
         },

@@ -43,24 +43,14 @@ export default {
       map: null,
       markerOptions: {
         url: "/images/Marker.svg",
-        size: {
-          width: markerSize * 2,
-          height: markerSize * 2,
-          f: "px",
-          b: "px",
-        },
+        size: { width: markerSize, height: markerSize, f: "px", b: "px" },
         scaledSize: { width: markerSize, height: markerSize, f: "px", b: "px" },
         anchor: { x: markerSize / 2, y: markerSize },
         // origin: { x: 0, y: 0 },
       },
       markerSelectedOptions: {
         url: "/images/MarkerSelected.svg",
-        size: {
-          width: markerSize * 2,
-          height: markerSize * 2,
-          f: "px",
-          b: "px",
-        },
+        size: { width: markerSize, height: markerSize, f: "px", b: "px" },
         scaledSize: { width: markerSize, height: markerSize, f: "px", b: "px" },
         anchor: { x: markerSize / 2, y: markerSize },
         // origin: { x: 0, y: 0 },
