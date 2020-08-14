@@ -65,7 +65,7 @@
             <h3>Aktivitet</h3>
             <div id="aktiviteter-indhold">{!! $aktivitet->indhold ?? '' !!}</div>
         </div>
-        <div class="p-4" id="materialer" style="display:{{ $aktivitet->materialer ? 'block' : 'none' }}">
+        <div class="p-4" id="materialer" style="display:{{ $aktivitet ? $aktivitet->materialer ? 'block' : 'none' : 'none' }}">
             <h3>Materialer</h3>
             <div id="materialer-indhold">{!! $aktivitet->materialer ?? '' !!}</div>
         </div>
