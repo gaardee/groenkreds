@@ -1899,8 +1899,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_string_iterator__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_iterator__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var core_js_modules_web_dom_collections_iterator__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
 /* harmony import */ var core_js_modules_web_dom_collections_iterator__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_collections_iterator__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var vue2_google_maps__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vue2-google-maps */ "./node_modules/vue2-google-maps/dist/main.js");
-/* harmony import */ var vue2_google_maps__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(vue2_google_maps__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var vue2_google_maps__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vue2-google-maps */ "./node_modules/vue2-google-maps/dist/main.js");
+/* harmony import */ var vue2_google_maps__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(vue2_google_maps__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
@@ -2033,7 +2033,7 @@ var markerSize = 40;
     };
   },
   computed: {
-    google: vue2_google_maps__WEBPACK_IMPORTED_MODULE_8__["gmapApi"]
+    google: vue2_google_maps__WEBPACK_IMPORTED_MODULE_9__["gmapApi"]
   },
   mounted: function mounted() {
     var _this = this;
@@ -61044,8 +61044,8 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue2_google_maps__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue2-google-maps */ "./node_modules/vue2-google-maps/dist/main.js");
-/* harmony import */ var vue2_google_maps__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue2_google_maps__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue2_google_maps__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue2-google-maps */ "./node_modules/vue2-google-maps/dist/main.js");
+/* harmony import */ var vue2_google_maps__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue2_google_maps__WEBPACK_IMPORTED_MODULE_1__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -61069,7 +61069,7 @@ Vue.component('mapbox-component', __webpack_require__(/*! ./components/MapboxCom
 Vue.component('gmaps-component', __webpack_require__(/*! ./components/GmapsComponent.vue */ "./resources/js/components/GmapsComponent.vue")["default"]);
 Vue.component('kortet-component', __webpack_require__(/*! ./components/KortetComponent.vue */ "./resources/js/components/KortetComponent.vue")["default"]);
 
-Vue.use(vue2_google_maps__WEBPACK_IMPORTED_MODULE_0__, {
+Vue.use(vue2_google_maps__WEBPACK_IMPORTED_MODULE_1__, {
   load: {
     key: 'AIzaSyArUxUuGpJSdf0-zd2F8WORQZT7LxAmybQ' //libraries: 'places', // This is required if you use the Autocomplete plugin
     // OR: libraries: 'places,drawing'

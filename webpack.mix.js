@@ -28,4 +28,5 @@ mix.js("resources/js/app.js", "public/js")
         enabled: true,
         useBuiltIns: "usage",
         targets: false
-    });
+    })
+    .version();
