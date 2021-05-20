@@ -19,5 +19,4 @@ Route::get('/kortet/{kreds}', 'HomeController@kreds')->name('kortet.kreds');
 Route::get('/kreds/{key}', 'KredsController@edit')->name('kreds.edit');
 Route::put('/kreds/{key}', 'KredsController@update')->name('kreds.update');
 Route::get('/aktiviteter/{aktivitet?}', 'HomeController@aktiviteter')->name('aktiviteter');
-Route::get('/om', 'HomeController@om')->name('om');
-Route::get('/bliv', 'HomeController@bliv')->name('bliv');
+Route::get('/{page}', 'HomeController@page')->name('page');

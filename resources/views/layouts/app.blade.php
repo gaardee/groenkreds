@@ -30,7 +30,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark shadow-sm">
-            <div class="container" id="navbar-container">
+            <div class="container-fluid px-5" id="navbar-container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="{{ url('/images/globus_logo_hvid.svg') }}">
                     {{ mb_strtoupper(config('app.name', 'Laravel')) }}
@@ -48,12 +48,11 @@
                         <li class="nav-item {{ (request()->is('aktiviteter')) ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('aktiviteter') }}">Aktiviteter</a>
                         </li>
-                        <li class="nav-item {{ (request()->is('om')) ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('om') }}">Om GRØN KREDS</a>
-                        </li>
-                        <li class="nav-item {{ (request()->is('bliv')) ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('bliv') }}">Bliv GRØN KREDS</a>
-                        </li>
+                        @foreach($pages AS $page)
+                            <li class="nav-item {{ (request()->is($page->slug)) ? 'active' : '' }}">
+                                <a class="nav-link" href="{{ route('page', [$page->slug]) }}">{{ $page->navn }}</a>
+                            </li>
+                        @endforeach
                         <li class="d-flex align-items-center justify-content-between d-md-none" style="width: 100%; padding: 0px 4rem;">
                             <div class="d-flex align-items-center">
                                 <div style="font-size:40pt; margin-right: 5px;">{{ $kredse_count }}</div>

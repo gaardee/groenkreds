@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Aktivitet;
 use App\Kreds;
+use App\Page;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -33,13 +34,8 @@ class HomeController extends Controller
         return view('aktiviteter', compact('aktiviteter', 'aktivitet', 'slug'));
     }
 
-    public function om()
+    public function page(Page $page)
     {
-        return view('om');
-    }
-
-    public function bliv()
-    {
-        return view('bliv');
+        return view('page', compact('page'));
     }
 }
