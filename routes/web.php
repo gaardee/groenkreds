@@ -1,22 +1,18 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KredsController;
+use Illuminate\Support\Facades\Route;
 
-Auth::routes();
+Route::get('/', [HomeController::class, 'kortet']);
+Route::get('/kortet', [HomeController::class, 'kortet'])->name('kortet');
+Route::get('/kortet/{kreds}', [HomeController::class, 'kreds'])->name('kortet.kreds');
+Route::get('/kreds/{key}', [KredsController::class, 'edit'])->name('kreds.edit');
+Route::put('/kreds/{key}', [KredsController::class, 'update'])->name('kreds.update');
+Route::get('/aktiviteter/{aktivitet?}', [HomeController::class, 'aktiviteter'])->name('aktiviteter');
 
-Route::get('/', 'HomeController@kortet');
-Route::get('/kortet', 'HomeController@kortet')->name('kortet');
-Route::get('/kortet/{kreds}', 'HomeController@kreds')->name('kortet.kreds');
-Route::get('/kreds/{key}', 'KredsController@edit')->name('kreds.edit');
-Route::put('/kreds/{key}', 'KredsController@update')->name('kreds.update');
-Route::get('/aktiviteter/{aktivitet?}', 'HomeController@aktiviteter')->name('aktiviteter');
-Route::get('/{page}', 'HomeController@page')->name('page')->where('page', '(?!nova).*');
+// The old Nova admin lived at /nova.
+Route::redirect('/nova/{any?}', '/admin')->where('any', '.*');
+
+Route::get('/{page}', [HomeController::class, 'page'])->name('page')
+    ->where('page', '(?!(admin|livewire|filament|storage|up)(/|$)).*');

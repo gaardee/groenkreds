@@ -2,43 +2,35 @@
 
 namespace App\Providers;
 
-use App\Kreds;
-use App\Observers\PageObserver;
-use App\Page;
+use App\Models\Kreds;
+use App\Models\Page;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
+    public function register(): void
     {
         //
     }
 
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
+    public function boot(): void
     {
-        Page::observe(PageObserver::class);
-
         if ($this->app->environment('production')) {
-            \URL::forceScheme('https');
+            URL::forceScheme('https');
         }
 
         Schema::defaultStringLength(191);
-        View::share('kredse_count', Kreds::isActive()->count());
-        View::share('pages', Cache::rememberForever('pages', function () {
-            return Page::all();
-        }));
+
+        // Resolved lazily so artisan commands don't need a database connection.
+        View::composer('layouts.app', function ($view) {
+            $view->with('kredse_count', Kreds::isActive()->count());
+            // Cached as plain arrays: Laravel refuses to unserialize objects from the cache.
+            $pages = Cache::rememberForever('pages', fn () => Page::all(['navn', 'slug'])->toArray());
+            $view->with('pages', array_map(fn (array $page) => (object) $page, $pages));
+        });
     }
 }

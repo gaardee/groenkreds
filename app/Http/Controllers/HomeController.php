@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Aktivitet;
-use App\Kreds;
-use App\Page;
-use Illuminate\Http\Request;
+use App\Models\Aktivitet;
+use App\Models\Kreds;
+use App\Models\Page;
 
 class HomeController extends Controller
 {
@@ -21,7 +20,7 @@ class HomeController extends Controller
         return view('kortet', compact('kredse', 'kreds'));
     }
 
-    public function aktiviteter(Aktivitet $aktivitet = null)
+    public function aktiviteter(?Aktivitet $aktivitet = null)
     {
         $all = Aktivitet::all()->groupBy('type');
         $aktiviteter = [];
