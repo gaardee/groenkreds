@@ -14,15 +14,15 @@
         @forelse($aktiviteter AS $a)
         @if($a)
     <div class="aktivitet type-{{ $a->type }}"
-            data-toggle="modal"
-            data-target="#exampleModal"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
             data-type="type-{{ $a->type }}"
             data-slug="{{ $a->slug }}"
             data-title="{{ $a->title }}"
             data-aktiviteter="{{ $a->indhold }}"
             data-ikon="{{ $a->ikon }}"
             data-image="{{ $a->path != '' ? url('storage/' . $a->path) : url('images/aktivitet_placeholder.png') }}"
-            data-materialer="{!! $a->materialer !!}"
+            data-materialer="{{ $a->materialer }}"
         >
             <div class="top d-flex align-items-center">
                 <div class="icon-badge rounded-circle">
@@ -53,9 +53,7 @@
             <i class="{{ $aktivitet->ikon ?? '' }}"></i>
         </div>
         <h5 class="modal-title" id="exampleModalLabel">{{ $aktivitet->title ?? '' }}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Luk"></button>
       </div>
       <div class="modal-body">
         <div class="image-holder">
@@ -77,63 +75,42 @@
 
 @section('scripts')
 <script>
-$( document ).ready(function() {
-    @if($aktivitet)
-    $('#exampleModal').modal('show');
-    @endif
-    // $(document).on("click", ".aktivitet.closed", function(){
-    //     $(this).removeClass('closed').addClass('open');
-    //     $("<div id='placeholder'></div>").insertAfter($(this));
-    //     $(window).scrollTop(0);
-    //     window.history.replaceState(
-    //       "aktivitet",
-    //       "Aktivitet - " + $(this).data('slug'),
-    //       "/aktiviteter/" + $(this).data('slug')
-    //     );
-    //     $("#modalShadow").show();
-    // });
-    $('#exampleModal').on('show.bs.modal', function (event) {
-        var trigger = $(event.relatedTarget);
-        var title = trigger.data('title');
-        var type = trigger.data('type');
-        var ikon = trigger.data('ikon');
-        var image = trigger.data('image');
-        var slug = trigger.data('slug');
-        var materialer = trigger.data('materialer');
-        var aktiviteter = trigger.data('aktiviteter');
-        var modal = $(this);
-        window.history.replaceState(
-          "aktivitet",
-          "Aktivitet - " + slug,
-          "/aktiviteter/" + slug
-        );
-        modal.find('.modal-title').text(title);
-        modal.removeClass('type-1 type-2 type-3').addClass(type);
-        console.log(materialer);
-        if(materialer){
-            modal.find('.modal-body #materialer').show();
-            modal.find('.modal-body #materialer-indhold').html(materialer);
-        } else {
-            modal.find('.modal-body #materialer').hide();
+document.addEventListener('DOMContentLoaded', function () {
+    var modalEl = document.getElementById('exampleModal');
+    var modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+
+    modalEl.addEventListener('show.bs.modal', function (event) {
+        var trigger = event.relatedTarget;
+        if (!trigger) {
+            return; // Opened on page load with server-rendered content.
         }
-        modal.find('.modal-body #aktiviteter-indhold').html(aktiviteter);
-        modal.find(".modal-body .image-holder img").attr("src",image);
-        modal.find(".modal-header .icon-badge i").removeClass();
-        modal.find(".modal-header .icon-badge i").addClass(ikon);
+        var data = trigger.dataset;
+
+        window.history.replaceState('aktivitet', 'Aktivitet - ' + data.slug, '/aktiviteter/' + data.slug);
+
+        modalEl.querySelector('.modal-title').textContent = data.title;
+        modalEl.classList.remove('type-1', 'type-2', 'type-3');
+        modalEl.classList.add(data.type);
+
+        var materialer = modalEl.querySelector('#materialer');
+        if (data.materialer) {
+            materialer.style.display = 'block';
+            modalEl.querySelector('#materialer-indhold').innerHTML = data.materialer;
+        } else {
+            materialer.style.display = 'none';
+        }
+        modalEl.querySelector('#aktiviteter-indhold').innerHTML = data.aktiviteter;
+        modalEl.querySelector('.modal-body .image-holder img').src = data.image;
+        modalEl.querySelector('.modal-header .icon-badge i').className = data.ikon;
     });
-    $('#exampleModal').on('hide.bs.modal', function (event) {
-        closeModal();
+
+    modalEl.addEventListener('hide.bs.modal', function () {
+        window.history.replaceState('aktiviteter', 'Aktiviteter', '/aktiviteter');
     });
+
+    @if($aktivitet)
+    modal.show();
+    @endif
 });
-function closeModal(){
-    $("#placeholder").remove();
-    $("#modalShadow").hide();
-    $(".open").removeClass('open').addClass('closed');
-        window.history.replaceState(
-          "aktiviteter",
-          "Aktiviteter",
-          "/aktiviteter"
-        );
-}
 </script>
 @endsection

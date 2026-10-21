@@ -22,8 +22,8 @@
 
             <div class="row mb-4">
                 <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-                    <div class="embed-responsive embed-responsive-4by3">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/EHBSb6qEu-g?rel=0" allowfullscreen></iframe>
+                    <div class="ratio ratio-4x3">
+                        <iframe src="https://www.youtube.com/embed/EHBSb6qEu-g?rel=0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>

@@ -1,13 +1,13 @@
 <template>
-  <div class id="kortet" v-bind:class="{ showBox: kreds != null }">
+  <div id="kortet" v-bind:class="{ showBox: kreds != null }">
     <div id="map-parent">
-      <gmaps-component id="map" :kredse="kredse" :kreds.sync="kreds"></gmaps-component>
+      <gmaps-component id="map" :kredse="kredse" v-model:kreds="kreds"></gmaps-component>
     </div>
     <div id="box" v-bind:class="{ show: kreds != null }">
       <template v-if="kreds">
         <div class="title mt-4">
           <h1>FDF {{ kreds.navn }}</h1>
-          <div class="close" @click="kreds = null">
+          <div class="close" role="button" aria-label="Luk" @click="kreds = null">
             <i class="fas fa-times"></i>
           </div>
         </div>
@@ -27,11 +27,7 @@
           >
             <div
               class="img"
-              :style="
-                                'background-image: url(/storage/photos/' +
-                                    billede +
-                                    ');'
-                            "
+:style="`background-image: url(/storage/photos/${billede});`"
             ></div>
           </div>
         </div>
@@ -40,9 +36,7 @@
           <div id="aktiviteter-select" class="d-flex" v-if="kreds.aktiviteter.length > 0">
             <a
               :href="`/aktiviteter/${aktivitet.slug}`"
-              :class="
-                                `btn btn-round d-flex type-${aktivitet.type} aktivitet active`
-                            "
+:class="`btn btn-round d-flex type-${aktivitet.type} aktivitet active`"
               v-for="aktivitet in kreds.aktiviteter"
               :key="aktivitet.id"
               target="_blank"
@@ -64,13 +58,7 @@
       escDisabled
       moveDisabled
       :visible="visible"
-      :imgs="
-                kreds
-                    ? Object.values(kreds.billeder).map(
-                          b => '/storage/photos/' + b
-                      )
-                    : []
-            "
+:imgs="kreds && kreds.billeder ? Object.values(kreds.billeder).map((b) => '/storage/photos/' + b) : []"
       :index="index"
       @hide="handleHide"
     ></vue-easy-lightbox>
@@ -79,9 +67,11 @@
 
 <script>
 import VueEasyLightbox from "vue-easy-lightbox";
+import GmapsComponent from "./GmapsComponent.vue";
 
 export default {
   components: {
+    GmapsComponent,
     VueEasyLightbox,
   },
   props: ["kredse", "kredsprop"],
@@ -89,17 +79,16 @@ export default {
     return {
       kreds: this.kredsprop,
       visible: false,
-      index: 0, // default: 0
+      index: 0,
     };
   },
-  mounted: function () {},
   watch: {
-    kreds: function (val, oldVal) {
+    kreds(val) {
       if (val) {
         window.history.replaceState(
           "kreds",
-          "Kortet - Kreds " + this.kreds.id,
-          "/kortet/" + this.kreds.id
+          "Kortet - Kreds " + val.id,
+          "/kortet/" + val.id
         );
       } else {
         window.history.replaceState("kortet", "Kortet", "/kortet");
@@ -114,34 +103,6 @@ export default {
     handleHide() {
       this.visible = false;
     },
-    async onMapLoad(event) {
-      // Here we cathing 'load' map event
-      const asyncActions = event.component.actions;
-      console.log(event);
-      event.map.resize();
-
-      const newParams = await asyncActions.fitBounds([
-        [15.258936, 54.629487],
-        [7.961436, 57.846724],
-      ]);
-
-      console.log(newParams);
-      /* => {
-              center: [30, 30],
-              zoom: 9,
-              bearing: 9,
-              pitch: 7
-            }
-      */
-    },
-    // closeBox: function () {
-    //   this.kreds = null;
-    //   window.history.replaceState('kortet', 'Kortet', '/kortet');
-    // },
-    // kredsSelected: function (kreds) {
-    //   this.kreds = kreds;
-    //   window.history.replaceState('kreds', 'Kortet - Kreds ' + kreds.id, '/kortet/' + kreds.id);
-    // }
   },
 };
 </script>

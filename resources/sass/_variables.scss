@@ -14,3 +14,16 @@ $hvid: #ffffff;
 $yellow: #fbb800;
 $orange: #ec6411;
 $green: #289438;
+
+// Bootstrap 5 defaults that differ from Bootstrap 4
+$enable-rfs: false; // Bootstrap 4 had fixed heading sizes
+$link-decoration: none;
+$link-hover-decoration: underline;
+// Keep Bootstrap 4's container widths; the aktivitet cards are sized from them.
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1140px,
+);

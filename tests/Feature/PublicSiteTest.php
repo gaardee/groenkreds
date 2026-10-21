@@ -53,7 +53,7 @@ class PublicSiteTest extends TestCase
     {
         $kreds = $this->kreds(['active' => true]);
 
-        $this->get(route('kortet.kreds', $kreds))->assertOk()->assertSee('kredsprop', false);
+        $this->get(route('kortet.kreds', $kreds))->assertOk()->assertSee('data-kreds=', false);
     }
 
     public function test_aktiviteter_list_and_detail(): void
@@ -61,7 +61,7 @@ class PublicSiteTest extends TestCase
         $this->aktivitet();
 
         $this->get('/aktiviteter')->assertOk()->assertSee('Plant et træ');
-        $this->get('/aktiviteter/plant-et-trae')->assertOk()->assertSee("modal('show')", false);
+        $this->get('/aktiviteter/plant-et-trae')->assertOk()->assertSee('modal.show()', false);
         $this->get('/aktiviteter/findes-ikke')->assertNotFound();
     }
 

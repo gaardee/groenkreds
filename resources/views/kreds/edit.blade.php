@@ -18,20 +18,20 @@
                     </div>
                     <div class="card-body">
 
-                        <div class="form-group">
-                            <label for="exampleFormControlInput1">Kredsens motivation</label>
-                            <textarea class="form-control" name="motivation" rows="5">{{ $kreds->motivation }}</textarea>
+                        <div class="mb-3">
+                            <label for="motivation" class="form-label">Kredsens motivation</label>
+                            <textarea class="form-control" id="motivation" name="motivation" rows="5">{{ $kreds->motivation }}</textarea>
                         </div>
 
-                        <div class="form-group">
+                        <div class="mb-3">
                             <div class="field" align="left">
                                 <h3>Billeder</h3>
-                                <input type="file" id="files" multiple />
+                                <input type="file" id="files" accept="image/*" multiple />
                                 @if($kreds->billeder)
                                 @foreach(array_reverse($kreds->billeder) AS $billede)
                                 <span class="pip">
                                     <img class="img-thumbnail" src="/storage/photos/{{ $billede }}"/>
-                                    <span class="remove-saved remove" data-path="{{ $billede }}">
+                                    <span class="remove-saved remove" role="button" aria-label="Fjern billede" data-path="{{ $billede }}">
                                         <i class="fas fa-times"></i>
                                     </span>
                                 </span>
@@ -41,14 +41,14 @@
                             </div>
                         </div>
 
-                        <div class="form-group mt-4">
+                        <div class="mb-3 mt-4">
                             <h4>Aktiviteter i har lavet</h4>
                         </div>
-                        <div class="form-group">
-                            <div class="btn-group-toggle d-flex" id="aktiviteter-select" data-toggle="buttons">
+                        <div class="mb-3">
+                            <div class="d-flex" id="aktiviteter-select">
                                 @foreach($aktiviteter AS $aktivitet)
-                                <label class="btn btn-round d-flex type-{{ $aktivitet->type }} aktivitet">
-                                    <input type="checkbox" value="{{ $aktivitet->id }}" name="aktiviteter[]" autocomplete="off" {{ $kreds->aktiviteter->contains('id', $aktivitet->id) ? 'checked' : '' }}>
+                                <input type="checkbox" class="btn-check" id="aktivitet-{{ $aktivitet->id }}" value="{{ $aktivitet->id }}" name="aktiviteter[]" autocomplete="off" @checked($kreds->aktiviteter->contains('id', $aktivitet->id))>
+                                <label class="btn btn-round d-flex type-{{ $aktivitet->type }} aktivitet" for="aktivitet-{{ $aktivitet->id }}">
                                     <div class="icon-badge rounded-circle">
                                         <i class="{{ $aktivitet->ikon }}"></i>
                                     </div>
@@ -60,21 +60,21 @@
                             </div>
                         </div>
 
-                        <div class="form-group mt-4">
+                        <div class="mb-3 mt-4">
                             <h4>Kontaktperson</h4>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlInput1">Navn</label>
-                            <input type="text" class="form-control" name="kontakt_navn" value="{{ $kreds->kontakt_navn }}">
+                        <div class="mb-3">
+                            <label for="kontakt_navn" class="form-label">Navn</label>
+                            <input type="text" class="form-control" id="kontakt_navn" name="kontakt_navn" value="{{ $kreds->kontakt_navn }}">
                         </div>
 
-                        <div class="form-group">
-                            <label for="exampleFormControlInput1">Email</label>
-                            <input type="email" class="form-control" name="kontakt_email" value="{{ $kreds->kontakt_email }}">
+                        <div class="mb-3">
+                            <label for="kontakt_email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="kontakt_email" name="kontakt_email" value="{{ $kreds->kontakt_email }}">
                         </div>
 
-                        <div class="form-group pt-4">
-                            <input type="submit" class="btn-block btn btn-success" value="Gem">
+                        <div class="mb-3 pt-4">
+                            <input type="submit" class="w-100 btn btn-success" value="Gem">
                         </div>
                     </div>
                 </div>
@@ -86,42 +86,52 @@
 
 @section('scripts')
 <script>
-    $(document).ready(function() {
-  if (window.File && window.FileList && window.FileReader) {
-    $("#files").on("change", function(e) {
-      var files = e.target.files,
-        filesLength = files.length;
-      for (var i = 0; i < filesLength; i++) {
-        var f = files[i]
-        var fileReader = new FileReader();
-        fileReader.onload = (function(e) {
-          var file = e.target;
-          $("<span class=\"pip\">" +
-            "<img class=\"img-thumbnail\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
-            "<span class=\"remove\"><i class='fas fa-times'></i></span>" +
-            "<input type='hidden' name='photos[]' value='" + e.target.result + "'>" +
-            "</span>").insertAfter("#files");
-          $(".remove").click(function(){
-            $(this).parent(".pip").remove();
-            files(e.target.files.splice(i,1));
-          });
-        });
-        fileReader.readAsDataURL(f);
-      }
-      $("#files").val('');
-    });
-  } else {
-    alert("Your browser doesn't support to File API")
-  }
+document.addEventListener('DOMContentLoaded', function () {
+    var input = document.getElementById('files');
 
-          $(".remove-saved").click(function(){
-            $(this).parent(".pip").remove();
-            var removes = JSON.parse($('#remove-photos').val());
-            console.log(removes);
-            removes.push($(this).data('path'));
-            console.log(removes);
-            $('#remove-photos').val(JSON.stringify(removes));
-          });
+    input.addEventListener('change', function () {
+        Array.from(input.files).forEach(function (file) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var pip = document.createElement('span');
+                pip.className = 'pip';
+
+                var img = document.createElement('img');
+                img.className = 'img-thumbnail';
+                img.src = reader.result;
+                img.title = file.name;
+
+                var remove = document.createElement('span');
+                remove.className = 'remove';
+                remove.setAttribute('role', 'button');
+                remove.setAttribute('aria-label', 'Fjern billede');
+                remove.innerHTML = '<i class="fas fa-times"></i>';
+                remove.addEventListener('click', function () {
+                    pip.remove();
+                });
+
+                var hidden = document.createElement('input');
+                hidden.type = 'hidden';
+                hidden.name = 'photos[]';
+                hidden.value = reader.result;
+
+                pip.append(img, remove, hidden);
+                input.after(pip);
+            };
+            reader.readAsDataURL(file);
+        });
+        input.value = '';
+    });
+
+    document.querySelectorAll('.remove-saved').forEach(function (button) {
+        button.addEventListener('click', function () {
+            var field = document.getElementById('remove-photos');
+            var removes = JSON.parse(field.value);
+            removes.push(button.dataset.path);
+            field.value = JSON.stringify(removes);
+            button.closest('.pip').remove();
+        });
+    });
 });
 </script>
 @endsection

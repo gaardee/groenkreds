@@ -1,10 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-@if($kreds ?? false)
-<kortet-component :kredse="{{ json_encode($kredse) }}" :kredsprop="{{ json_encode($kreds) }}"></kortet-component>
-@else
-<kortet-component :kredse="{{ json_encode($kredse) }}"></kortet-component>
-@endif
+<div id="kortet-app"
+    data-kredse="{{ json_encode($kredse) }}"
+    @isset($kreds) data-kreds="{{ json_encode($kreds) }}" @endisset
+></div>
 @endsection
-

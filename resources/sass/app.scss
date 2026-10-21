@@ -5,7 +5,7 @@
 @import "variables";
 
 // Bootstrap
-@import "~bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
 
 body,
 #app {
@@ -238,6 +238,17 @@ input[type="file"] {
 
 #aktiviteter-select {
     flex-wrap: wrap;
+    .btn-check:checked + .aktivitet {
+        &.type-1 {
+            background-color: $green;
+        }
+        &.type-2 {
+            background-color: $orange;
+        }
+        &.type-3 {
+            background-color: $yellow;
+        }
+    }
     .aktivitet {
         padding: 0;
         border-radius: 20px;
@@ -375,8 +386,8 @@ input[type="file"] {
             font-weight: 700;
             line-height: 1.5rem;
         }
-        .close {
-            margin: -1rem 0rem -1rem auto;
+        .btn-close {
+            margin: 0 0.5rem 0 auto;
         }
         .icon-badge {
             background-color: $fdfmoerkeblaa;
