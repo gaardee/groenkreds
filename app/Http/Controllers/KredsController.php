@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Aktivitet;
-use App\Kreds;
+use App\Models\Aktivitet;
+use App\Models\Kreds;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,27 +15,15 @@ class KredsController extends Controller
 
         $aktiviteter = Aktivitet::orderBy('type')->get();
 
+        abort_if(! $kreds, 404);
+
         return view('kreds.edit', compact('kreds', 'aktiviteter'));
-    }
-
-
-    public function rules()
-    {
-        $rules = [
-            'name' => 'required'
-        ];
-        $photos = count($this->input('photos'));
-        foreach (range(0, $photos) as $index) {
-            $rules['photos.' . $index] = 'image|mimes:jpeg,bmp,png|max:2000';
-        }
-
-        return $rules;
     }
 
     public function update(Request $request, $key)
     {
         // dd($request);
-        $kreds = Kreds::where('key', $key)->first();
+        $kreds = Kreds::where('key', $key)->firstOrFail();
         $kreds->kontakt_email = $request->kontakt_email;
         $kreds->kontakt_navn = $request->kontakt_navn;
         $kreds->motivation = $request->motivation;

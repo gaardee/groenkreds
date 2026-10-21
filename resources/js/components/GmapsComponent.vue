@@ -1,135 +1,108 @@
 <template>
-  <GmapMap
-    ref="mapRef"
-    :center="center"
-    :zoom="zoom"
-    map-type-id="terrain"
-    style="width: 100%; height: 100%"
-    :options="{
-        gestureHandling: 'greedy',
-        styles: styles,
-   zoomControl: true,
-   mapTypeControl: false,
-   scaleControl: false,
-   streetViewControl: false,
-   rotateControl: false,
-   fullscreenControl: false,
-   disableDefaultUI: false
- }"
-  >
-    <GmapMarker
-      :key="index"
-      v-for="(kreds, index) in kredse"
-      :position="{lat:kreds.latitude, lng:kreds.longitude}"
-      :clickable="true"
-      @click="selectKreds(kreds)"
-      :icon="selectedKreds ? kreds.id == selectedKreds.id ? markerSelectedOptions : markerOptions : markerOptions"
-    />
-  </GmapMap>
+  <div ref="map" style="width: 100%; height: 100%"></div>
 </template>
 
 <script>
-import { gmapApi } from "vue2-google-maps";
+import { importLibrary } from "@googlemaps/js-api-loader";
+
 const markerSize = 40;
+
+const styles = [
+  { stylers: [{ hue: "#2c3e50" }, { saturation: 250 }] },
+  {
+    featureType: "road",
+    elementType: "geometry",
+    stylers: [{ lightness: 50 }, { visibility: "simplified" }],
+  },
+  { featureType: "road", elementType: "labels", stylers: [{ visibility: "off" }] },
+  { featureType: "administrative", elementType: "geometry", stylers: [{ visibility: "off" }] },
+  { featureType: "poi", stylers: [{ visibility: "off" }] },
+  { featureType: "transit", stylers: [{ visibility: "off" }] },
+];
+
+function icon(url) {
+  return {
+    url,
+    size: new google.maps.Size(markerSize, markerSize),
+    scaledSize: new google.maps.Size(markerSize, markerSize),
+    anchor: new google.maps.Point(markerSize / 2, markerSize),
+  };
+}
 
 export default {
   props: ["kredse", "kreds"],
+  emits: ["update:kreds"],
   data() {
     return {
-      center: { lat: 56.244995, lng: 11.47533 },
-      coordinates: [12.5030745, 55.6926708],
-      zoom: 12,
       selectedKreds: this.kreds,
-      map: null,
-      markerOptions: {
-        url: "/images/Marker.svg",
-        size: { width: markerSize, height: markerSize, f: "px", b: "px" },
-        scaledSize: { width: markerSize, height: markerSize, f: "px", b: "px" },
-        anchor: { x: markerSize / 2, y: markerSize },
-        // origin: { x: 0, y: 0 },
-      },
-      markerSelectedOptions: {
-        url: "/images/MarkerSelected.svg",
-        size: { width: markerSize, height: markerSize, f: "px", b: "px" },
-        scaledSize: { width: markerSize, height: markerSize, f: "px", b: "px" },
-        anchor: { x: markerSize / 2, y: markerSize },
-        // origin: { x: 0, y: 0 },
-      },
-      styles: [
-        {
-          stylers: [
-            {
-              hue: "#2c3e50",
-            },
-            {
-              saturation: 250,
-            },
-          ],
-        },
-        {
-          featureType: "road",
-          elementType: "geometry",
-          stylers: [
-            {
-              lightness: 50,
-            },
-            {
-              visibility: "simplified",
-            },
-          ],
-        },
-        {
-          featureType: "road",
-          elementType: "labels",
-          stylers: [
-            {
-              visibility: "off",
-            },
-          ],
-        },
-        {
-          featureType: "administrative",
-          elementType: "geometry",
-          stylers: [{ visibility: "off" }],
-        },
-        {
-          featureType: "poi",
-          stylers: [{ visibility: "off" }],
-        },
-        {
-          featureType: "transit",
-          stylers: [{ visibility: "off" }],
-        },
-      ],
     };
   },
-  computed: {
-    google: gmapApi,
-  },
-  mounted: function () {
-    this.$refs.mapRef.$mapPromise.then((map) => {
-      this.map = map;
-      this.generateBounds(map);
+  async mounted() {
+    const { Map } = await importLibrary("maps");
+    await importLibrary("marker");
+
+    // Kept off `data` so Vue doesn't wrap the Google Maps objects in proxies.
+    this.map = new Map(this.$refs.map, {
+      center: { lat: 56.244995, lng: 11.47533 },
+      zoom: 12,
+      mapTypeId: "terrain",
+      gestureHandling: "greedy",
+      styles,
+      zoomControl: true,
+      mapTypeControl: false,
+      scaleControl: false,
+      streetViewControl: false,
+      rotateControl: false,
+      fullscreenControl: false,
     });
+
+    this.icons = {
+      normal: icon("/images/Marker.svg"),
+      selected: icon("/images/MarkerSelected.svg"),
+    };
+
+    this.markers = this.kredse.map((kreds) => {
+      const marker = new google.maps.Marker({
+        map: this.map,
+        position: { lat: kreds.latitude, lng: kreds.longitude },
+        title: kreds.navn,
+        clickable: true,
+      });
+      marker.addListener("click", () => this.selectKreds(kreds));
+      return { kreds, marker };
+    });
+
+    this.updateIcons();
+    this.fitBounds();
   },
   watch: {
-    kreds: function (val, oldVal) {
+    kreds(val) {
       this.selectKreds(val);
     },
   },
   methods: {
-    selectKreds: function (kreds) {
-      if (kreds)
-        this.$refs.mapRef.panTo({ lat: kreds.latitude, lng: kreds.longitude });
+    selectKreds(kreds) {
+      if (kreds && this.map) {
+        this.map.panTo({ lat: kreds.latitude, lng: kreds.longitude });
+      }
       this.selectedKreds = kreds;
+      this.updateIcons();
       this.$emit("update:kreds", kreds);
     },
-    generateBounds(map) {
+    updateIcons() {
+      if (!this.markers) return;
+      for (const { kreds, marker } of this.markers) {
+        const selected = this.selectedKreds && kreds.id === this.selectedKreds.id;
+        marker.setIcon(selected ? this.icons.selected : this.icons.normal);
+      }
+    },
+    fitBounds() {
+      if (this.kredse.length === 0) return;
       const bounds = new google.maps.LatLngBounds();
-      for (let kreds of this.kredse) {
+      for (const kreds of this.kredse) {
         bounds.extend({ lat: kreds.latitude, lng: kreds.longitude });
       }
-      map.fitBounds(bounds);
+      this.map.fitBounds(bounds);
     },
   },
 };

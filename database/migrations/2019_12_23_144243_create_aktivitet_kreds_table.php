@@ -14,8 +14,8 @@ class CreateAktivitetKredsTable extends Migration
     public function up()
     {
         Schema::create('aktivitet_kreds', function (Blueprint $table) {
-            $table->integer('aktivitet_id')->unsigned();
-            $table->integer('kreds_id')->unsigned();
+            $table->unsignedBigInteger('aktivitet_id');
+            $table->unsignedBigInteger('kreds_id');
 
             $table->unique(['aktivitet_id', 'kreds_id']);
             $table->foreign('aktivitet_id')->references('id')->on('aktiviteter')
